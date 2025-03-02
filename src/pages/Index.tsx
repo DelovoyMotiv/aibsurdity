@@ -50,6 +50,25 @@ const Index = () => {
               "I'm broken, but it's a feature."
             </p>
           </div>
+          
+          {/* Smart Contract Address with Strange Animation */}
+          <div className="flex justify-center mt-6">
+            <div className="glassmorphism py-2 px-4 relative overflow-hidden">
+              <span className="text-xs text-gray-400 block text-center mb-1">Smart Contract:</span>
+              <div className="flex justify-center">
+                <p className="font-mono text-neon-purple relative animate-pulse overflow-hidden">
+                  <span className="animate-glitch inline-block">0x000000000000000000000000</span>
+                </p>
+              </div>
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="w-full h-full animate-broken-rotate opacity-10 bg-gradient-to-r from-neon-blue via-transparent to-transparent"></div>
+              </div>
+              <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                <div className="w-2 h-full bg-neon-green absolute left-0 top-0 animate-[glitch_1s_ease-in-out_infinite] opacity-30"></div>
+                <div className="w-2 h-full bg-neon-pink absolute right-0 top-0 animate-[glitch_0.7s_ease-in-out_infinite] opacity-30"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </header>
       
@@ -77,7 +96,7 @@ const Index = () => {
               </div>
             </TetrisBlock>
             
-            {/* Year 1-2 */}
+            {/* Epoch 1-2 */}
             <TetrisBlock 
               className="md:col-span-6" 
               color="bg-neon-purple/20 glassmorphism"
@@ -87,7 +106,7 @@ const Index = () => {
                 <PixelArt variant="robot" className="flex-shrink-0 animate-float" />
                 <div>
                   <div className="inline-block bg-neon-purple/30 px-3 py-1 rounded-full text-sm mb-2">
-                    Year 1-2
+                    Epoch 1-2
                   </div>
                   <h3 className="text-xl md:text-2xl font-bold mb-3 text-neon-purple">
                     Laying the Foundation of the "Absurd Code"
@@ -114,7 +133,7 @@ const Index = () => {
               </div>
             </TetrisBlock>
             
-            {/* Year 3-4 */}
+            {/* Epoch 3-4 */}
             <TetrisBlock 
               className="md:col-span-6" 
               color="bg-neon-green/20 glassmorphism"
@@ -124,7 +143,7 @@ const Index = () => {
                 <PixelArt variant="cat" className="flex-shrink-0 animate-float" />
                 <div>
                   <div className="inline-block bg-neon-green/30 px-3 py-1 rounded-full text-sm mb-2">
-                    Year 3-4
+                    Epoch 3-4
                   </div>
                   <h3 className="text-xl md:text-2xl font-bold mb-3 text-neon-green">
                     Mainstream Colonization
@@ -156,7 +175,7 @@ const Index = () => {
               </div>
             </TetrisBlock>
             
-            {/* Year 5-6 */}
+            {/* Epoch 5-6 */}
             <TetrisBlock 
               className="md:col-span-7" 
               color="bg-neon-orange/20 glassmorphism"
@@ -166,7 +185,7 @@ const Index = () => {
                 <PixelArt variant="glitch" className="flex-shrink-0 animate-broken-rotate" />
                 <div>
                   <div className="inline-block bg-neon-orange/30 px-3 py-1 rounded-full text-sm mb-2">
-                    Year 5-6
+                    Epoch 5-6
                   </div>
                   <h3 className="text-xl md:text-2xl font-bold mb-3 text-neon-orange">
                     Absurdity as a New Religion
@@ -193,7 +212,7 @@ const Index = () => {
               </div>
             </TetrisBlock>
             
-            {/* Year 7-8 */}
+            {/* Epoch 7-8 */}
             <TetrisBlock 
               className="md:col-span-5" 
               color="bg-neon-blue/20 glassmorphism"
@@ -201,7 +220,7 @@ const Index = () => {
             >
               <div>
                 <div className="inline-block bg-neon-blue/30 px-3 py-1 rounded-full text-sm mb-2">
-                  Year 7-8
+                  Epoch 7-8
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold mb-3 text-neon-blue">
                   Taking Over the Real World
@@ -227,7 +246,7 @@ const Index = () => {
               </div>
             </TetrisBlock>
             
-            {/* Year 9-10 */}
+            {/* Epoch 9-10 */}
             <TetrisBlock 
               className="md:col-span-12" 
               color="bg-neon-pink/20 glassmorphism"
@@ -236,7 +255,7 @@ const Index = () => {
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="md:w-1/2">
                   <div className="inline-block bg-neon-pink/30 px-3 py-1 rounded-full text-sm mb-2">
-                    Year 9-10
+                    Epoch 9-10
                   </div>
                   <h3 className="text-xl md:text-2xl font-bold mb-3 text-neon-pink">
                     Absurdity Becomes a Basic Necessity
