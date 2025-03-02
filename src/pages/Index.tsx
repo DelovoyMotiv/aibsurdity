@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
-import { Github, Twitter, Send } from 'lucide-react';
+import { Github, Twitter, Send, Copy } from 'lucide-react';
+import { toast } from "sonner";
 import GlitchText from '@/components/GlitchText';
 import ParticleBackground from '@/components/ParticleBackground';
 import PixelArt from '@/components/PixelArt';
@@ -24,6 +25,17 @@ const Index = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText("0x000000000000000000000000")
+      .then(() => {
+        toast.success("Contract address copied to clipboard");
+      })
+      .catch((err) => {
+        toast.error("Failed to copy address");
+        console.error("Failed to copy text: ", err);
+      });
+  };
   
   if (!mounted) return null;
   
@@ -51,21 +63,29 @@ const Index = () => {
             </p>
           </div>
           
-          {/* Smart Contract Address with Strange Animation */}
+          {/* Smart Contract Address with Smoother Animation */}
           <div className="flex justify-center mt-6">
-            <div className="glassmorphism py-2 px-4 relative overflow-hidden">
-              <span className="text-xs text-gray-400 block text-center mb-1">Smart Contract:</span>
-              <div className="flex justify-center">
-                <p className="font-mono text-neon-purple relative animate-pulse overflow-hidden">
-                  <span className="animate-glitch inline-block">0x000000000000000000000000</span>
+            <div className="glassmorphism py-3 px-5 relative overflow-hidden max-w-md w-full mx-auto">
+              <span className="text-xs text-gray-400 block text-center mb-2">Smart Contract:</span>
+              <div className="flex justify-between items-center">
+                <p className="font-mono text-neon-purple relative overflow-hidden transition-all duration-500">
+                  <span className="animate-pulse inline-block">0x000000000000000000000000</span>
                 </p>
+                <button 
+                  onClick={copyToClipboard}
+                  className="ml-3 text-neon-green hover:text-neon-blue transition-colors p-1 rounded hover:bg-white/10"
+                  title="Copy to clipboard"
+                >
+                  <Copy size={18} />
+                </button>
               </div>
+              
               <div className="absolute inset-0 pointer-events-none">
-                <div className="w-full h-full animate-broken-rotate opacity-10 bg-gradient-to-r from-neon-blue via-transparent to-transparent"></div>
+                <div className="w-full h-full opacity-10 bg-gradient-to-r from-neon-blue via-transparent to-transparent animate-[pulse_3s_ease-in-out_infinite]"></div>
               </div>
               <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div className="w-2 h-full bg-neon-green absolute left-0 top-0 animate-[glitch_1s_ease-in-out_infinite] opacity-30"></div>
-                <div className="w-2 h-full bg-neon-pink absolute right-0 top-0 animate-[glitch_0.7s_ease-in-out_infinite] opacity-30"></div>
+                <div className="w-1 h-full bg-neon-green absolute left-0 top-0 animate-[pulse_2s_ease-in-out_infinite] opacity-30"></div>
+                <div className="w-1 h-full bg-neon-pink absolute right-0 top-0 animate-[pulse_3s_ease-in-out_infinite] opacity-30"></div>
               </div>
             </div>
           </div>
