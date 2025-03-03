@@ -1,4 +1,3 @@
-importtypescript
 import React, { useEffect, useRef, useState } from 'react';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { Crown, Zap, Sparkles } from 'lucide-react';
@@ -211,29 +210,6 @@ const TopHoldersChart = () => {
   
   return (
     <div className="w-full h-full flex flex-col">
-      <div className="flex items-center justify-center mb-4 space-x-2">
-        <Crown className="text-neon-yellow animate-pulse" size={24} />
-        <GlitchText 
-          text="100 Legends" 
-          fontSize="text-2xl md:text-3xl" 
-          color="text-white" 
-          className="font-pixel"
-          variant="pixel"
-          as="h3"
-          pixelated={true}
-        />
-        <Sparkles className="text-neon-purple animate-pulse" size={24} />
-      </div>
-      
-      <div className="text-center mb-6">
-        <p className="font-pixel text-neon-green text-sm w-full">Top ABSURD Token Holders</p>
-        <div className="flex justify-center items-center space-x-2 mt-1">
-          <Zap size={14} className="text-neon-pink animate-pulse" />
-          <p className="text-xs text-gray-300 font-pixel w-full">Data from Solscan Explorer</p>
-          <Zap size={14} className="text-neon-pink animate-pulse" />
-        </div>
-      </div>
-      
       <div className="flex-grow w-full relative">
         {/* Toggle switch for chart type */}
         <button 
