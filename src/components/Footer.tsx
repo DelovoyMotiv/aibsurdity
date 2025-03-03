@@ -1,14 +1,44 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Twitter, ExternalLink, Copy, Check, Github, MessageCircle } from 'lucide-react';
 import { toast } from "sonner";
+import GlitchText from './GlitchText';
 
 const Footer = () => {
   const [contractCopied, setContractCopied] = useState(false);
   const [emailCopied, setEmailCopied] = useState(false);
+  const [glitchActive, setGlitchActive] = useState(false);
+  const vhsOverlayRef = useRef<HTMLDivElement>(null);
+  const quantumNoiseRef = useRef<HTMLDivElement>(null);
   
   const contractAddress = "0xabsurd...42069";
   const supportEmail = "ai@absurdity.wtf";
+  
+  // VHS overlay and quantum noise effects
+  useEffect(() => {
+    const glitchInterval = setInterval(() => {
+      // Randomly activate glitch effect
+      if (Math.random() > 0.7) {
+        setGlitchActive(true);
+        setTimeout(() => setGlitchActive(false), 800 + Math.random() * 1200);
+      }
+      
+      // Animate VHS overlay
+      if (vhsOverlayRef.current) {
+        vhsOverlayRef.current.style.opacity = (Math.random() * 0.3 + 0.1).toString();
+        vhsOverlayRef.current.style.transform = `translateY(${Math.random() * 4 - 2}px)`;
+      }
+      
+      // Animate quantum noise
+      if (quantumNoiseRef.current) {
+        const hue = Math.floor(Math.random() * 360);
+        quantumNoiseRef.current.style.filter = `hue-rotate(${hue}deg)`;
+        quantumNoiseRef.current.style.opacity = (Math.random() * 0.2 + 0.05).toString();
+      }
+    }, 2000);
+    
+    return () => clearInterval(glitchInterval);
+  }, []);
   
   const copyToClipboard = (text: string, type: 'contract' | 'email') => {
     navigator.clipboard.writeText(text)
@@ -29,33 +59,66 @@ const Footer = () => {
   };
   
   return (
-    <footer className="bg-absurd-dark border-t border-gray-800 py-12 mt-auto">
-      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+    <footer className="bg-absurd-dark border-t border-gray-800 py-12 mt-auto relative overflow-hidden">
+      {/* VHS Overlay */}
+      <div 
+        ref={vhsOverlayRef}
+        className="absolute inset-0 pointer-events-none z-10 opacity-20"
+        style={{
+          background: `repeating-linear-gradient(
+            to bottom,
+            transparent,
+            transparent 2px,
+            rgba(255, 0, 255, 0.2) 3px,
+            rgba(0, 255, 255, 0.2) 4px
+          )`,
+          animation: 'vhs-jitter 0.5s infinite',
+          mixBlendMode: 'exclusion'
+        }}
+      />
+      
+      {/* Quantum Noise Background */}
+      <div 
+        ref={quantumNoiseRef}
+        className="absolute inset-0 pointer-events-none opacity-10"
+        style={{
+          background: 'radial-gradient(circle at center, rgba(255,0,255,0.3) 0%, rgba(0,255,255,0.3) 50%, rgba(255,255,0,0.3) 100%)',
+          backgroundSize: '200% 200%',
+          animation: 'data-corruption 15s ease infinite',
+          mixBlendMode: 'screen'
+        }}
+      />
+      
+      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 relative z-20">
         <div>
-          <h3 className="text-neon-blue font-pixel text-lg mb-4">AIbsurdity</h3>
+          <h3 className={`text-neon-blue font-pixel text-lg mb-4 ${glitchActive ? 'animate-broken-glitch' : ''}`}>AIbsurdity</h3>
           <p className="text-gray-400 text-sm mb-4 font-pixel">
-            Absolutely everything that surrounds you was once someone's absurd idea...
+            <GlitchText 
+              text="Absolutely everything that surrounds you was once someone's absurd idea..." 
+              variant={Math.random() > 0.5 ? 'broken' : 'fragmented'}
+              interactive={true}
+            />
           </p>
           <div className="flex space-x-4">
             <a href="https://twitter.com/absurdity" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-blue transition-colors">
-              <Twitter size={20} />
+              <Twitter size={20} className={glitchActive ? 'animate-distort-text' : ''} />
             </a>
             <a href="https://t.me/absurdity" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-purple transition-colors">
-              <MessageCircle size={20} />
+              <MessageCircle size={20} className={glitchActive ? 'animate-fragmented-glitch' : ''} />
             </a>
             <a href="https://github.com/absurdity" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-green transition-colors">
-              <Github size={20} />
+              <Github size={20} className={glitchActive ? 'animate-broken-shake' : ''} />
             </a>
             <a href="https://absurdity.wtf" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-yellow transition-colors">
-              <ExternalLink size={20} />
+              <ExternalLink size={20} className={glitchActive ? 'animate-broken-rotate' : ''} />
             </a>
           </div>
         </div>
         
         <div>
-          <h3 className="text-neon-pink font-pixel text-lg mb-4">Official addresses</h3>
+          <h3 className={`text-neon-pink font-pixel text-lg mb-4 ${glitchActive ? 'animate-broken-flicker' : ''}`}>Official addresses</h3>
           <div className="space-y-3">
-            <div className="flex items-center justify-between text-gray-400 text-sm p-2 bg-gray-900 rounded font-pixel">
+            <div className={`flex items-center justify-between text-gray-400 text-sm p-2 bg-gray-900 rounded font-pixel ${glitchActive ? 'animate-reality-glitch' : ''}`}>
               <span>Contract:</span>
               <span className="flex items-center">
                 {contractAddress}
@@ -68,7 +131,7 @@ const Footer = () => {
               </span>
             </div>
             
-            <div className="flex items-center justify-between text-gray-400 text-sm p-2 bg-gray-900 rounded font-pixel">
+            <div className={`flex items-center justify-between text-gray-400 text-sm p-2 bg-gray-900 rounded font-pixel ${glitchActive ? 'animate-broken-warp' : ''}`}>
               <span>Fund:</span>
               <span className="flex items-center">
                 {supportEmail}
@@ -89,7 +152,11 @@ const Footer = () => {
           © {new Date().getFullYear()} AIbsurdity. All rights absurdified. This is not financial advice—it's a joke with a blockchain.
         </p>
         <p className="text-center text-neon-orange text-sm mt-4 font-pixel animate-pulse">
-          If nothing works out for us... we'll leave, but as a farewell we'll slam the door so hard that the world will tremble!
+          <GlitchText 
+            text="If nothing works out for us... we'll leave, but as a farewell we'll slam the door so hard that the world will tremble!" 
+            variant="quantum"
+            interactive={true}
+          />
         </p>
       </div>
     </footer>
