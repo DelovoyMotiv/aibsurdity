@@ -1,8 +1,23 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Github, Twitter, Send } from 'lucide-react';
 
 const Footer = () => {
+  const [glowColor, setGlowColor] = useState('text-neon-blue');
+  
+  // Create a changing glow effect
+  useEffect(() => {
+    const colors = ['text-neon-blue', 'text-neon-green', 'text-neon-purple', 'text-neon-pink'];
+    let colorIndex = 0;
+    
+    const interval = setInterval(() => {
+      colorIndex = (colorIndex + 1) % colors.length;
+      setGlowColor(colors[colorIndex]);
+    }, 3000);
+    
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <footer className="w-full py-8 px-4 mt-16 glassmorphism-2 border-t border-gray-800">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
@@ -30,6 +45,19 @@ const Footer = () => {
           <p className="text-gray-400 text-sm font-pixel">© 2024 AIbsurdity</p>
           <p className="text-gray-500 text-xs">All rights unreserved in alternate realities</p>
         </div>
+      </div>
+      
+      {/* Animated neon-glowing quote */}
+      <div className="mt-8 text-center">
+        <p 
+          className={`font-pixel text-sm md:text-base animate-pulse ${glowColor} transition-colors duration-1000 ease-in-out`}
+          style={{ 
+            textShadow: '0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor',
+            animation: 'neon-pulse 3s ease-in-out infinite'
+          }}
+        >
+          "If we fail... We'll leave, but we'll slam the door so hard that the world will tremble!"
+        </p>
       </div>
     </footer>
   );
