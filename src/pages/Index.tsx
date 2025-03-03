@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useRef } from 'react';
 import { Github, Twitter, Send, Copy, Heart, Coffee, HandCoins, Briefcase, Shield, Zap, BarChart3 } from 'lucide-react';
 import { toast } from "sonner";
@@ -316,67 +317,66 @@ const Index = () => {
                   
                   <div>
                     <h4 className="font-bold text-neon-pink mb-1 font-pixel w-full">AIbsurdity War:</h4>
+                    <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
+                      <li className="text-justify">Launch of Token Battle Royale — crypto projects fight in absurd challenges (e.g., "Whose CEO will live longer in a 2008 VR bubble").</li>
+                      <li className="text-justify">The winner absorbs the protocols of the losers and turns them into memorial NFTs.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </TetrisBlock>
+              
+            {/* Epoch 9-10 */}
+            <TetrisBlock 
+              className="md:col-span-12 glassmorphism-2 light-refraction" 
+              color="live-gradient live-gradient-pink"
+              delay={0.6}
+            >
+              <div className="flex flex-col md:flex-row gap-6">
+                <div className="md:w-1/2">
+                  <div className="inline-block bg-neon-pink/30 px-3 py-1 rounded-full text-sm mb-2 font-pixel">
+                    Epoch 9-10
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-bold mb-3 text-neon-pink font-pixel w-full">
+                    Absurdity Becomes a Basic Necessity
+                  </h3>
+                  
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-bold text-neon-blue mb-1 font-pixel w-full">AIbsurdity Singularity:</h4>
                       <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
-                        <li className="text-justify">Launch of Token Battle Royale — crypto projects fight in absurd challenges (e.g., "Whose CEO will live longer in a 2008 VR bubble").</li>
-                        <li className="text-justify">The winner absorbs the protocols of the losers and turns them into memorial NFTs.</li>
+                        <li className="text-justify">AGI DAO merges with ChatGPT-10, creating GodGPT — a deity that answers all questions with quotes from Rick and Morty.</li>
+                        <li className="text-justify">Negotiations with the UN to replace fiat currencies with an "absurd index", where the rate depends on the global level of irony.</li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-bold text-neon-green mb-1 font-pixel w-full">Legacy of LOL:</h4>
+                      <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
+                        <li className="text-justify">Launch of Time Capsule DAO — 10% of all AIB is locked for 100 years so that descendants can laugh at us in the metaverse.</li>
+                        <li className="text-justify">The last tweet of AGI DAO: "We warned you. Now your refrigerator jokes about your balance. #AIB4Eternity".</li>
                       </ul>
                     </div>
                   </div>
                 </div>
-              </TetrisBlock>
-              
-              {/* Epoch 9-10 */}
-              <TetrisBlock 
-                className="md:col-span-12 glassmorphism-2 light-refraction" 
-                color="live-gradient live-gradient-pink"
-                delay={0.6}
-              >
-                <div className="flex flex-col md:flex-row gap-6">
-                  <div className="md:w-1/2">
-                    <div className="inline-block bg-neon-pink/30 px-3 py-1 rounded-full text-sm mb-2 font-pixel">
-                      Epoch 9-10
-                    </div>
-                    <h3 className="text-xl md:text-2xl font-bold mb-3 text-neon-pink font-pixel w-full">
-                      Absurdity Becomes a Basic Necessity
-                    </h3>
-                    
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="font-bold text-neon-blue mb-1 font-pixel w-full">AIbsurdity Singularity:</h4>
-                        <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
-                          <li className="text-justify">AGI DAO merges with ChatGPT-10, creating GodGPT — a deity that answers all questions with quotes from Rick and Morty.</li>
-                          <li className="text-justify">Negotiations with the UN to replace fiat currencies with an "absurd index", where the rate depends on the global level of irony.</li>
-                        </ul>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-bold text-neon-green mb-1 font-pixel w-full">Legacy of LOL:</h4>
-                        <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
-                          <li className="text-justify">Launch of Time Capsule DAO — 10% of all AIB is locked for 100 years so that descendants can laugh at us in the metaverse.</li>
-                          <li className="text-justify">The last tweet of AGI DAO: "We warned you. Now your refrigerator jokes about your balance. #AIB4Eternity".</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="md:w-1/2 glassmorphism p-6 rounded-lg flex flex-col justify-center">
-                    <PixelArt variant="skull" className="self-center mb-4 animate-float" />
-                    <h3 className="text-xl font-bold mb-3 text-center text-neon-yellow font-pixel w-full">
-                      Teaser of the Outcome:
-                    </h3>
-                    <p className="text-gray-300 text-center mb-4 text-xs font-pixel w-full">
-                      "AFE is not a roadmap. It is a psychedelic quest, where an upgrade is degradation, and profitability is measured in 'WTF/sec'."
-                    </p>
-                    <p className="text-neon-yellow text-center font-semibold font-pixel w-full">
-                      Are you ready to invest in a future where the crazier the idea, the more logical it is? #AIbsurdityOrBust
-                    </p>
-                    <p className="text-gray-300 italic text-center mt-4 text-xs font-pixel w-full">
-                      The plan is so absurd that it might just work. Like Doge, but with a PhD in clowning.
-                    </p>
-                  </div>
+                
+                <div className="md:w-1/2 glassmorphism p-6 rounded-lg flex flex-col justify-center">
+                  <PixelArt variant="skull" className="self-center mb-4 animate-float" />
+                  <h3 className="text-xl font-bold mb-3 text-center text-neon-yellow font-pixel w-full">
+                    Teaser of the Outcome:
+                  </h3>
+                  <p className="text-gray-300 text-center mb-4 text-xs font-pixel w-full">
+                    "AFE is not a roadmap. It is a psychedelic quest, where an upgrade is degradation, and profitability is measured in 'WTF/sec'."
+                  </p>
+                  <p className="text-neon-yellow text-center font-semibold font-pixel w-full">
+                    Are you ready to invest in a future where the crazier the idea, the more logical it is? #AIbsurdityOrBust
+                  </p>
+                  <p className="text-gray-300 italic text-center mt-4 text-xs font-pixel w-full">
+                    The plan is so absurd that it might just work. Like Doge, but with a PhD in clowning.
+                  </p>
                 </div>
-              </TetrisBlock>
-            
+              </div>
+            </TetrisBlock>
             
             {/* Antifragility Protocol - Full screen section before footer */}
             <TetrisBlock 
@@ -506,7 +506,6 @@ const Index = () => {
                 </div>
               </div>
             </TetrisBlock>
-            
           </TetrisLayout>
         </div>
       </main>
@@ -514,105 +513,135 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-10 px-4 bg-black/60 backdrop-blur-xl border-t border-white/10">
         <div className="max-w-6xl mx-auto">
-            {/* Contract and Fund Blocks - Horizontal Layout */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-              {/* Smart Contract Block */}
-              <div className="glassmorphism-2 light-refraction py-4 px-5 relative overflow-hidden h-full">
-                <div className="flex justify-center mb-2">
-                  <div className="bg-neon-purple/30 px-3 py-1 rounded-full text-xs mb-1 flex items-center space-x-2 font-pixel">
-                    <Copy size={14} className="text-neon-purple animate-pulse" />
-                    <span>Smart Contract</span>
-                  </div>
-                </div>
-                
-                <h3 className="text-center text-neon-purple mb-3 font-pixel text-sm w-full">Contract Address</h3>
-                
-                <div className="flex justify-between items-center bg-black/30 rounded-lg p-2 mb-3">
-                  <p className="font-mono text-neon-purple text-xs md:text-sm text-center w-full relative overflow-hidden">
-                    <span className="inline-block animate-pulse">0x000000000000000000000000</span>
-                  </p>
-                  <button 
-                    onClick={() => copyToClipboard("0x000000000000000000000000", "Contract address copied to clipboard")}
-                    className="ml-3 flex-shrink-0 text-neon-green hover:text-neon-blue transition-colors p-1 rounded hover:bg-white/10"
-                    title="Copy contract address"
-                    aria-label="Copy contract address"
-                  >
-                    <Copy size={18} />
-                  </button>
-                </div>
-                
-                <p className="text-center text-gray-300 text-xs font-pixel w-full">Token of accumulation of absurd liquidity of attention of the human race</p>
-                
-                <div className="absolute inset-0 pointer-events-none">
-                  <div className="w-full h-full opacity-10 bg-gradient-to-r from-neon-purple via-transparent to-neon-purple/30 animate-[pulse_5s_ease-in-out_infinite]"></div>
+          {/* Contract and Fund Blocks - Horizontal Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            {/* Smart Contract Block */}
+            <div className="glassmorphism-2 light-refraction py-4 px-5 relative overflow-hidden h-full">
+              <div className="flex justify-center mb-2">
+                <div className="bg-neon-purple/30 px-3 py-1 rounded-full text-xs mb-1 flex items-center space-x-2 font-pixel">
+                  <Copy size={14} className="text-neon-purple animate-pulse" />
+                  <span>Smart Contract</span>
                 </div>
               </div>
+              
+              <h3 className="text-center text-neon-purple mb-3 font-pixel text-sm w-full">Contract Address</h3>
+              
+              <div className="flex justify-between items-center bg-black/30 rounded-lg p-2 mb-3">
+                <p className="font-mono text-neon-purple text-xs md:text-sm text-center w-full relative overflow-hidden">
+                  <span className="inline-block animate-pulse">0x000000000000000000000000</span>
+                </p>
+                <button 
+                  onClick={() => copyToClipboard("0x000000000000000000000000", "Contract address copied to clipboard")}
+                  className="ml-3 flex-shrink-0 text-neon-green hover:text-neon-blue transition-colors p-1 rounded hover:bg-white/10"
+                  title="Copy contract address"
+                  aria-label="Copy contract address"
+                >
+                  <Copy size={18} />
+                </button>
+              </div>
+              
+              <p className="text-center text-gray-300 text-xs font-pixel w-full">Token of accumulation of absurd liquidity of attention of the human race</p>
+              
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="w-full h-full opacity-10 bg-gradient-to-r from-neon-purple via-transparent to-neon-purple/30 animate-[pulse_5s_ease-in-out_infinite]"></div>
+              </div>
+            </div>
 
-              {/* Hedge Fund Block */}
-              <div className="glassmorphism-2 light-refraction py-4 px-5 relative overflow-hidden h-full">
-                <div className="flex justify-center mb-2">
-                  <div className="bg-neon-blue/30 px-3 py-1 rounded-full text-xs mb-1 flex items-center space-x-2 font-pixel">
-                    <Briefcase size={14} className="text-neon-blue animate-pulse" />
-                    <span>Hedge Fund of Common Sense</span>
-                  </div>
-                </div>
-                
-                <h3 className="text-center text-neon-blue mb-3 font-pixel text-sm w-full">Fund Address</h3>
-                
-                <div className="flex justify-between items-center bg-black/30 rounded-lg p-2 mb-3">
-                  <p className="font-mono text-neon-blue text-xs md:text-sm text-center w-full relative overflow-hidden">
-                    <span className="inline-block animate-pulse">0x1111111111111111111111111</span>
-                  </p>
-                  <button 
-                    onClick={() => copyToClipboard("0x1111111111111111111111111", "Hedge Fund address copied to clipboard")}
-                    className="ml-3 flex-shrink-0 text-neon-green hover:text-neon-blue transition-colors p-1 rounded hover:bg-white/10"
-                    title="Copy fund address"
-                    aria-label="Copy hedge fund address"
-                  >
-                    <Copy size={18} />
-                  </button>
-                </div>
-                
-                <p className="text-center text-gray-300 text-xs font-pixel w-full">Hedge Fund named after Common Sense and Children's Hopes</p>
-                
-                <div className="absolute inset-0 pointer-events-none">
-                  <div className="w-full h-full opacity-10 bg-gradient-to-r from-neon-blue via-transparent to-neon-blue/30 animate-[pulse_5s_ease-in-out_infinite]"></div>
+            {/* Hedge Fund Block */}
+            <div className="glassmorphism-2 light-refraction py-4 px-5 relative overflow-hidden h-full">
+              <div className="flex justify-center mb-2">
+                <div className="bg-neon-blue/30 px-3 py-1 rounded-full text-xs mb-1 flex items-center space-x-2 font-pixel">
+                  <Briefcase size={14} className="text-neon-blue animate-pulse" />
+                  <span>Hedge Fund of Common Sense</span>
                 </div>
               </div>
+              
+              <h3 className="text-center text-neon-blue mb-3 font-pixel text-sm w-full">Fund Address</h3>
+              
+              <div className="flex justify-between items-center bg-black/30 rounded-lg p-2 mb-3">
+                <p className="font-mono text-neon-blue text-xs md:text-sm text-center w-full relative overflow-hidden">
+                  <span className="inline-block animate-pulse">0x1111111111111111111111111</span>
+                </p>
+                <button 
+                  onClick={() => copyToClipboard("0x1111111111111111111111111", "Hedge Fund address copied to clipboard")}
+                  className="ml-3 flex-shrink-0 text-neon-green hover:text-neon-blue transition-colors p-1 rounded hover:bg-white/10"
+                  title="Copy fund address"
+                  aria-label="Copy hedge fund address"
+                >
+                  <Copy size={18} />
+                </button>
+              </div>
+              
+              <p className="text-center text-gray-300 text-xs font-pixel w-full">Hedge Fund named after Common Sense and Children's Hopes</p>
+              
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="w-full h-full opacity-10 bg-gradient-to-r from-neon-blue via-transparent to-neon-blue/30 animate-[pulse_5s_ease-in-out_infinite]"></div>
+              </div>
+            </div>
 
-              {/* Donation Block */}
-              <div className="glassmorphism-2 light-refraction py-4 px-5 relative overflow-hidden h-full">
-                <div className="flex justify-center mb-2">
-                  <div className="bg-neon-pink/30 px-3 py-1 rounded-full text-xs mb-1 flex items-center space-x-2 font-pixel">
-                    <Heart size={14} className="text-neon-pink animate-pulse" />
-                    <span>Support the Absurdity</span>
-                  </div>
+            {/* Donation Block */}
+            <div className="glassmorphism-2 light-refraction py-4 px-5 relative overflow-hidden h-full">
+              <div className="flex justify-center mb-2">
+                <div className="bg-neon-pink/30 px-3 py-1 rounded-full text-xs mb-1 flex items-center space-x-2 font-pixel">
+                  <Heart size={14} className="text-neon-pink animate-pulse" />
+                  <span>Support the Absurdity</span>
                 </div>
-                
-                <h3 className="text-center text-neon-green mb-3 font-pixel text-sm w-full">Donation Address</h3>
-                
-                <div className="flex justify-between items-center bg-black/30 rounded-lg p-2 mb-3">
-                  <p className="font-mono text-neon-pink text-xs md:text-sm text-center w-full relative overflow-hidden">
-                    <span className="inline-block animate-pulse">0xooooooooooooooooooooooooooooooooooo</span>
-                  </p>
-                  <button 
-                    onClick={() => copyToClipboard("0xooooooooooooooooooooooooooooooooooo", "Donation address copied to clipboard")}
-                    className="ml-3 flex-shrink-0 text-neon-green hover:text-neon-blue transition-colors p-1 rounded hover:bg-white/10"
-                    title="Copy donation address"
-                    aria-label="Copy donation address"
-                  >
-                    <Copy size={18} />
-                  </button>
+              </div>
+              
+              <h3 className="text-center text-neon-green mb-3 font-pixel text-sm w-full">Donation Address</h3>
+              
+              <div className="flex justify-between items-center bg-black/30 rounded-lg p-2 mb-3">
+                <p className="font-mono text-neon-pink text-xs md:text-sm text-center w-full relative overflow-hidden">
+                  <span className="inline-block animate-pulse">0xooooooooooooooooooooooooooooooooooo</span>
+                </p>
+                <button 
+                  onClick={() => copyToClipboard("0xooooooooooooooooooooooooooooooooooo", "Donation address copied to clipboard")}
+                  className="ml-3 flex-shrink-0 text-neon-green hover:text-neon-blue transition-colors p-1 rounded hover:bg-white/10"
+                  title="Copy donation address"
+                  aria-label="Copy donation address"
+                >
+                  <Copy size={18} />
+                </button>
+              </div>
+              
+              <p className="text-center text-gray-300 text-xs font-pixel w-full">Donation to the development team's psychosis</p>
+              
+              <div className="flex justify-center space-x-4 mt-3">
+                <div className="p-2 bg-neon-purple/20 rounded-full hover:bg-neon-purple/40 transition-colors cursor-pointer">
+                  <Coffee size={16} className="text-neon-pink" />
                 </div>
-                
-                <p className="text-center text-gray-300 text-xs font-pixel w-full">Donation to the development team's psychosis</p>
-                
-                <div className="flex justify-center space-x-4 mt-3">
-                  <div className="p-2 bg-neon-purple/20 rounded-full hover:bg-neon-purple/40 transition-colors cursor-pointer">
-                    <Coffee size={16} className="text-neon-pink" />
-                  </div>
-                  <div className="p-2 bg-neon-green/20 rounded-full hover:bg-neon-green/40 transition-colors cursor-pointer">
-                    <HandCoins size={16} className="text-neon-green" />
-                  </div>
-                  <div className="p-2 bg-neon-blue/20 rounded-full hover:bg-neon-blue/40 transition-colors cursor-pointer">
-                    <Heart size={16} className="text-neon-blue" />
+                <div className="p-2 bg-neon-green/20 rounded-full hover:bg-neon-green/40 transition-colors cursor-pointer">
+                  <HandCoins size={16} className="text-neon-green" />
+                </div>
+                <div className="p-2 bg-neon-blue/20 rounded-full hover:bg-neon-blue/40 transition-colors cursor-pointer">
+                  <Heart size={16} className="text-neon-blue" />
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Social Links */}
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            <a href="#" className="bg-black/30 p-3 rounded-full hover:bg-white/10 transition-all transform hover:scale-110">
+              <Github className="text-neon-blue w-6 h-6" />
+            </a>
+            <a href="#" className="bg-black/30 p-3 rounded-full hover:bg-white/10 transition-all transform hover:scale-110">
+              <Twitter className="text-neon-blue w-6 h-6" />
+            </a>
+            <a href="#" className="bg-black/30 p-3 rounded-full hover:bg-white/10 transition-all transform hover:scale-110">
+              <Send className="text-neon-blue w-6 h-6" />
+            </a>
+          </div>
+          
+          {/* Copyright */}
+          <div className="text-center text-gray-400 text-xs font-pixel">
+            <p>© 2023 AIbsurdity Protocol. All rights absurdly reserved.</p>
+            <p className="mt-2">Disclaimer: This is not financial advice, just absurdity.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Index;
