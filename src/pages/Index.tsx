@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useRef } from 'react';
 import { Github, Twitter, Send, Copy, Heart, Coffee, HandCoins, Briefcase } from 'lucide-react';
 import { toast } from "sonner";
@@ -409,7 +410,7 @@ const Index = () => {
                 </button>
               </div>
               
-              <p className="text-center text-gray-300 text-xs font-pixel">Verified on Etherscan</p>
+              <p className="text-center text-gray-300 text-xs font-pixel">Token of accumulation of absurd liquidity of attention of the human race</p>
               
               <div className="absolute inset-0 pointer-events-none">
                 <div className="w-full h-full opacity-10 bg-gradient-to-r from-neon-purple via-transparent to-neon-purple/30 animate-[pulse_5s_ease-in-out_infinite]"></div>
