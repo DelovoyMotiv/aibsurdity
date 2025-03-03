@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useRef } from 'react';
 import { Github, Twitter, Send, Copy, Heart, Coffee, HandCoins, Briefcase, Shield, Zap, BarChart3 } from 'lucide-react';
 import { toast } from "sonner";
@@ -610,4 +611,39 @@ const Index = () => {
                 <div className="p-2 bg-neon-purple/20 rounded-full hover:bg-neon-purple/40 transition-colors cursor-pointer">
                   <Coffee size={16} className="text-neon-pink" />
                 </div>
-                <div className="p-2 bg
+                <div className="p-2 bg-neon-green/20 rounded-full hover:bg-neon-green/40 transition-colors cursor-pointer">
+                  <HandCoins size={16} className="text-neon-green" />
+                </div>
+              </div>
+              
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="w-full h-full opacity-10 bg-gradient-to-r from-neon-pink via-transparent to-neon-pink/30 animate-[pulse_5s_ease-in-out_infinite]"></div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Social Links & Copyright */}
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex space-x-4 mb-4 md:mb-0">
+              <a href="#" className="p-2 bg-white/5 hover:bg-white/10 transition-colors rounded-full" aria-label="Twitter">
+                <Twitter size={20} className="text-neon-blue" />
+              </a>
+              <a href="#" className="p-2 bg-white/5 hover:bg-white/10 transition-colors rounded-full" aria-label="GitHub">
+                <Github size={20} className="text-white" />
+              </a>
+              <a href="#" className="p-2 bg-white/5 hover:bg-white/10 transition-colors rounded-full" aria-label="Discord">
+                <Send size={20} className="text-neon-purple" />
+              </a>
+            </div>
+            
+            <p className="text-center md:text-right text-gray-400 text-xs font-pixel">
+              &copy; {new Date().getFullYear()} AIbsurdity | <span className="text-neon-green">All rights reversed</span>
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Index;
