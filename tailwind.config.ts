@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,6 +19,9 @@ export default {
 			}
 		},
 		extend: {
+			fontSize: {
+				'2xs': '0.625rem', // 10px
+			},
 			fontFamily: {
 				pixel: ['"Press Start 2P"', 'cursive'],
 			},

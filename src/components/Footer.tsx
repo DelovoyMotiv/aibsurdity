@@ -46,10 +46,10 @@ const Footer = () => {
         </div>
       </div>
       
-      {/* Animated neon-glowing quote with smaller font and smoother animation */}
+      {/* Animated neon-glowing quote with tiny font and smoother animation */}
       <div className="mt-8 text-center">
         <p 
-          className={`font-pixel text-xs md:text-sm ${glowColor} transition-colors duration-3000 ease-in-out`}
+          className={`font-pixel text-2xs md:text-xs ${glowColor} transition-colors duration-3000 ease-in-out`}
           style={{ 
             textShadow: '0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor',
             animation: 'neon-pulse 5s ease-in-out infinite'
