@@ -53,7 +53,7 @@ const Footer = () => {
         </div>
         
         <div>
-          <h3 className="text-neon-pink font-pixel text-lg mb-4">Contact</h3>
+          <h3 className="text-neon-pink font-pixel text-lg mb-4">Official addresses</h3>
           <div className="space-y-3">
             <div className="flex items-center justify-between text-gray-400 text-sm p-2 bg-gray-900 rounded font-pixel">
               <span>Contract:</span>
