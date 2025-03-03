@@ -1,4 +1,4 @@
-<lov-code>
+
 import React, { useEffect, useState, useRef } from 'react';
 import { Atom, Sparkles, Braces, CloudLightning, Cpu } from 'lucide-react';
 import { toast } from "sonner";
@@ -308,7 +308,7 @@ const Index = () => {
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold mb-4 text-neon-blue font-pixel w-full">
                   Taking Over the Real World
-                  </h3>
+                </h3>
                 
                 <div className="space-y-4">
                   <div>
@@ -665,3 +665,53 @@ C = Conscience coefficient (0 ≤ C < 1)`}
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
                         <li>Transmute FUD into humor via quantum meme-portals</li>
+                        <li>Liquidity is sacrificed to anti-sense markets</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <div className="inline-block bg-neon-red/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel flex items-center space-x-2">
+                    <CloudLightning size={16} className="text-neon-red animate-pulse" />
+                    <span>Apocalypse Scenario</span>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-bold text-neon-orange mb-2 font-pixel w-full">Too Absurd To Fail:</h4>
+                      <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
+                        If absurdity level exceeds Nash-Kafka threshold:
+                      </p>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                        <li>All tokens unify into single meta-currency: MEH</li>
+                        <li>Self-destruction smart contract replaces entire blockchain with a haiku about a lonely doge</li>
+                        <li>TVL converts to DANK tokens, only redeemable on Mars</li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-bold text-neon-green mb-2 font-pixel w-full">System Armageddon:</h4>
+                      <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
+                        Final collapse insurance:
+                      </p>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                        <li>Automatic conversion of all assets to PepeUSD stablecoins</li>
+                        <li>Randomized wealth redistribution based on meme creation history</li>
+                        <li>Decentralized obituary written by AI for each wallet address</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TetrisBlock>
+          </TetrisLayout>
+        </div>
+        
+        <Footer />
+      </main>
+    </div>
+  );
+};
+
+export default Index;
