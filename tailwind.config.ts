@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,6 +19,7 @@ export default {
 		},
 		extend: {
 			fontSize: {
+				'3xs': '0.5rem', // 8px
 				'2xs': '0.625rem', // 10px
 			},
 			fontFamily: {
@@ -169,10 +169,10 @@ export default {
 				},
 				'neon-pulse': {
 					'0%, 100%': { 
-						textShadow: '0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff'
+						textShadow: '0 0 3px #ff00ff, 0 0 5px #ff00ff'
 					},
 					'50%': { 
-						textShadow: '0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff'
+						textShadow: '0 0 3px #00ffff, 0 0 5px #00ffff'
 					}
 				},
 				'broken-rotate': {
@@ -224,7 +224,7 @@ export default {
 				'broken-shake': 'broken-shake 0.5s cubic-bezier(.36,.07,.19,.97) infinite',
 				'float': 'float 6s ease-in-out infinite',
 				'shake': 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both',
-				'neon-pulse': 'neon-pulse 2s ease-in-out infinite',
+				'neon-pulse': 'neon-pulse 8s ease-in-out infinite',
 				'broken-rotate': 'broken-rotate 8s linear infinite',
 				'tetris-fall': 'tetris-fall 1.5s cubic-bezier(0.65, 0, 0.35, 1)',
 				'pixel-bounce': 'pixel-bounce 0.5s ease-in-out infinite',

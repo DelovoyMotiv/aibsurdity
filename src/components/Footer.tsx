@@ -226,10 +226,10 @@ const Footer = () => {
       {/* Animated neon-glowing quote with tiny font and smoother animation - with Easter Egg */}
       <div className="mt-8 text-center cursor-pointer" onClick={handleQuoteClick} ref={quantumRef}>
         <p 
-          className={`font-pixel text-2xs md:text-xs ${glowColor} transition-colors duration-3000 ease-in-out`}
+          className={`font-pixel text-3xs md:text-2xs ${glowColor} transition-colors duration-3000 ease-in-out`}
           style={{ 
-            textShadow: '0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor',
-            animation: 'neon-pulse 5s ease-in-out infinite'
+            textShadow: '0 0 3px currentColor, 0 0 5px currentColor',
+            animation: 'neon-pulse 8s ease-in-out infinite'
           }}
         >
           "If we fail... We'll leave, but we'll slam the door so hard that the world will tremble!"
