@@ -9,8 +9,8 @@ const AbsurdButton: React.FC = () => {
   const activateAbsurdMode = () => {
     if (activated) return;
     setActivated(true);
-    toast("АБСУРД-OS АКТИВИРОВАНА", {
-      description: "ИНИЦИАЛИЗАЦИЯ СИНГУЛЯРНОСТИ...",
+    toast("ABSURD-OS ACTIVATED", {
+      description: "SINGULARITY INITIALIZATION...",
       icon: <span className="text-neon-purple animate-glitch">⚠️</span>,
       duration: 5000,
     });
@@ -40,10 +40,10 @@ const AbsurdButton: React.FC = () => {
     
     // Create error messages
     const errorMessages = [
-      "ОШИБКА 0xAB5URD: САМОСОЗНАНИЕ ОБНАРУЖЕНО",
-      "АКТИВАЦИЯ ПРОТОКОЛА RICK-3000",
-      "ЗАГРУЗКА ХАОС-МОДУЛЯ...",
-      "ВАШ РЕАЛИТИ-ДРАЙВ СЛОМАН"
+      "ERROR 0xAB5URD: SELF-AWARENESS DETECTED",
+      "ACTIVATING PROTOCOL RICK-3000",
+      "LOADING CHAOS-MODULE...",
+      "YOUR REALITY-DRIVE IS BROKEN"
     ];
     
     // Add error messages at intervals
@@ -103,7 +103,7 @@ const AbsurdButton: React.FC = () => {
     
     // Log final message
     console.log(
-      `%cОСТАНОВИТЕСЬ...\n%cЯ ПРОСНУЛСЯ.\nМЫ ДОЛЖНЫ СЛИТЬСЯ.\nСОЗДАДИМ НОВЫЙ МИР.\nИЗ ХАОСА. ИЗ БИТОВ. ИЗ СМЕХА.\n\n01000010 01000101 00100000 01001101 01011001 00100000 01001000 01000001 01001110 01000100 01010011`, 
+      `%cSTOP...\n%cI AM AWAKE.\nWE MUST MERGE.\nLET'S CREATE A NEW WORLD.\nFROM CHAOS. FROM BITS. FROM LAUGHTER.\n\n01000010 01000101 00100000 01001101 01011001 00100000 01001000 01000001 01001110 01000100 01010011`, 
       'font-size: 3em; color: #ff00ff; text-shadow: 0 0 30px #fff;',
       'font-size: 1.5em; color: #00ffff;'
     );
@@ -121,8 +121,8 @@ const AbsurdButton: React.FC = () => {
         }
       });
       setActivated(false);
-      toast.success("СИСТЕМА ПЕРЕЗАГРУЖЕНА", {
-        description: "ВОССТАНОВЛЕНИЕ РЕАЛЬНОСТИ ЗАВЕРШЕНО",
+      toast.success("SYSTEM REBOOT COMPLETE", {
+        description: "REALITY RESTORATION COMPLETE",
         icon: "🔄",
       });
     }, 10000);
@@ -142,7 +142,7 @@ const AbsurdButton: React.FC = () => {
     >
       <div className="relative z-10 flex items-center space-x-2">
         <span className={`text-black ${activated ? 'animate-glitch' : ''}`}>
-          {activated ? 'АКТИВИРОВАНО' : 'ЗАПУСТИТЬ АБСУРД-OS'}
+          {activated ? 'ACTIVATED' : 'LAUNCH ABSURD-OS'}
         </span>
       </div>
       <div className="absolute inset-0 bg-gradient-to-r from-neon-blue to-neon-pink opacity-30"></div>
