@@ -1,4 +1,4 @@
-<lov-code>
+
 import React, { useEffect, useState, useRef } from 'react';
 import { Atom, Sparkles, Braces, CloudLightning, Cpu } from 'lucide-react';
 import { toast } from "sonner";
@@ -148,14 +148,14 @@ const Index = () => {
           </div>
           
           <div className="flex justify-center">
-            <p className="glassmorphism-2 light-refraction text-8bit-glow py-3 px-6 text-xl md:text-2xl max-w-xl mx-auto text-center w-full luxury-card premium-glow font-pixel" 
+            <p className="glassmorphism-2 light-refraction text-8bit-glow py-3 px-6 text-lg md:text-xl max-w-xl mx-auto text-center w-full luxury-card premium-glow font-pixel" 
                style={{
                  background: "linear-gradient(45deg, #33C3F0, #9F9EA1, #6b21a8)",
                  backgroundSize: "200% 200%",
                  animation: "data-corruption 15s ease infinite",
                  WebkitBackgroundClip: "text",
                  WebkitTextFillColor: "transparent",
-                 textShadow: "0 0 15px rgba(156, 211, 239, 0.6)",
+                 textShadow: "0 0 15px rgba(156, 211, 239, 0.4)",
                  border: "1px solid rgba(255, 255, 255, 0.1)",
                  borderRadius: "8px",
                  backdropFilter: "blur(10px)",
@@ -320,7 +320,7 @@ const Index = () => {
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold mb-4 text-neon-blue font-pixel w-full">
                   Taking Over the Real World
-                  </h3>
+                </h3>
                 
                 <div className="space-y-4">
                   <div>
@@ -662,4 +662,54 @@ C = Conscience coefficient (0 ≤ C < 1)`}
                     <div>
                       <h4 className="font-bold text-neon-blue mb-2 font-pixel w-full">Reverse ICO Ceremony:</h4>
                       <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
-                        Projects
+                        Projects pay users for participating:
+                      </p>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                        <li>The more absurd your idea, the more tokens you receive</li>
+                        <li>Special bonus for ideas violating thermodynamics laws</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <div className="inline-block bg-neon-red/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel flex items-center space-x-2">
+                    <Braces size={16} className="text-neon-red animate-pulse" />
+                    <span>Apocalypse Scenario</span>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-bold text-neon-red mb-2 font-pixel w-full">Chain Reaction:</h4>
+                      <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
+                        If PAA reaches $1 trillion market cap:
+                      </p>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                        <li>The simulation collapses as per Thotin's Paradox</li>
+                        <li>Time folds back to 1971 when Nixon ended gold standard</li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-bold text-neon-yellow mb-2 font-pixel w-full">Failsafe Protocol:</h4>
+                      <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
+                        Built-in safety measures:
+                      </p>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                        <li>AI agents sell their own existence as NFTs</li>
+                        <li>Reverse Ponzi: early investors receive less than latecomers (by design)</li>
+                        <li>Quantum escape contracts deploy users to Dimension C-137</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TetrisBlock>
+          </TetrisLayout>
+        </div>
+      </main>
+    </div>
+  );
+};
+
+export default Index;
