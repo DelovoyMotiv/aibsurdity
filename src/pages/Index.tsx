@@ -1,4 +1,4 @@
-<lov-code>
+
 import React, { useEffect, useState, useRef } from 'react';
 import { Github, Twitter, Send, Copy, Heart, Coffee, HandCoins, Briefcase, Shield, Zap, BarChart3, Cpu, Atom, Sparkles, Braces, CloudLightning } from 'lucide-react';
 import { toast } from "sonner";
@@ -304,7 +304,7 @@ const Index = () => {
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold mb-3 text-neon-blue font-pixel w-full">
                   Taking Over the Real World
-                  </h3>
+                </h3>
                 
                 <div className="space-y-4">
                   <div>
@@ -663,3 +663,96 @@ C = Conscience coefficient (0 ≤ C < 1)`}
                         <li>Transmute FUD into humor via quantum meme-portals</li>
                         <li>Summon ancient Satoshi bots to exorcise bear trends</li>
                       </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <div className="inline-block bg-neon-red/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel flex items-center space-x-2">
+                    <Shield size={16} className="text-neon-red animate-pulse" />
+                    <span>Apocalypse Scenario</span>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-bold text-neon-yellow mb-2 font-pixel w-full">If liquidity falls below the Absurdity Planck Threshold:</h4>
+                      <p className="text-gray-300 text-xs font-pixel mb-1 w-full">
+                        "Financial Big Bang" protocol activates:
+                      </p>
+                      <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
+                        <li>All tokens annihilate, birthing new economic universes</li>
+                        <li>Users become gods in pocket realities</li>
+                        <li>Debts transform into cosmic saga plotlines</li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-bold text-neon-green mb-2 font-pixel w-full">Financial Singularity Achieved When:</h4>
+                      <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
+                        <li>Memes trade humans via reverse NFTs</li>
+                        <li>AI agents pay taxes in emotions</li>
+                        <li>Black holes outperform fiat liquidity</li>
+                      </ul>
+                      
+                      <div className="mt-4 p-3 bg-neon-yellow/10 rounded-lg border-2 border-dashed border-neon-yellow">
+                        <p className="text-center text-neon-yellow text-xs font-pixel font-bold">
+                          "When absurdity becomes the norm, normality becomes the true absurdity."
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TetrisBlock>
+          </TetrisLayout>
+        </div>
+      </main>
+      
+      {/* Footer */}
+      <footer className="py-8 px-4 border-t border-gray-800">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-wrap justify-between items-center">
+            <div className="w-full md:w-auto mb-6 md:mb-0">
+              <GlitchText 
+                text="AIbsurdity" 
+                fontSize="text-2xl" 
+                color="text-white" 
+                className="font-pixel tracking-tight"
+                variant="subtle"
+                as="div"
+                pixelated={true}
+              />
+              <p className="text-gray-400 text-xs mt-2">Breaking financial systems through pure absurdity since 2023</p>
+            </div>
+            
+            <div className="flex space-x-4">
+              <a href="#" className="text-gray-400 hover:text-neon-pink transition-colors">
+                <Github size={20} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-neon-blue transition-colors">
+                <Twitter size={20} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-neon-green transition-colors">
+                <Send size={20} />
+              </a>
+            </div>
+          </div>
+          
+          <div className="mt-8 pt-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-500 text-xs mb-4 md:mb-0">
+              &copy; {new Date().getFullYear()} AIbsurdity Labs. All absurdities reserved.
+            </p>
+            
+            <div className="flex space-x-6">
+              <a href="#" className="text-gray-500 hover:text-white text-xs">Absurd Terms</a>
+              <a href="#" className="text-gray-500 hover:text-white text-xs">Reality Policy</a>
+              <a href="#" className="text-gray-500 hover:text-white text-xs">Psychedelic Map</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Index;
