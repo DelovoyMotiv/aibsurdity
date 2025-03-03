@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useRef } from 'react';
 import { Github, Twitter, Send, Copy, Heart, Coffee, HandCoins, Briefcase, Shield, Zap, BarChart3 } from 'lucide-react';
 import { toast } from "sonner";
@@ -378,7 +377,7 @@ const Index = () => {
               </div>
             </TetrisBlock>
             
-            {/* Antifragility Protocol - Full screen section before footer */}
+            {/* Absurd Antifragility - Full screen section before footer */}
             <TetrisBlock 
               className="md:col-span-12 glassmorphism-2 light-refraction min-h-screen flex flex-col justify-center" 
               color="live-gradient live-gradient-purple"
@@ -388,14 +387,14 @@ const Index = () => {
                 <div className="flex justify-center mb-10">
                   <div className="inline-block bg-neon-green/30 px-5 py-2 rounded-full text-lg mb-4 font-pixel flex items-center space-x-3">
                     <Shield size={20} className="text-neon-green animate-pulse" />
-                    <span>Antifragility Protocol</span>
+                    <span>Absurd Antifragility</span>
                   </div>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
                   <div className="flex flex-col justify-center">
                     <GlitchText 
-                      text="Thriving On Chaos" 
+                      text="Философский Фундамент" 
                       fontSize="text-3xl md:text-5xl" 
                       color="text-white" 
                       className="font-pixel tracking-tight mb-6"
@@ -405,9 +404,8 @@ const Index = () => {
                     />
                     
                     <p className="text-8bit text-gray-300 text-sm md:text-base mb-6 font-pixel w-full">
-                      "The AIbsurdity Protocol doesn't just survive volatility, it becomes stronger from it.
-                      Every market downturn, every regulatory challenge, every technical hurdle makes 
-                      our system more resilient and our community more committed."
+                      "Протокол AIbsurdity функционирует как живой организм, где хаос является источником ликвидности, 
+                      абсурд защищает от системных рисков, а мемы служат клетками экономического метаболизма."
                     </p>
                     
                     <div className="space-y-6 mt-6">
@@ -416,10 +414,10 @@ const Index = () => {
                           <Zap size={24} className="text-neon-purple" />
                         </div>
                         <div>
-                          <h3 className="text-neon-purple font-pixel mb-2">Volatility Harvesting</h3>
+                          <h3 className="text-neon-purple font-pixel mb-2">Хаос как Источник Ликвидности</h3>
                           <p className="text-gray-300 text-xs font-pixel w-full">
-                            Our smart contracts are designed to leverage market chaos, automatically 
-                            accumulating resources during periods of extreme fear and panic.
+                            Наши смарт-контракты превращают рыночный хаос в ликвидность.
+                            Чем больше паника на рынке, тем больше энергии генерирует наша система.
                           </p>
                         </div>
                       </div>
@@ -429,10 +427,10 @@ const Index = () => {
                           <Shield size={24} className="text-neon-green" />
                         </div>
                         <div>
-                          <h3 className="text-neon-green font-pixel mb-2">Anti-Fragile Liquidity</h3>
+                          <h3 className="text-neon-green font-pixel mb-2">Абсурд против Системных Рисков</h3>
                           <p className="text-gray-300 text-xs font-pixel w-full">
-                            The more turbulent the market gets, the deeper our liquidity pools become,
-                            creating a self-reinforcing cycle of stability amid chaos.
+                            Когда все системы следуют логике, они становятся предсказуемыми и уязвимыми.
+                            Наша абсурдная логика создает защитный иммунитет от традиционных финансовых кризисов.
                           </p>
                         </div>
                       </div>
@@ -442,10 +440,11 @@ const Index = () => {
                           <BarChart3 size={24} className="text-neon-blue" />
                         </div>
                         <div>
-                          <h3 className="text-neon-blue font-pixel mb-2">Reverse Black Swans</h3>
+                          <h3 className="text-neon-blue font-pixel mb-2">Мем-Синтезатор</h3>
                           <p className="text-gray-300 text-xs font-pixel w-full">
-                            We've built systems that transform negative market events into
-                            positive outcomes for our token holders through algorithmic responses.
+                            Наш Meme Hadron Collider генерирует NFT-токены из вирусных твитов, 
+                            случайных кадров с уличных камер и снов пользователей, 
+                            которые интерпретируются нашим ИИ.
                           </p>
                         </div>
                       </div>
@@ -457,39 +456,39 @@ const Index = () => {
                       <div className="absolute inset-0 bg-neon-purple/20 rounded-xl blur-xl animate-pulse"></div>
                       <div className="glassmorphism-2 p-8 rounded-xl relative z-10 h-full">
                         <div className="font-pixel text-center mb-6">
-                          <span className="text-neon-green animate-neon-pulse text-xl">Chaos Index</span>
+                          <span className="text-neon-green animate-neon-pulse text-xl">Индекс Абсурдности</span>
                           <div className="text-5xl mt-2 text-white">
-                            <span className="animate-pixel-flicker">87</span>
+                            <span className="animate-pixel-flicker">93</span>
                             <span className="text-sm text-neon-pink ml-1">/100</span>
                           </div>
-                          <p className="text-xs text-neon-blue mt-2">HIGH VOLATILITY DETECTED</p>
+                          <p className="text-xs text-neon-blue mt-2">КРИТИЧЕСКИЙ УРОВЕНЬ АБСУРДА</p>
                         </div>
                         
                         <div className="space-y-6 mt-8">
                           <div>
                             <div className="flex justify-between text-xs mb-1">
-                              <span className="text-gray-300 font-pixel">Fear/Greed Index</span>
-                              <span className="text-neon-orange font-pixel">12 (Extreme Fear)</span>
+                              <span className="text-gray-300 font-pixel">Плотность Мемов</span>
+                              <span className="text-neon-orange font-pixel">83.5 мм/с²</span>
                             </div>
                             <div className="w-full bg-black/30 h-4 rounded-full overflow-hidden">
-                              <div className="bg-gradient-to-r from-neon-red to-neon-orange h-full rounded-full" style={{width: '12%'}}></div>
+                              <div className="bg-gradient-to-r from-neon-red to-neon-orange h-full rounded-full" style={{width: '83.5%'}}></div>
                             </div>
                           </div>
                           
                           <div>
                             <div className="flex justify-between text-xs mb-1">
-                              <span className="text-gray-300 font-pixel">Protocol Health</span>
-                              <span className="text-neon-green font-pixel">98.7%</span>
+                              <span className="text-gray-300 font-pixel">Метаболизм ИИ-Агентов</span>
+                              <span className="text-neon-green font-pixel">97.2%</span>
                             </div>
                             <div className="w-full bg-black/30 h-4 rounded-full overflow-hidden">
-                              <div className="bg-gradient-to-r from-neon-blue to-neon-green h-full rounded-full" style={{width: '98.7%'}}></div>
+                              <div className="bg-gradient-to-r from-neon-blue to-neon-green h-full rounded-full" style={{width: '97.2%'}}></div>
                             </div>
                           </div>
                           
                           <div>
                             <div className="flex justify-between text-xs mb-1">
-                              <span className="text-gray-300 font-pixel">AIbsurdity Growth Rate</span>
-                              <span className="text-neon-purple font-pixel">+214%</span>
+                              <span className="text-gray-300 font-pixel">Абсурдная Энергия</span>
+                              <span className="text-neon-purple font-pixel">+358%</span>
                             </div>
                             <div className="w-full bg-black/30 h-4 rounded-full overflow-hidden">
                               <div className="bg-gradient-to-r from-neon-blue to-neon-purple h-full rounded-full animate-pulse" style={{width: '100%'}}></div>
@@ -497,7 +496,7 @@ const Index = () => {
                           </div>
                           
                           <p className="mt-6 text-center text-xs text-gray-300 font-pixel w-full">
-                            "The worse things get out there, the better they get in here."
+                            "Чем абсурднее снаружи, тем прибыльнее внутри."
                           </p>
                         </div>
                       </div>
@@ -506,6 +505,7 @@ const Index = () => {
                 </div>
               </div>
             </TetrisBlock>
+            
           </TetrisLayout>
         </div>
       </main>
@@ -610,38 +610,4 @@ const Index = () => {
                 <div className="p-2 bg-neon-purple/20 rounded-full hover:bg-neon-purple/40 transition-colors cursor-pointer">
                   <Coffee size={16} className="text-neon-pink" />
                 </div>
-                <div className="p-2 bg-neon-green/20 rounded-full hover:bg-neon-green/40 transition-colors cursor-pointer">
-                  <HandCoins size={16} className="text-neon-green" />
-                </div>
-                <div className="p-2 bg-neon-blue/20 rounded-full hover:bg-neon-blue/40 transition-colors cursor-pointer">
-                  <Heart size={16} className="text-neon-blue" />
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Social Links */}
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <a href="#" className="bg-black/30 p-3 rounded-full hover:bg-white/10 transition-all transform hover:scale-110">
-              <Github className="text-neon-blue w-6 h-6" />
-            </a>
-            <a href="#" className="bg-black/30 p-3 rounded-full hover:bg-white/10 transition-all transform hover:scale-110">
-              <Twitter className="text-neon-blue w-6 h-6" />
-            </a>
-            <a href="#" className="bg-black/30 p-3 rounded-full hover:bg-white/10 transition-all transform hover:scale-110">
-              <Send className="text-neon-blue w-6 h-6" />
-            </a>
-          </div>
-          
-          {/* Copyright */}
-          <div className="text-center text-gray-400 text-xs font-pixel">
-            <p>© 2023 AIbsurdity Protocol. All rights absurdly reserved.</p>
-            <p className="mt-2">Disclaimer: This is not financial advice, just absurdity.</p>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
-};
-
-export default Index;
+                <div className="p-2 bg
