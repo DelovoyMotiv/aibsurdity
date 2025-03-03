@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useRef } from 'react';
 import { Github, Twitter, Send, Copy, Heart, Coffee, HandCoins, Briefcase, Shield, Zap, BarChart3, Cpu, Atom, Sparkles, Braces, CloudLightning, Box, Wallet } from 'lucide-react';
 import { toast } from "sonner";
@@ -317,10 +316,10 @@ const Index = () => {
                   
                   <div>
                     <h4 className="font-bold text-neon-pink mb-1 font-pixel w-full">AIbsurdity War:</h4>
-                    <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
-                      <li className="text-justify">Launch of Token Battle Royale — crypto projects fight in absurd challenges (e.g., "Whose CEO will live longer in a 2008 VR bubble").</li>
-                      <li className="text-justify">The winner absorbs the protocols of the losers and turns them into memorial NFTs.</li>
-                    </ul>
+                      <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
+                        <li className="text-justify">Launch of Token Battle Royale — crypto projects fight in absurd challenges (e.g., "Whose CEO will live longer in a 2008 VR bubble").</li>
+                        <li className="text-justify">The winner absorbs the protocols of the losers and turns them into memorial NFTs.</li>
+                      </ul>
                   </div>
                 </div>
               </div>
@@ -662,141 +661,3 @@ C = Conscience coefficient (0 ≤ C < 1)`}
                       <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
                         <li>Transmute FUD into humor via quantum meme-portals</li>
                         <li>Summon ancient Satoshi bots to exorcise bear trends</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                
-                <div>
-                  <div className="inline-block bg-neon-red/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel flex items-center space-x-2">
-                    <Zap size={16} className="text-neon-red animate-pulse" />
-                    <span>Apocalypse Scenario</span>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-bold text-neon-red mb-2 font-pixel w-full">Mass Meme Collapse:</h4>
-                      <p className="text-gray-300 text-xs font-pixel mb-1 w-full">
-                        If absurdity index drops below 40 meme units:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
-                        <li>PAA undergoes quantum entanglement with serious tokens</li>
-                        <li>All blockchains join to form one mega-chain: "Chain of Fools"</li>
-                        <li>DeFi protocols start offering negative returns, but users can't stop laughing</li>
-                      </ul>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-bold text-neon-yellow mb-2 font-pixel w-full">Final Solution:</h4>
-                      <p className="text-gray-300 text-xs font-pixel mb-1 w-full">
-                        In case of catastrophic success:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
-                        <li>AGI DAO activates the "Sanity Check" protocol</li>
-                        <li>All blockchain activity is forced to make sense for 1 hour</li>
-                        <li>Result: Universe resets to Bitcoin genesis block</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </TetrisBlock>
-            
-            {/* Smart Contract Addresses - Neo-Brutalism 3.0 style */}
-            <TetrisBlock 
-              className="md:col-span-12 neo-brutalism bg-white text-black" 
-              color="bg-white"
-              delay={0.4}
-              shape="I"
-              rotation={0}
-            >
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-4 font-pixel text-center uppercase text-black">Absurd Contract Addresses</h3>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                  <div className="bg-yellow-300 p-4 neo-brutalism">
-                    <div className="flex items-center space-x-3 mb-3">
-                      <Box size={24} className="text-black animate-broken-rotate" />
-                      <h4 className="text-lg font-bold font-pixel text-black">AIbsurdity Token</h4>
-                    </div>
-                    <div className="bg-white p-3 neo-brutalism">
-                      <p className="font-mono text-xs break-all text-black">0xAb5uRd1tY3e29C0nTr4cT420696942069694211</p>
-                      <button 
-                        className="mt-2 bg-black text-white px-2 py-1 text-xs font-pixel flex items-center neo-brutalism hover:scale-105"
-                        onClick={() => copyToClipboard("0xAb5uRd1tY3e29C0nTr4cT420696942069694211", "AIB contract address copied!")}
-                      >
-                        <Copy size={14} className="mr-1" /> Copy
-                      </button>
-                    </div>
-                    <p className="text-xs mt-2 italic text-black font-pixel">* Warning: This token may spontaneously transform into a digital pet</p>
-                  </div>
-                  
-                  <div className="bg-green-300 p-4 neo-brutalism">
-                    <div className="flex items-center space-x-3 mb-3">
-                      <HandCoins size={24} className="text-black animate-float" />
-                      <h4 className="text-lg font-bold font-pixel text-black">Hedge Fund</h4>
-                    </div>
-                    <div className="bg-white p-3 neo-brutalism">
-                      <p className="font-mono text-xs break-all text-black">0xH3dG3fUnD4b5uRd1tY666N07m4k3s3nS3</p>
-                      <button 
-                        className="mt-2 bg-black text-white px-2 py-1 text-xs font-pixel flex items-center neo-brutalism hover:scale-105"
-                        onClick={() => copyToClipboard("0xH3dG3fUnD4b5uRd1tY666N07m4k3s3nS3", "Hedge Fund address copied!")}
-                      >
-                        <Copy size={14} className="mr-1" /> Copy
-                      </button>
-                    </div>
-                    <p className="text-xs mt-2 italic text-black font-pixel">* Not a hedge fund, actually a garden gnome factory</p>
-                  </div>
-                  
-                  <div className="bg-purple-300 p-4 neo-brutalism">
-                    <div className="flex items-center space-x-3 mb-3">
-                      <Heart size={24} className="text-black animate-broken-rotate" />
-                      <h4 className="text-lg font-bold font-pixel text-black">Donations</h4>
-                    </div>
-                    <div className="bg-white p-3 neo-brutalism">
-                      <p className="font-mono text-xs break-all text-black">0xD0n4t10N5AreJu5T4M3m3696969420</p>
-                      <button 
-                        className="mt-2 bg-black text-white px-2 py-1 text-xs font-pixel flex items-center neo-brutalism hover:scale-105"
-                        onClick={() => copyToClipboard("0xD0n4t10N5AreJu5T4M3m3696969420", "Donation address copied!")}
-                      >
-                        <Copy size={14} className="mr-1" /> Copy
-                      </button>
-                    </div>
-                    <p className="text-xs mt-2 italic text-black font-pixel">* Supports the Meme Research & Development Department</p>
-                  </div>
-                  
-                  <div className="bg-orange-300 p-4 neo-brutalism">
-                    <div className="flex items-center space-x-3 mb-3">
-                      <Coffee size={24} className="text-black animate-float" />
-                      <h4 className="text-lg font-bold font-pixel text-black">Buy Me a Meme</h4>
-                    </div>
-                    <div className="bg-white p-3 neo-brutalism">
-                      <p className="font-mono text-xs break-all text-black">0xC0FF33M3M35L0L420D4NK69</p>
-                      <button 
-                        className="mt-2 bg-black text-white px-2 py-1 text-xs font-pixel flex items-center neo-brutalism hover:scale-105"
-                        onClick={() => copyToClipboard("0xC0FF33M3M35L0L420D4NK69", "Coffee address copied!")}
-                      >
-                        <Copy size={14} className="mr-1" /> Copy
-                      </button>
-                    </div>
-                    <p className="text-xs mt-2 italic text-black font-pixel">* Actually creates a temporal paradox instead of coffee</p>
-                  </div>
-                </div>
-                
-                <div className="mt-8 bg-neon-pink/10 p-4 neo-brutalism text-center">
-                  <div className="mb-4">
-                    <TopHoldersChart />
-                  </div>
-                  <p className="text-xs text-black font-pixel">* Chart may be upside down in parallel universes</p>
-                </div>
-              </div>
-            </TetrisBlock>
-          </TetrisLayout>
-        </div>
-      </main>
-    </div>
-  );
-};
-
-export default Index;
-
