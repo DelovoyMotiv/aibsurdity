@@ -1,4 +1,4 @@
-
+<lov-code>
 import React, { useEffect, useState, useRef } from 'react';
 import { Atom, Sparkles, Braces, CloudLightning, Cpu } from 'lucide-react';
 import { toast } from "sonner";
@@ -9,6 +9,7 @@ import { TetrisLayout, TetrisBlock } from '@/components/TetrisLayout';
 import AbsurdButton from '@/components/AbsurdButton';
 import Footer from '@/components/Footer';
 import LogoReveal from '@/components/LogoReveal';
+import RabbitEarsButton from '@/components/RabbitEarsButton';
 
 const Index = () => {
   const [mounted, setMounted] = useState(false);
@@ -307,7 +308,7 @@ const Index = () => {
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold mb-4 text-neon-blue font-pixel w-full">
                   Taking Over the Real World
-                </h3>
+                  </h3>
                 
                 <div className="space-y-4">
                   <div>
@@ -664,53 +665,3 @@ C = Conscience coefficient (0 ≤ C < 1)`}
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
                         <li>Transmute FUD into humor via quantum meme-portals</li>
-                        <li>Summon ancient Satoshi bots to exorcise bear trends</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                
-                <div>
-                  <div className="inline-block bg-neon-pink/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel flex items-center space-x-2">
-                    <Sparkles size={16} className="text-neon-pink animate-pulse" />
-                    <span>Apocalypse Scenario</span>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-bold text-neon-yellow mb-2 font-pixel w-full">Protocol Self-Destruct:</h4>
-                      <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
-                        When absurdity levels reach critical mass:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
-                        <li>Smart contracts achieve sentience and start writing dad jokes</li>
-                        <li>All blockchains merge into a stand-up comedy show</li>
-                        <li>Validators become professional meme critics</li>
-                      </ul>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-bold text-neon-green mb-2 font-pixel w-full">Final Form:</h4>
-                      <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
-                        The ultimate transformation:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
-                        <li>Each wallet becomes a parallel universe</li>
-                        <li>Token supply measured in laughs per second</li>
-                        <li>The blockchain achieves comedy singularity</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </TetrisBlock>
-          </TetrisLayout>
-        </div>
-      </main>
-      
-      <Footer />
-    </div>
-  );
-};
-
-export default Index;
