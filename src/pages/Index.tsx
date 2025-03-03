@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useRef } from 'react';
 import { Github, Twitter, Send, Copy, Heart, Coffee, HandCoins, Briefcase, Shield, Zap, BarChart3 } from 'lucide-react';
 import { toast } from "sonner";
@@ -610,4 +611,19 @@ const Index = () => {
                 <div className="p-2 bg-neon-purple/20 rounded-full hover:bg-neon-purple/40 transition-colors cursor-pointer">
                   <Coffee size={16} className="text-neon-pink" />
                 </div>
-                <div className="p-2 bg
+                <div className="p-2 bg-neon-green/20 rounded-full hover:bg-neon-green/40 transition-colors cursor-pointer">
+                  <HandCoins size={16} className="text-neon-green" />
+                </div>
+                <div className="p-2 bg-neon-blue/20 rounded-full hover:bg-neon-blue/40 transition-colors cursor-pointer">
+                  <Heart size={16} className="text-neon-blue" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Index;
