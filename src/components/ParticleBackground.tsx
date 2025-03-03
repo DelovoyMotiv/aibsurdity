@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 
 const ParticleBackground: React.FC = () => {
@@ -67,17 +66,17 @@ const ParticleBackground: React.FC = () => {
       }
     };
     
-    // Draw a single morphing blob
+    // Enhanced blob drawing with improved depth and glass-like effects
     const drawBlob = (blob: Blob, timestamp: number) => {
       const time = timestamp * 0.001; // Convert milliseconds to seconds
-      const points = 8; // Number of points to create the blob
+      const points = 12; // Increased points for smoother blob shape
       const twoPi = Math.PI * 2;
       
-      // Blob movement using perlin-like motion
-      const centerX = blob.x + Math.sin(time * 0.2 + blob.xOffset) * 100;
-      const centerY = blob.y + Math.cos(time * 0.3 + blob.yOffset) * 100;
+      // Enhanced blob movement with more natural flow
+      const centerX = blob.x + Math.sin(time * 0.2 + blob.xOffset) * 100 * blob.depth;
+      const centerY = blob.y + Math.cos(time * 0.3 + blob.yOffset) * 100 * blob.depth;
       
-      // Create gradient fill for depth perception
+      // Create more complex gradient fill for glass-like effect
       const gradient = ctx.createRadialGradient(
         centerX, centerY, 0,
         centerX, centerY, blob.radius * 1.5
@@ -88,28 +87,33 @@ const ParticleBackground: React.FC = () => {
       if (colorMatch) {
         const [_, r, g, b, a] = colorMatch;
         
-        // Create a 3D-like effect with the gradient
-        gradient.addColorStop(0, `rgba(${r}, ${g}, ${b}, ${parseFloat(a) * 2})`);
-        gradient.addColorStop(0.5, `rgba(${r}, ${g}, ${b}, ${parseFloat(a)})`);
+        // Create a more complex, glass-like gradient
+        gradient.addColorStop(0, `rgba(${r}, ${g}, ${b}, ${parseFloat(a) * 2.5})`);
+        gradient.addColorStop(0.3, `rgba(${r}, ${g}, ${b}, ${parseFloat(a) * 1.5})`);
+        gradient.addColorStop(0.7, `rgba(${r}, ${g}, ${b}, ${parseFloat(a) * 0.8})`);
         gradient.addColorStop(1, `rgba(${r}, ${g}, ${b}, 0)`);
       }
       
       ctx.fillStyle = gradient;
+      
+      // Draw blob with bezier curves
       ctx.beginPath();
       
-      // Start drawing the blob with bezier curves for smoother shapes
       for (let i = 0; i <= points; i++) {
         const angle = (i / points) * twoPi;
         const nextAngle = ((i + 1) / points) * twoPi;
         
-        // Create wavy radius for organic feeling
-        const waveX = Math.sin(angle * 3 + time + blob.angle) * blob.amplitude;
-        const waveY = Math.cos(angle * 2 + time + blob.angle) * blob.amplitude;
-        const nextWaveX = Math.sin(nextAngle * 3 + time + blob.angle) * blob.amplitude;
-        const nextWaveY = Math.cos(nextAngle * 2 + time + blob.angle) * blob.amplitude;
+        // Create more complex wavy radius with multiple sine/cosine waves
+        const wave1 = Math.sin(angle * 3 + time + blob.angle) * blob.amplitude;
+        const wave2 = Math.cos(angle * 2 + time * 1.5 + blob.angle) * (blob.amplitude * 0.8);
+        const wave3 = Math.sin(angle * 5 + time * 0.7 + blob.angle) * (blob.amplitude * 0.3);
         
-        const radius = blob.radius + waveX + waveY;
-        const nextRadius = blob.radius + nextWaveX + nextWaveY;
+        const nextWave1 = Math.sin(nextAngle * 3 + time + blob.angle) * blob.amplitude;
+        const nextWave2 = Math.cos(nextAngle * 2 + time * 1.5 + blob.angle) * (blob.amplitude * 0.8);
+        const nextWave3 = Math.sin(nextAngle * 5 + time * 0.7 + blob.angle) * (blob.amplitude * 0.3);
+        
+        const radius = blob.radius + wave1 + wave2 + wave3;
+        const nextRadius = blob.radius + nextWave1 + nextWave2 + nextWave3;
         
         const x = centerX + Math.cos(angle) * radius;
         const y = centerY + Math.sin(angle) * radius;
@@ -117,19 +121,45 @@ const ParticleBackground: React.FC = () => {
         const nextX = centerX + Math.cos(nextAngle) * nextRadius;
         const nextY = centerY + Math.sin(nextAngle) * nextRadius;
         
-        // Control points for bezier curves
+        // Enhanced control points for more fluid bezier curves
         const cpX1 = centerX + Math.cos(angle + 0.1) * (radius * 1.2);
         const cpY1 = centerY + Math.sin(angle + 0.1) * (radius * 1.2);
+        const cpX2 = centerX + Math.cos(nextAngle - 0.1) * (nextRadius * 1.2);
+        const cpY2 = centerY + Math.sin(nextAngle - 0.1) * (nextRadius * 1.2);
         
         if (i === 0) {
           ctx.moveTo(x, y);
         } else {
-          ctx.quadraticCurveTo(cpX1, cpY1, nextX, nextY);
+          // Use cubic bezier for smoother curves
+          ctx.bezierCurveTo(cpX1, cpY1, cpX2, cpY2, nextX, nextY);
         }
       }
       
       ctx.closePath();
       ctx.fill();
+      
+      // Add a subtle highlight to enhance the glass effect
+      ctx.save();
+      ctx.globalCompositeOperation = 'lighter';
+      ctx.beginPath();
+      
+      const highlightRadius = blob.radius * 0.7;
+      const highlightX = centerX + Math.cos(time * 0.5) * (blob.radius * 0.2);
+      const highlightY = centerY + Math.sin(time * 0.5) * (blob.radius * 0.2);
+      
+      ctx.arc(highlightX, highlightY, highlightRadius, 0, Math.PI * 2);
+      
+      const highlightGradient = ctx.createRadialGradient(
+        highlightX, highlightY, 0,
+        highlightX, highlightY, highlightRadius
+      );
+      
+      highlightGradient.addColorStop(0, `rgba(255, 255, 255, ${0.05 * blob.depth})`);
+      highlightGradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+      
+      ctx.fillStyle = highlightGradient;
+      ctx.fill();
+      ctx.restore();
       
       // Update blob angle for continuous morphing
       blob.angle += blob.angleSpeed;

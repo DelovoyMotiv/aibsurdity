@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+
+import React, { useEffect, useState, useRef } from 'react';
 import { Github, Twitter, Send, Copy, Heart, Coffee, HandCoins } from 'lucide-react';
 import { toast } from "sonner";
 import GlitchText from '@/components/GlitchText';
@@ -9,6 +10,8 @@ import TetrisLayout, { TetrisBlock } from '@/components/TetrisLayout';
 const Index = () => {
   const [mounted, setMounted] = useState(false);
   const [hasVisitedBefore, setHasVisitedBefore] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const pageRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     setMounted(true);
@@ -30,8 +33,54 @@ const Index = () => {
       document.documentElement.style.setProperty('--scroll-percentage', scrollPercentage.toString());
     };
     
+    // Handle mouse move for refraction effects
+    const handleMouseMove = (e: MouseEvent) => {
+      if (pageRef.current) {
+        const rect = pageRef.current.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        setMousePosition({ x, y });
+        
+        // Update CSS variables for light refraction
+        document.documentElement.style.setProperty('--mouse-x', `${x}px`);
+        document.documentElement.style.setProperty('--mouse-y', `${y}px`);
+        
+        // Apply hover effect to elements with light-refraction class
+        const elements = document.querySelectorAll('.light-refraction');
+        elements.forEach(el => {
+          const elRect = (el as HTMLElement).getBoundingClientRect();
+          const elX = ((e.clientX - elRect.left) / elRect.width) * 100;
+          const elY = ((e.clientY - elRect.top) / elRect.height) * 100;
+          
+          (el as HTMLElement).style.setProperty('--x', `${elX}%`);
+          (el as HTMLElement).style.setProperty('--y', `${elY}%`);
+        });
+        
+        // Apply gradient movement to live-gradient elements
+        const gradientElements = document.querySelectorAll('.live-gradient');
+        gradientElements.forEach(el => {
+          const elRect = (el as HTMLElement).getBoundingClientRect();
+          // Calculate distance from element center
+          const centerX = elRect.left + elRect.width / 2;
+          const centerY = elRect.top + elRect.height / 2;
+          
+          // Map mouse position to gradient position (invert for natural feeling)
+          const gradientX = 100 - ((e.clientX - centerX) / window.innerWidth * 50 + 50);
+          const gradientY = 100 - ((e.clientY - centerY) / window.innerHeight * 50 + 50);
+          
+          (el as HTMLElement).style.backgroundPosition = `${gradientX}% ${gradientY}%`;
+        });
+      }
+    };
+    
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('mousemove', handleMouseMove);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
   }, []);
 
   const copyToClipboard = (text: string, message: string) => {
@@ -63,7 +112,7 @@ const Index = () => {
   if (!mounted) return null;
   
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
+    <div ref={pageRef} className="relative min-h-screen overflow-x-hidden">
       <ParticleBackground />
       
       {/* Header */}
@@ -81,7 +130,7 @@ const Index = () => {
           </div>
           
           <div className="flex justify-center">
-            <p className="glassmorphism text-neon-green neon-text py-3 px-6 text-xl md:text-2xl max-w-xl mx-auto">
+            <p className="glassmorphism-2 light-refraction text-neon-green neon-text py-3 px-6 text-xl md:text-2xl max-w-xl mx-auto">
               "I'm broken, but it's a feature."
             </p>
           </div>
@@ -94,7 +143,7 @@ const Index = () => {
           <TetrisLayout>
             {/* Intro Block */}
             <TetrisBlock 
-              className="md:col-span-12" 
+              className="md:col-span-12 glassmorphism-2 light-refraction" 
               color="bg-absurd-dark"
               delay={0.1}
             >
@@ -114,8 +163,8 @@ const Index = () => {
             
             {/* Epoch 1-2 */}
             <TetrisBlock 
-              className="md:col-span-6" 
-              color="bg-neon-purple/20 glassmorphism"
+              className="md:col-span-6 glassmorphism-2 light-refraction" 
+              color="live-gradient live-gradient-purple"
               delay={0.3}
             >
               <div className="flex items-start space-x-4">
@@ -151,8 +200,8 @@ const Index = () => {
             
             {/* Epoch 3-4 */}
             <TetrisBlock 
-              className="md:col-span-6" 
-              color="bg-neon-green/20 glassmorphism"
+              className="md:col-span-6 glassmorphism-2 light-refraction" 
+              color="live-gradient live-gradient-green"
               delay={0.5}
             >
               <div className="flex items-start space-x-4">
@@ -193,8 +242,8 @@ const Index = () => {
             
             {/* Epoch 5-6 */}
             <TetrisBlock 
-              className="md:col-span-7" 
-              color="bg-neon-orange/20 glassmorphism"
+              className="md:col-span-7 glassmorphism-2 light-refraction" 
+              color="live-gradient live-gradient-blue"
               delay={0.2}
             >
               <div className="flex items-start space-x-4">
@@ -230,8 +279,8 @@ const Index = () => {
             
             {/* Epoch 7-8 */}
             <TetrisBlock 
-              className="md:col-span-5" 
-              color="bg-neon-blue/20 glassmorphism"
+              className="md:col-span-5 glassmorphism-2 light-refraction" 
+              color="live-gradient live-gradient-blue"
               delay={0.4}
             >
               <div>
@@ -264,8 +313,8 @@ const Index = () => {
             
             {/* Epoch 9-10 */}
             <TetrisBlock 
-              className="md:col-span-12" 
-              color="bg-neon-pink/20 glassmorphism"
+              className="md:col-span-12 glassmorphism-2 light-refraction" 
+              color="live-gradient live-gradient-pink"
               delay={0.6}
             >
               <div className="flex flex-col md:flex-row gap-6">
@@ -322,7 +371,7 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           {/* Smart Contract Address Block */}
           <div className="flex justify-center mb-10">
-            <div className="glassmorphism py-3 px-5 relative overflow-hidden max-w-md w-full mx-auto">
+            <div className="glassmorphism-2 light-refraction py-3 px-5 relative overflow-hidden max-w-md w-full mx-auto">
               <span className="text-xs text-gray-400 block text-center mb-2">Smart Contract:</span>
               <div className="flex justify-between items-center">
                 <p className="font-mono text-neon-purple text-center w-full relative overflow-hidden transition-all duration-500">
@@ -349,7 +398,7 @@ const Index = () => {
 
           {/* Donation Block */}
           <div className="flex justify-center mb-10">
-            <div className="glassmorphism py-4 px-5 relative overflow-hidden max-w-md w-full mx-auto">
+            <div className="glassmorphism-2 light-refraction py-4 px-5 relative overflow-hidden max-w-md w-full mx-auto">
               <div className="flex justify-center mb-2">
                 <div className="bg-neon-pink/30 px-3 py-1 rounded-full text-sm mb-1 flex items-center space-x-2">
                   <Heart size={14} className="text-neon-pink animate-pulse" />
