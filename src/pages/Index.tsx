@@ -5,6 +5,7 @@ import GlitchText from '@/components/GlitchText';
 import ParticleBackground from '@/components/ParticleBackground';
 import PixelArt from '@/components/PixelArt';
 import TetrisLayout, { TetrisBlock } from '@/components/TetrisLayout';
+import AbsurdButton from '@/components/AbsurdButton';
 
 const Index = () => {
   const [mounted, setMounted] = useState(false);
@@ -133,6 +134,11 @@ const Index = () => {
             <p className="glassmorphism-2 light-refraction text-8bit-glow text-neon-green py-3 px-6 text-lg md:text-xl max-w-xl mx-auto">
               "I'm broken, but it's a feature."
             </p>
+          </div>
+          
+          {/* AbsurdOS Button */}
+          <div className="flex justify-center mt-6">
+            <AbsurdButton />
           </div>
         </div>
       </header>
