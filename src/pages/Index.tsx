@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Github, Twitter, Send, Copy } from 'lucide-react';
+import { Github, Twitter, Send, Copy, Heart, Coffee, HandCoins } from 'lucide-react';
 import { toast } from "sonner";
 import GlitchText from '@/components/GlitchText';
 import ParticleBackground from '@/components/ParticleBackground';
@@ -34,10 +34,10 @@ const Index = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText("0x000000000000000000000000")
+  const copyToClipboard = (text: string, message: string) => {
+    navigator.clipboard.writeText(text)
       .then(() => {
-        toast.success("Contract address copied to clipboard");
+        toast.success(message);
       })
       .catch((err) => {
         toast.error("Failed to copy address");
@@ -329,7 +329,7 @@ const Index = () => {
                   <span className="animate-pulse inline-block">0x000000000000000000000000</span>
                 </p>
                 <button 
-                  onClick={copyToClipboard}
+                  onClick={() => copyToClipboard("0x000000000000000000000000", "Contract address copied to clipboard")}
                   className="ml-3 flex-shrink-0 text-neon-green hover:text-neon-blue transition-colors p-1 rounded hover:bg-white/10"
                   title="Copy to clipboard"
                 >
@@ -343,6 +343,51 @@ const Index = () => {
               <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <div className="w-1 h-full bg-neon-green absolute left-0 top-0 animate-[pulse_2s_ease-in-out_infinite] opacity-30"></div>
                 <div className="w-1 h-full bg-neon-pink absolute right-0 top-0 animate-[pulse_3s_ease-in-out_infinite] opacity-30"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Donation Block */}
+          <div className="flex justify-center mb-10">
+            <div className="glassmorphism py-4 px-5 relative overflow-hidden max-w-md w-full mx-auto">
+              <div className="flex justify-center mb-2">
+                <div className="bg-neon-pink/30 px-3 py-1 rounded-full text-sm mb-1 flex items-center space-x-2">
+                  <Heart size={14} className="text-neon-pink animate-pulse" />
+                  <span>Support the Absurdity</span>
+                </div>
+              </div>
+              
+              <h3 className="text-center text-neon-green mb-3 font-bold">Donation to the development team's psychosis</h3>
+              
+              <div className="flex justify-between items-center bg-black/30 rounded-lg p-2 mb-3">
+                <p className="font-mono text-neon-purple text-center w-full relative overflow-hidden">
+                  <span className="inline-block">0xooooooooooooooooooooooooooooooooooo</span>
+                </p>
+                <button 
+                  onClick={() => copyToClipboard("0xooooooooooooooooooooooooooooooooooo", "Donation address copied to clipboard")}
+                  className="ml-3 flex-shrink-0 text-neon-green hover:text-neon-blue transition-colors p-1 rounded hover:bg-white/10"
+                  title="Copy donation address"
+                >
+                  <Copy size={18} />
+                </button>
+              </div>
+              
+              <p className="text-center text-gray-300 text-sm">Your support helps us create more absurdity in the crypto space!</p>
+              
+              <div className="flex justify-center space-x-4 mt-3">
+                <div className="p-2 bg-neon-purple/20 rounded-full hover:bg-neon-purple/40 transition-colors cursor-pointer">
+                  <Coffee size={20} className="text-neon-pink" />
+                </div>
+                <div className="p-2 bg-neon-green/20 rounded-full hover:bg-neon-green/40 transition-colors cursor-pointer">
+                  <HandCoins size={20} className="text-neon-green" />
+                </div>
+                <div className="p-2 bg-neon-blue/20 rounded-full hover:bg-neon-blue/40 transition-colors cursor-pointer">
+                  <Heart size={20} className="text-neon-blue" />
+                </div>
+              </div>
+              
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="w-full h-full opacity-10 bg-gradient-to-r from-neon-pink via-transparent to-neon-green/30 animate-[pulse_5s_ease-in-out_infinite]"></div>
               </div>
             </div>
           </div>
