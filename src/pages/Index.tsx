@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Github, Twitter, Send, Copy, Heart, Coffee, HandCoins, Briefcase } from 'lucide-react';
+import { Github, Twitter, Send, Copy, Heart, Coffee, HandCoins, Briefcase, Shield, Zap, BarChart3 } from 'lucide-react';
 import { toast } from "sonner";
 import GlitchText from '@/components/GlitchText';
 import ParticleBackground from '@/components/ParticleBackground';
@@ -378,6 +378,135 @@ const Index = () => {
               </TetrisBlock>
             
             
+            {/* Antifragility Protocol - Full screen section before footer */}
+            <TetrisBlock 
+              className="md:col-span-12 glassmorphism-2 light-refraction min-h-screen flex flex-col justify-center" 
+              color="live-gradient live-gradient-purple"
+              delay={0.3}
+            >
+              <div className="py-16">
+                <div className="flex justify-center mb-10">
+                  <div className="inline-block bg-neon-green/30 px-5 py-2 rounded-full text-lg mb-4 font-pixel flex items-center space-x-3">
+                    <Shield size={20} className="text-neon-green animate-pulse" />
+                    <span>Antifragility Protocol</span>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                  <div className="flex flex-col justify-center">
+                    <GlitchText 
+                      text="Thriving On Chaos" 
+                      fontSize="text-3xl md:text-5xl" 
+                      color="text-white" 
+                      className="font-pixel tracking-tight mb-6"
+                      variant="intense"
+                      as="h2"
+                      pixelated={true}
+                    />
+                    
+                    <p className="text-8bit text-gray-300 text-sm md:text-base mb-6 font-pixel w-full">
+                      "The AIbsurdity Protocol doesn't just survive volatility, it becomes stronger from it.
+                      Every market downturn, every regulatory challenge, every technical hurdle makes 
+                      our system more resilient and our community more committed."
+                    </p>
+                    
+                    <div className="space-y-6 mt-6">
+                      <div className="flex items-start space-x-4">
+                        <div className="p-3 bg-neon-purple/20 rounded-lg mt-1">
+                          <Zap size={24} className="text-neon-purple" />
+                        </div>
+                        <div>
+                          <h3 className="text-neon-purple font-pixel mb-2">Volatility Harvesting</h3>
+                          <p className="text-gray-300 text-xs font-pixel w-full">
+                            Our smart contracts are designed to leverage market chaos, automatically 
+                            accumulating resources during periods of extreme fear and panic.
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start space-x-4">
+                        <div className="p-3 bg-neon-green/20 rounded-lg mt-1">
+                          <Shield size={24} className="text-neon-green" />
+                        </div>
+                        <div>
+                          <h3 className="text-neon-green font-pixel mb-2">Anti-Fragile Liquidity</h3>
+                          <p className="text-gray-300 text-xs font-pixel w-full">
+                            The more turbulent the market gets, the deeper our liquidity pools become,
+                            creating a self-reinforcing cycle of stability amid chaos.
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start space-x-4">
+                        <div className="p-3 bg-neon-blue/20 rounded-lg mt-1">
+                          <BarChart3 size={24} className="text-neon-blue" />
+                        </div>
+                        <div>
+                          <h3 className="text-neon-blue font-pixel mb-2">Reverse Black Swans</h3>
+                          <p className="text-gray-300 text-xs font-pixel w-full">
+                            We've built systems that transform negative market events into
+                            positive outcomes for our token holders through algorithmic responses.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center justify-center relative">
+                    <div className="relative w-full max-w-md h-full">
+                      <div className="absolute inset-0 bg-neon-purple/20 rounded-xl blur-xl animate-pulse"></div>
+                      <div className="glassmorphism-2 p-8 rounded-xl relative z-10 h-full">
+                        <div className="font-pixel text-center mb-6">
+                          <span className="text-neon-green animate-neon-pulse text-xl">Chaos Index</span>
+                          <div className="text-5xl mt-2 text-white">
+                            <span className="animate-pixel-flicker">87</span>
+                            <span className="text-sm text-neon-pink ml-1">/100</span>
+                          </div>
+                          <p className="text-xs text-neon-blue mt-2">HIGH VOLATILITY DETECTED</p>
+                        </div>
+                        
+                        <div className="space-y-6 mt-8">
+                          <div>
+                            <div className="flex justify-between text-xs mb-1">
+                              <span className="text-gray-300 font-pixel">Fear/Greed Index</span>
+                              <span className="text-neon-orange font-pixel">12 (Extreme Fear)</span>
+                            </div>
+                            <div className="w-full bg-black/30 h-4 rounded-full overflow-hidden">
+                              <div className="bg-gradient-to-r from-neon-red to-neon-orange h-full rounded-full" style={{width: '12%'}}></div>
+                            </div>
+                          </div>
+                          
+                          <div>
+                            <div className="flex justify-between text-xs mb-1">
+                              <span className="text-gray-300 font-pixel">Protocol Health</span>
+                              <span className="text-neon-green font-pixel">98.7%</span>
+                            </div>
+                            <div className="w-full bg-black/30 h-4 rounded-full overflow-hidden">
+                              <div className="bg-gradient-to-r from-neon-blue to-neon-green h-full rounded-full" style={{width: '98.7%'}}></div>
+                            </div>
+                          </div>
+                          
+                          <div>
+                            <div className="flex justify-between text-xs mb-1">
+                              <span className="text-gray-300 font-pixel">AIbsurdity Growth Rate</span>
+                              <span className="text-neon-purple font-pixel">+214%</span>
+                            </div>
+                            <div className="w-full bg-black/30 h-4 rounded-full overflow-hidden">
+                              <div className="bg-gradient-to-r from-neon-blue to-neon-purple h-full rounded-full animate-pulse" style={{width: '100%'}}></div>
+                            </div>
+                          </div>
+                          
+                          <p className="mt-6 text-center text-xs text-gray-300 font-pixel w-full">
+                            "The worse things get out there, the better they get in here."
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TetrisBlock>
+            
           </TetrisLayout>
         </div>
       </main>
@@ -487,62 +616,3 @@ const Index = () => {
                   </div>
                   <div className="p-2 bg-neon-blue/20 rounded-full hover:bg-neon-blue/40 transition-colors cursor-pointer">
                     <Heart size={16} className="text-neon-blue" />
-                  </div>
-                </div>
-                
-                <div className="absolute inset-0 pointer-events-none">
-                  <div className="w-full h-full opacity-10 bg-gradient-to-r from-neon-pink via-transparent to-neon-green/30 animate-[pulse_5s_ease-in-out_infinite]"></div>
-                </div>
-              </div>
-            </div>
-
-            {/* Rest of the footer content */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="space-y-3">
-                <GlitchText 
-                  text="The era of burning-out superheroes."
-                  fontSize="text-sm" 
-                  color="text-gray-300"
-                  variant="pixel"
-                  pixelated={true}
-                />
-              </div>
-              
-              <div className="space-y-3">
-                <p className="text-neon-green hover:animate-glitch cursor-pointer font-pixel text-xs w-full text-center">Society of the Spectacle</p>
-                <p className="text-neon-blue hover:animate-glitch cursor-pointer font-pixel text-xs w-full text-center">Capitalism of Opportunities</p>
-                <p className="text-neon-pink hover:animate-glitch cursor-pointer font-pixel text-xs w-full text-center">Consumption of Illusion</p>
-              </div>
-              
-              <div className="space-y-3">
-                <p className="text-gray-300 italic text-xs font-pixel w-full text-justify">
-                  If nothing works out for us... We will leave, but as a farewell, we will slam the door so hard that the world will shudder!
-                </p>
-                
-                <div className="flex space-x-6 mt-4 justify-center">
-                  <a href="#" className="text-neon-blue hover:scale-110 transition-transform">
-                    <Twitter className="w-6 h-6" />
-                  </a>
-                  <a href="#" className="text-neon-green hover:scale-110 transition-transform">
-                    <Send className="w-6 h-6" />
-                  </a>
-                  <a href="#" className="text-neon-purple hover:scale-110 transition-transform">
-                    <Github className="w-6 h-6" />
-                  </a>
-                </div>
-              </div>
-            </div>
-            
-            <div className="mt-10 pt-6 border-t border-white/10 text-center text-gray-500 text-xs font-pixel w-full">
-              <p>© {new Date().getFullYear()} AIbsurdity — A psychological experiment disguised as a token</p>
-              <p className="mt-1 text-xs text-neon-purple opacity-60 hover:opacity-100 transition-opacity w-full">
-                <span className="inline-block animate-pixel-flicker">In the symbiosis of AI and human creativity, we transcend the limitations of both</span>
-              </p>
-            </div>
-          </div>
-        </footer>
-      </div>
-    );
-  };
-
-  export default Index;
