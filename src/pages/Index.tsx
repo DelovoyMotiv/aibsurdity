@@ -1,13 +1,11 @@
-<lov-code>
 import React, { useEffect, useState, useRef } from 'react';
-import { Github, Twitter, Send, Copy, Heart, Coffee, HandCoins, Briefcase, Shield, Zap, BarChart3, Cpu, Atom, Sparkles, Braces, CloudLightning, Box, Wallet } from 'lucide-react';
+import { Atom, Sparkles, Braces, CloudLightning, Cpu } from 'lucide-react';
 import { toast } from "sonner";
 import GlitchText from '@/components/GlitchText';
 import ParticleBackground from '@/components/ParticleBackground';
 import PixelArt from '@/components/PixelArt';
 import TetrisLayout, { TetrisBlock } from '@/components/TetrisLayout';
 import AbsurdButton from '@/components/AbsurdButton';
-import TopHoldersChart from '@/components/TopHoldersChart';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -662,4 +660,11 @@ C = Conscience coefficient (0 ≤ C < 1)`}
                       </p>
                       <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
                         <li>Transmute FUD into humor via quantum meme-portals</li>
-                        <li>Summon
+                        <li>Summon ancient Satoshi bots to exorcise bear trends</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <div className="inline-block bg-neon-pink/30 px-3 py-
