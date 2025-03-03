@@ -30,7 +30,7 @@ const Footer = () => {
   
   return (
     <footer className="bg-absurd-dark border-t border-gray-800 py-12 mt-auto">
-      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <h3 className="text-neon-blue font-pixel text-lg mb-4">AIbsurdity</h3>
           <p className="text-gray-400 text-sm mb-4 font-pixel">
@@ -44,17 +44,6 @@ const Footer = () => {
               <ExternalLink size={20} />
             </a>
           </div>
-        </div>
-        
-        <div>
-          <h3 className="text-neon-green font-pixel text-lg mb-4">Roadmap</h3>
-          <ul className="text-gray-400 text-sm space-y-2 font-pixel">
-            <li>Epoch 1-2: Absurd Code Foundation</li>
-            <li>Epoch 3-4: Mainstream Absurdification</li>
-            <li>Epoch 5-6: Absurd Religious Movement</li>
-            <li>Epoch 7-8: Global Dominance</li>
-            <li>Epoch 9-10: Multiversal Comedy Singularity</li>
-          </ul>
         </div>
         
         <div>
