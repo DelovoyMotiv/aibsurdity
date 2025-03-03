@@ -230,7 +230,11 @@ export default {
 				'pixel-bounce': 'pixel-bounce 0.5s ease-in-out infinite',
 				'pixel-flicker': 'pixel-flicker 2s linear infinite',
 				'scan-line': 'scan-line 2s linear infinite',
-				'distort-text': 'distort-text 4s ease-in-out infinite'
+				'distort-text': 'distort-text 4s ease-in-out infinite',
+				'content-reveal-sweep': 'content-reveal-sweep 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards',
+				'fade-out': 'fade-out 0.8s ease-out forwards',
+				'spin-slow': 'spin-slow 3s linear infinite',
+				'shimmer': 'shimmer 2s infinite linear'
 			}
 		}
 	},

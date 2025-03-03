@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useRef } from 'react';
 import { Atom, Sparkles, Braces, CloudLightning, Cpu } from 'lucide-react';
 import { toast } from "sonner";
@@ -8,6 +7,7 @@ import PixelArt from '@/components/PixelArt';
 import TetrisLayout, { TetrisBlock } from '@/components/TetrisLayout';
 import AbsurdButton from '@/components/AbsurdButton';
 import Footer from '@/components/Footer';
+import LogoReveal from '@/components/LogoReveal';
 
 const Index = () => {
   const [mounted, setMounted] = useState(false);
@@ -128,40 +128,42 @@ const Index = () => {
         <AbsurdButton />
       </div>
       
-      {/* Header */}
+      {/* Enhanced Header */}
       <header className="pt-10 pb-6 px-4 relative">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center items-center mb-8">
-            <GlitchText 
-              text="AIbsurdity" 
-              fontSize="text-5xl md:text-7xl" 
-              color="text-white" 
-              className="font-pixel tracking-tight"
-              variant="intense"
-              as="h1"
-              pixelated={true}
-            />
+            <LogoReveal>
+              <GlitchText 
+                text="AIbsurdity" 
+                fontSize="text-5xl md:text-7xl" 
+                color="text-white" 
+                className="font-pixel tracking-tight"
+                variant="intense"
+                as="h1"
+                pixelated={true}
+              />
+            </LogoReveal>
           </div>
           
           <div className="flex justify-center">
-            <p className="glassmorphism-2 light-refraction text-8bit-glow text-neon-green py-3 px-6 text-lg md:text-xl max-w-xl mx-auto text-center w-full">
+            <p className="glassmorphism-2 light-refraction text-8bit-glow text-neon-green py-3 px-6 text-lg md:text-xl max-w-xl mx-auto text-center w-full luxury-card premium-glow">
               "I'm broken, but it's a feature."
             </p>
           </div>
         </div>
       </header>
       
-      {/* Main Content */}
+      {/* Main Content - Enhanced with luxury design elements */}
       <main className="px-4 pb-20">
         <div className="max-w-6xl mx-auto">
           <TetrisLayout>
-            {/* Intro Block */}
+            {/* Intro Block - upgraded with luxury styling */}
             <TetrisBlock 
-              className="md:col-span-12 glassmorphism-2 light-refraction" 
+              className="md:col-span-12 glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="bg-absurd-dark"
               delay={0.1}
             >
-              <div className="flex flex-col items-center justify-center space-y-6">
+              <div className="flex flex-col items-center justify-center space-y-6 content-reveal">
                 <GlitchText 
                   text="This is not a token. It is a psychological experiment where AI diagnoses the entire crypto space!"
                   fontSize="text-xl md:text-2xl" 
@@ -178,7 +180,7 @@ const Index = () => {
             
             {/* Epoch 1-2 */}
             <TetrisBlock 
-              className="md:col-span-6 glassmorphism-2 light-refraction" 
+              className="md:col-span-6 glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="live-gradient live-gradient-purple"
               delay={0.3}
             >
@@ -215,7 +217,7 @@ const Index = () => {
             
             {/* Epoch 3-4 */}
             <TetrisBlock 
-              className="md:col-span-6 glassmorphism-2 light-refraction" 
+              className="md:col-span-6 glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="live-gradient live-gradient-green"
               delay={0.5}
             >
@@ -257,7 +259,7 @@ const Index = () => {
             
             {/* Epoch 5-6 */}
             <TetrisBlock 
-              className="md:col-span-7 glassmorphism-2 light-refraction" 
+              className="md:col-span-7 glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="live-gradient live-gradient-blue"
               delay={0.2}
             >
@@ -294,7 +296,7 @@ const Index = () => {
             
             {/* Epoch 7-8 */}
             <TetrisBlock 
-              className="md:col-span-5 glassmorphism-2 light-refraction" 
+              className="md:col-span-5 glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="live-gradient live-gradient-blue"
               delay={0.4}
             >
@@ -328,7 +330,7 @@ const Index = () => {
               
             {/* Epoch 9-10 */}
             <TetrisBlock 
-              className="md:col-span-12 glassmorphism-2 light-refraction" 
+              className="md:col-span-12 glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="live-gradient live-gradient-pink"
               delay={0.6}
             >
@@ -380,7 +382,7 @@ const Index = () => {
             
             {/* NEW SECTION: PAA Tokenomics - Tetris layout */}
             <TetrisBlock 
-              className="md:col-span-12 glassmorphism-2 light-refraction mt-10 mb-8" 
+              className="md:col-span-12 glassmorphism-2 light-refraction mt-10 mb-8 luxury-card premium-hover" 
               color="bg-absurd-dark"
               delay={0.2}
             >
@@ -402,7 +404,7 @@ const Index = () => {
 
             {/* Liquidity Singularity Block - Shape I */}
             <TetrisBlock 
-              className="md:col-span-4 glassmorphism-2 light-refraction" 
+              className="md:col-span-4 glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="live-gradient live-gradient-blue"
               delay={0.3}
               shape="I"
@@ -449,7 +451,7 @@ const Index = () => {
             
             {/* Dream Economy Block - Shape Z */}
             <TetrisBlock 
-              className="md:col-span-4 glassmorphism-2 light-refraction" 
+              className="md:col-span-4 glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="live-gradient live-gradient-purple"
               delay={0.4}
               shape="Z"
@@ -487,7 +489,7 @@ const Index = () => {
             
             {/* Temporal Antifragility Block - Shape L */}
             <TetrisBlock 
-              className="md:col-span-4 glassmorphism-2 light-refraction" 
+              className="md:col-span-4 glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="live-gradient live-gradient-green"
               delay={0.5}
               shape="L"
@@ -524,7 +526,7 @@ const Index = () => {
             
             {/* Technologies Block - Shape T */}
             <TetrisBlock 
-              className="md:col-span-6 glassmorphism-2 light-refraction" 
+              className="md:col-span-6 glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="live-gradient live-gradient-orange"
               delay={0.3}
               shape="T"
@@ -575,7 +577,7 @@ const Index = () => {
             
             {/* Economic Justification Block - Shape O */}
             <TetrisBlock 
-              className="md:col-span-6 glassmorphism-2 light-refraction" 
+              className="md:col-span-6 glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="live-gradient live-gradient-red"
               delay={0.4}
               shape="O"
@@ -618,7 +620,7 @@ C = Conscience coefficient (0 ≤ C < 1)`}
             
             {/* Liquidity Rituals & Apocalypse Scenario - Shape S */}
             <TetrisBlock 
-              className="md:col-span-12 glassmorphism-2 light-refraction" 
+              className="md:col-span-12 glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="live-gradient live-gradient-purple"
               delay={0.5}
               shape="S"

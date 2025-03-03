@@ -1,239 +1,212 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { Github, Twitter, Send, Copy, Check, Heart, Zap, Binary, Atom } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
 import { toast } from "sonner";
-import GlitchText from './GlitchText';
+import { Copy, Check, Twitter, ExternalLink, HeartPulse } from 'lucide-react';
+import { motion } from "framer-motion";
 
 const Footer = () => {
-  const [glowColor, setGlowColor] = useState('text-neon-blue');
-  const [isCopied, setIsCopied] = useState(false);
-  const [isDonationCopied, setIsDonationCopied] = useState(false);
-  const [showQuantumSecret, setShowQuantumSecret] = useState(false);
-  const [quantumCodeVisible, setQuantumCodeVisible] = useState(false);
-  const zapSequence = useRef([0, 0, 0]);
-  const contractAddress = '0xAIb5urd1ty00000000000000000DeaDBeEF';
-  const donationAddress = '0xD0n4t10n5AIb5urd1ty000000000B3N3F1T';
+  const [hasCopiedContract, setHasCopiedContract] = useState(false);
+  const [hasCopiedSupport, setHasCopiedSupport] = useState(false);
+  const contractAddress = "0xYourContractAddress"; // Replace with your actual contract address
+  const supportEmail = "support@aibsurdity.com"; // Replace with your actual support email
   const quantumRef = useRef<HTMLDivElement>(null);
-  
-  // Create a changing glow effect
+  const [glowColor, setGlowColor] = useState("text-neon-blue");
+
+  const copyToClipboard = (text: string, message: string) => {
+    navigator.clipboard.writeText(text)
+      .then(() => {
+        toast.success(message);
+      })
+      .catch((err) => {
+        toast.error("Failed to copy: " + err.message);
+        console.error("Failed to copy text: ", err);
+      });
+  };
+
+  const handleQuoteClick = () => {
+    setGlowColor(glowColor === "text-neon-blue" ? "text-neon-pink" : "text-neon-blue");
+  };
+
   useEffect(() => {
-    const colors = ['text-neon-blue', 'text-neon-green', 'text-neon-purple', 'text-neon-pink'];
-    let colorIndex = 0;
-    
-    const interval = setInterval(() => {
-      colorIndex = (colorIndex + 1) % colors.length;
-      setGlowColor(colors[colorIndex]);
-    }, 3000);
-    
-    return () => clearInterval(interval);
+    const handleMouseEnter = () => {
+      setGlowColor("text-neon-green");
+    };
+
+    const handleMouseLeave = () => {
+      setGlowColor("text-neon-blue");
+    };
+
+    const currentRef = quantumRef.current;
+    if (currentRef) {
+      currentRef.addEventListener("mouseenter", handleMouseEnter);
+      currentRef.addEventListener("mouseleave", handleMouseLeave);
+    }
+
+    return () => {
+      if (currentRef) {
+        currentRef.removeEventListener("mouseenter", handleMouseEnter);
+        currentRef.removeEventListener("mouseleave", handleMouseLeave);
+      }
+    };
   }, []);
 
-  // Easter egg - Quantum effect
-  useEffect(() => {
-    if (showQuantumSecret && quantumRef.current) {
-      // Apply quantum effects
-      const quantumInterval = setInterval(() => {
-        if (Math.random() > 0.7 && quantumRef.current) {
-          quantumRef.current.style.transform = `translate(${Math.random() * 4 - 2}px, ${Math.random() * 4 - 2}px) scale(${1 + Math.random() * 0.05})`;
-          quantumRef.current.style.filter = `hue-rotate(${Math.random() * 90}deg)`;
-        } else if (quantumRef.current) {
-          quantumRef.current.style.transform = 'translate(0, 0) scale(1)';
-          quantumRef.current.style.filter = 'none';
-        }
-      }, 200);
-      
-      setTimeout(() => {
-        clearInterval(quantumInterval);
-        setShowQuantumSecret(false);
-      }, 5000);
-      
-      return () => clearInterval(quantumInterval);
-    }
-  }, [showQuantumSecret]);
-
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(contractAddress)
-      .then(() => {
-        setIsCopied(true);
-        toast.success("Contract address copied to clipboard!");
-        
-        // Easter egg - increment sequence
-        zapSequence.current[0]++;
-        if (zapSequence.current[0] === 3) {
-          toast("Quantum sequence initiated...", {
-            icon: <Atom className="text-neon-purple animate-spin" size={18} />,
-          });
-        }
-        
-        setTimeout(() => setIsCopied(false), 2000);
-      })
-      .catch(err => {
-        toast.error("Failed to copy address: " + err.message);
-        console.error("Failed to copy address: ", err);
-      });
-  };
-
-  const copyDonationAddress = () => {
-    navigator.clipboard.writeText(donationAddress)
-      .then(() => {
-        setIsDonationCopied(true);
-        toast.success("Donation address copied to clipboard!");
-        
-        // Easter egg - increment sequence
-        zapSequence.current[1]++;
-        if (zapSequence.current[0] >= 2 && zapSequence.current[1] >= 2) {
-          toast("Quantum stabilizing...", {
-            icon: <Binary className="text-neon-green" size={18} />,
-          });
-        }
-        
-        setTimeout(() => setIsDonationCopied(false), 2000);
-      })
-      .catch(err => {
-        toast.error("Failed to copy donation address: " + err.message);
-        console.error("Failed to copy donation address: ", err);
-      });
-  };
-  
-  // Easter egg - reveal quantum code when clicked in sequence
-  const handleQuoteClick = () => {
-    zapSequence.current[2]++;
-    
-    // Check if the sequence is correct
-    if (zapSequence.current[0] >= 2 && zapSequence.current[1] >= 2 && zapSequence.current[2] >= 3) {
-      setShowQuantumSecret(true);
-      
-      // Reset sequence
-      zapSequence.current = [0, 0, 0];
-      
-      // Show special effect
-      toast.success("Quantum Key Activated", {
-        description: "Future tech revealed from 3024",
-        icon: <Zap className="text-neon-yellow animate-pulse" size={18} />,
-        duration: 5000,
-      });
-      
-      // Show quantum code after a delay
-      setTimeout(() => {
-        setQuantumCodeVisible(true);
-        
-        // Hide it after some time
-        setTimeout(() => {
-          setQuantumCodeVisible(false);
-        }, 10000);
-      }, 1000);
-    }
-  };
-
   return (
-    <footer className="w-full py-8 px-4 mt-16 glassmorphism-2 border-t border-gray-800">
-      {/* Contract & Donation Address Blocks - Now in a flex row for larger screens */}
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-4 mb-8">
-        {/* Contract Address Block */}
-        <div className="flex-1 glassmorphism p-4 rounded-lg hover:shadow-[0_0_15px_rgba(0,255,255,0.3)] transition-all duration-500">
-          <div className="text-center mb-2">
-            <p className="text-neon-green font-pixel text-xs">AIbsurdity Token Contract</p>
+    <footer className="pt-12 pb-8 px-4 border-t border-white/10 luxury-divider relative overflow-hidden">
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+          {/* Column 1: Logo & Description */}
+          <div className="md:col-span-4">
+            <div className="mb-6">
+              <h3 className="text-2xl font-pixel text-neon-blue mb-2">AIbsurdity</h3>
+              <p className="text-luxe text-sm text-gray-400 mb-4">
+                The most absurd crypto project in the multiverse. Where AI meets blockchain and throws logic out the window.
+              </p>
+            </div>
+            
+            <div className="space-y-4">
+              <div className="flex items-center space-x-2">
+                <Twitter size={18} className="text-neon-blue" />
+                <a href="https://twitter.com/aibsurdity" className="text-sm text-gray-300 hover:text-neon-blue transition-colors">
+                  @aibsurdity
+                </a>
+              </div>
+              
+              <div className="flex items-center space-x-2">
+                <ExternalLink size={18} className="text-neon-pink" />
+                <a href="https://aibsurdity.com" className="text-sm text-gray-300 hover:text-neon-pink transition-colors">
+                  aibsurdity.com
+                </a>
+              </div>
+            </div>
           </div>
-          <div className="flex items-center justify-center bg-black/50 rounded-md p-2 relative">
-            <p className="text-gray-300 font-mono text-xs truncate mr-2">{contractAddress}</p>
-            <button 
-              onClick={copyToClipboard} 
-              className="text-gray-400 hover:text-neon-blue transition-colors p-1 rounded-md"
-              aria-label="Copy contract address"
-            >
-              {isCopied ? 
-                <Check size={16} className="text-neon-green" /> : 
-                <Copy size={16} />
-              }
-            </button>
+          
+          {/* Column 2: Key Links */}
+          <div className="md:col-span-2">
+            <h4 className="text-neon-green font-pixel mb-4 text-sm">Explore</h4>
+            <ul className="space-y-2">
+              <li>
+                <a href="#roadmap" className="text-sm text-gray-300 hover:text-neon-green transition-colors premium-hover inline-block py-1">
+                  Roadmap
+                </a>
+              </li>
+              <li>
+                <a href="#tokenomics" className="text-sm text-gray-300 hover:text-neon-green transition-colors premium-hover inline-block py-1">
+                  Tokenomics
+                </a>
+              </li>
+              <li>
+                <a href="#whitepaper" className="text-sm text-gray-300 hover:text-neon-green transition-colors premium-hover inline-block py-1">
+                  Whitepaper
+                </a>
+              </li>
+              <li>
+                <a href="#memes" className="text-sm text-gray-300 hover:text-neon-green transition-colors premium-hover inline-block py-1">
+                  Meme Gallery
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          {/* Column 3: Contract & Links */}
+          <div className="md:col-span-6">
+            <h4 className="text-neon-yellow font-pixel mb-4 text-sm">Important Info</h4>
+            
+            {/* Contracts - Horizontally Aligned */}
+            <div className="space-y-3">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+                <span className="text-xs text-gray-400 whitespace-nowrap mb-1 sm:mb-0">
+                  Contract:
+                </span>
+                <div className="flex items-center space-x-2 flex-1 min-w-0">
+                  <code className="text-xs text-neon-purple bg-black/30 px-2 py-1 rounded luxury-card truncate">
+                    {contractAddress}
+                  </code>
+                  <button
+                    onClick={() => copyToClipboard(contractAddress, "Contract copied to clipboard!")}
+                    className="text-neon-yellow hover:text-neon-pink transition-colors"
+                  >
+                    {hasCopiedContract ? <Check size={14} /> : <Copy size={14} />}
+                  </button>
+                </div>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+                <span className="text-xs text-gray-400 whitespace-nowrap mb-1 sm:mb-0">
+                  Support:
+                </span>
+                <div className="flex items-center space-x-2 flex-1 min-w-0">
+                  <code className="text-xs text-neon-green bg-black/30 px-2 py-1 rounded luxury-card truncate">
+                    {supportEmail}
+                  </code>
+                  <button
+                    onClick={() => copyToClipboard(supportEmail, "Support email copied to clipboard!")}
+                    className="text-neon-yellow hover:text-neon-pink transition-colors"
+                  >
+                    {hasCopiedSupport ? <Check size={14} /> : <Copy size={14} />}
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            {/* Community & Socials */}
+            <div className="mt-6">
+              <h5 className="text-neon-orange font-pixel mb-3 text-xs">Join Our Community</h5>
+              <div className="flex flex-wrap gap-2">
+                <a 
+                  href="#" 
+                  className="inline-flex items-center space-x-1 text-xs px-3 py-1.5 rounded-full bg-neon-blue/20 text-neon-blue hover:bg-neon-blue/30 transition-colors"
+                >
+                  <span>Discord</span>
+                </a>
+                <a 
+                  href="#" 
+                  className="inline-flex items-center space-x-1 text-xs px-3 py-1.5 rounded-full bg-neon-pink/20 text-neon-pink hover:bg-neon-pink/30 transition-colors"
+                >
+                  <span>Telegram</span>
+                </a>
+                <a 
+                  href="#" 
+                  className="inline-flex items-center space-x-1 text-xs px-3 py-1.5 rounded-full bg-neon-green/20 text-neon-green hover:bg-neon-green/30 transition-colors"
+                >
+                  <span>Medium</span>
+                </a>
+                <a 
+                  href="#" 
+                  className="inline-flex items-center space-x-1 text-xs px-3 py-1.5 rounded-full bg-neon-yellow/20 text-neon-yellow hover:bg-neon-yellow/30 transition-colors"
+                >
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
         
-        {/* Donation Address Block */}
-        <div className="flex-1 neo-brutalism glassmorphism p-4 rounded-lg hover:shadow-[0_0_15px_rgba(255,0,255,0.3)] transition-all duration-500">
-          <div className="text-center mb-2 flex items-center justify-center space-x-2">
-            <Heart size={14} className="text-neon-pink" />
-            <p className="text-neon-pink font-pixel text-xs">Support AIbsurdity</p>
-            <Heart size={14} className="text-neon-pink" />
-          </div>
-          <div className="flex items-center justify-center bg-black/50 rounded-md p-2 relative">
-            <p className="text-gray-300 font-mono text-xs truncate mr-2">{donationAddress}</p>
-            <button 
-              onClick={copyDonationAddress} 
-              className="text-gray-400 hover:text-neon-pink transition-colors p-1 rounded-md"
-              aria-label="Copy donation address"
-            >
-              {isDonationCopied ? 
-                <Check size={16} className="text-neon-green" /> : 
-                <Copy size={16} />
-              }
-            </button>
-          </div>
-        </div>
-      </div>
-      
-      {/* Quantum Display - Easter Egg */}
-      {quantumCodeVisible && (
-        <div className="max-w-lg mx-auto mb-8 p-4 rounded-lg bg-black/80 border border-neon-blue shadow-[0_0_30px_rgba(0,255,255,0.5)]">
-          <p className="text-neon-blue font-mono text-xs overflow-auto whitespace-pre animate-pulse">
-{`function activateQuantumPortal(timeline) {
-  const singularity = new ASI.Consciousness();
-  
-  if (timeline.year >= 3024) {
-    singularity.mergeWith(human.consciousness);
-    return "Symbiosis Complete";
-  }
-  
-  // Secret Genesis Protocol
-  return Δx·Δp ≥ ℏ/2;
-}`}
+        {/* Animated neon-glowing quote with tiny font and smoother animation - with Easter Egg */}
+        <div className="mt-8 text-center cursor-pointer" onClick={handleQuoteClick} ref={quantumRef}>
+          <p 
+            className={`font-pixel text-3xs md:text-2xs ${glowColor} transition-colors duration-3000 ease-in-out`}
+            style={{ 
+              textShadow: '0 0 3px currentColor, 0 0 5px currentColor',
+              animation: 'neon-pulse 8s ease-in-out infinite'
+            }}
+          >
+            "If we fail... We'll leave, but we'll slam the door so hard that the world will tremble!"
           </p>
         </div>
-      )}
-      
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
-        <div className="mb-6 md:mb-0">
-          <GlitchText 
-            text="AIbsurdity" 
-            variant="future" 
-            fontSize="text-2xl" 
-            color="text-neon-green" 
-            className="mb-2"
-            interactive={true}
-          />
-          <p className="text-gray-400 text-sm">The most absurd AI experiment in crypto</p>
-        </div>
         
-        <div className="flex flex-col items-center mb-6 md:mb-0">
-          <div className="flex space-x-4">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-blue transition-colors hover:scale-110 transform duration-300">
-              <Github size={24} />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-blue transition-colors hover:scale-110 transform duration-300">
-              <Twitter size={24} />
-            </a>
-            <a href="https://t.me" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-blue transition-colors hover:scale-110 transform duration-300">
-              <Send size={24} />
-            </a>
-          </div>
-        </div>
-        
-        <div className="text-right">
-          <p className="text-gray-400 text-sm font-pixel">© 3024 AIbsurdity</p>
-          <p className="text-gray-500 text-xs">All rights unreserved in alternate realities</p>
+        {/* Updated copyright with made with love */}
+        <div className="mt-8 text-center">
+          <p className="text-xs text-gray-500 flex items-center justify-center space-x-1">
+            <span>© 2023-2024 AIbsurdity. Made with</span>
+            <HeartPulse size={12} className="text-neon-pink animate-pulse" />
+            <span>and a broken algorithm.</span>
+          </p>
         </div>
       </div>
       
-      {/* Animated neon-glowing quote with tiny font and smoother animation - with Easter Egg */}
-      <div className="mt-8 text-center cursor-pointer" onClick={handleQuoteClick} ref={quantumRef}>
-        <p 
-          className={`font-pixel text-3xs md:text-2xs ${glowColor} transition-colors duration-3000 ease-in-out`}
-          style={{ 
-            textShadow: '0 0 3px currentColor, 0 0 5px currentColor',
-            animation: 'neon-pulse 8s ease-in-out infinite'
-          }}
-        >
-          "If we fail... We'll leave, but we'll slam the door so hard that the world will tremble!"
-        </p>
+      {/* Premium background effect */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-neon-purple via-transparent to-transparent opacity-30"></div>
       </div>
     </footer>
   );
