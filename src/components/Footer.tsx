@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Twitter, ExternalLink, Copy, Check, Github, Telegram } from 'lucide-react';
+import { Twitter, ExternalLink, Copy, Check, Github, MessageCircle } from 'lucide-react';
 import { toast } from "sonner";
 
 const Footer = () => {
@@ -41,7 +41,7 @@ const Footer = () => {
               <Twitter size={20} />
             </a>
             <a href="https://t.me/absurdity" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-purple transition-colors">
-              <Telegram size={20} />
+              <MessageCircle size={20} />
             </a>
             <a href="https://github.com/absurdity" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-green transition-colors">
               <Github size={20} />
