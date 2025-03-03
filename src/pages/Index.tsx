@@ -620,6 +620,23 @@ const Index = () => {
               </div>
             </div>
           </div>
+          
+          {/* Social links footer */}
+          <div className="flex justify-center space-x-6 pt-4 border-t border-white/5">
+            <a href="#" className="text-gray-400 hover:text-neon-purple transition-colors">
+              <Github size={20} />
+            </a>
+            <a href="#" className="text-gray-400 hover:text-neon-blue transition-colors">
+              <Twitter size={20} />
+            </a>
+            <a href="#" className="text-gray-400 hover:text-neon-green transition-colors">
+              <Send size={20} />
+            </a>
+          </div>
+          
+          <p className="text-center text-gray-500 text-xs mt-4 font-pixel">
+            © {new Date().getFullYear()} AIbsurdity. All rights absolutely absurd.
+          </p>
         </div>
       </footer>
     </div>
