@@ -6,6 +6,21 @@
   body {
     @apply bg-absurd-dark text-white;
   }
+  
+  /* Global text alignment and padding consistency */
+  p, h1, h2, h3, h4, h5, h6, li, span {
+    @apply text-left;
+  }
+  
+  /* Center text only for specific components that need centering */
+  .text-center {
+    @apply text-center;
+  }
+  
+  /* Consistent padding for containers */
+  .container, section, main > div, footer > div {
+    @apply px-6;
+  }
 }
 
 /* Absurd Global Styles */

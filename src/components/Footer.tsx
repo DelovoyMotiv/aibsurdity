@@ -89,8 +89,8 @@ const Footer = () => {
         }}
       />
       
-      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 relative z-20">
-        <div>
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 relative z-20">
+        <div className="text-left">
           <h3 className={`text-neon-blue font-pixel text-lg mb-4 ${glitchActive ? 'animate-broken-glitch' : ''}`}>AIbsurdity</h3>
           <p className="text-gray-400 text-sm mb-4 font-pixel">
             <GlitchText 
@@ -115,10 +115,10 @@ const Footer = () => {
           </div>
         </div>
         
-        <div>
+        <div className="text-left">
           <h3 className={`text-neon-pink font-pixel text-lg mb-4 ${glitchActive ? 'animate-broken-flicker' : ''}`}>Official addresses</h3>
           <div className="space-y-3">
-            <div className={`flex items-center justify-between text-gray-400 text-sm p-2 bg-gray-900 rounded font-pixel ${glitchActive ? 'animate-reality-glitch' : ''}`}>
+            <div className={`flex items-center justify-between text-gray-400 text-sm p-3 bg-gray-900 rounded font-pixel ${glitchActive ? 'animate-reality-glitch' : ''}`}>
               <span>Contract:</span>
               <span className="flex items-center">
                 {contractAddress}
@@ -131,7 +131,7 @@ const Footer = () => {
               </span>
             </div>
             
-            <div className={`flex items-center justify-between text-gray-400 text-sm p-2 bg-gray-900 rounded font-pixel ${glitchActive ? 'animate-broken-warp' : ''}`}>
+            <div className={`flex items-center justify-between text-gray-400 text-sm p-3 bg-gray-900 rounded font-pixel ${glitchActive ? 'animate-broken-warp' : ''}`}>
               <span>Fund:</span>
               <span className="flex items-center">
                 {supportEmail}
@@ -147,7 +147,7 @@ const Footer = () => {
         </div>
       </div>
       
-      <div className="max-w-6xl mx-auto px-4 mt-8 pt-8 border-t border-gray-800">
+      <div className="max-w-6xl mx-auto px-6 mt-8 pt-8 border-t border-gray-800">
         <p className="text-center text-gray-500 text-xs font-pixel">
           © {new Date().getFullYear()} AIbsurdity. All rights absurdified. This is not financial advice—it's a joke with a blockchain.
         </p>
