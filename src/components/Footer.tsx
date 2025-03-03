@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { toast } from "sonner";
 import { Copy, Check, Twitter, ExternalLink, HeartPulse } from 'lucide-react';
@@ -12,10 +11,18 @@ const Footer = () => {
   const quantumRef = useRef<HTMLDivElement>(null);
   const [glowColor, setGlowColor] = useState("text-neon-blue");
 
-  const copyToClipboard = (text: string, message: string) => {
+  const copyToClipboard = (text: string, type: 'contract' | 'support') => {
     navigator.clipboard.writeText(text)
       .then(() => {
-        toast.success(message);
+        if (type === 'contract') {
+          setHasCopiedContract(true);
+          toast.success("Contract address copied to clipboard!");
+          setTimeout(() => setHasCopiedContract(false), 2000);
+        } else {
+          setHasCopiedSupport(true);
+          toast.success("Support email copied to clipboard!");
+          setTimeout(() => setHasCopiedSupport(false), 2000);
+        }
       })
       .catch((err) => {
         toast.error("Failed to copy: " + err.message);
@@ -123,7 +130,7 @@ const Footer = () => {
                     {contractAddress}
                   </code>
                   <button
-                    onClick={() => copyToClipboard(contractAddress, "Contract copied to clipboard!")}
+                    onClick={() => copyToClipboard(contractAddress, 'contract')}
                     className="text-neon-yellow hover:text-neon-pink transition-colors"
                   >
                     {hasCopiedContract ? <Check size={14} /> : <Copy size={14} />}
@@ -140,7 +147,7 @@ const Footer = () => {
                     {supportEmail}
                   </code>
                   <button
-                    onClick={() => copyToClipboard(supportEmail, "Support email copied to clipboard!")}
+                    onClick={() => copyToClipboard(supportEmail, 'support')}
                     className="text-neon-yellow hover:text-neon-pink transition-colors"
                   >
                     {hasCopiedSupport ? <Check size={14} /> : <Copy size={14} />}
