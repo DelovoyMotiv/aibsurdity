@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useRef } from 'react';
 import { Github, Twitter, Send, Copy, Heart, Coffee, HandCoins, Briefcase } from 'lucide-react';
 import { toast } from "sonner";
@@ -84,12 +85,18 @@ const Index = () => {
   }, []);
 
   const copyToClipboard = (text: string, message: string) => {
+    // Fix: Add error handling and make sure the Clipboard API is available
+    if (!navigator.clipboard) {
+      toast.error("Clipboard API not available in your browser");
+      return;
+    }
+    
     navigator.clipboard.writeText(text)
       .then(() => {
         toast.success(message);
       })
       .catch((err) => {
-        toast.error("Failed to copy address");
+        toast.error("Failed to copy: " + err.message);
         console.error("Failed to copy text: ", err);
       });
   };
@@ -397,6 +404,7 @@ const Index = () => {
                   onClick={() => copyToClipboard("0x000000000000000000000000", "Contract address copied to clipboard")}
                   className="ml-3 flex-shrink-0 text-neon-green hover:text-neon-blue transition-colors p-1 rounded hover:bg-white/10"
                   title="Copy contract address"
+                  aria-label="Copy contract address"
                 >
                   <Copy size={18} />
                 </button>
@@ -428,6 +436,7 @@ const Index = () => {
                   onClick={() => copyToClipboard("0x1111111111111111111111111", "Hedge Fund address copied to clipboard")}
                   className="ml-3 flex-shrink-0 text-neon-green hover:text-neon-blue transition-colors p-1 rounded hover:bg-white/10"
                   title="Copy fund address"
+                  aria-label="Copy hedge fund address"
                 >
                   <Copy size={18} />
                 </button>
@@ -453,12 +462,13 @@ const Index = () => {
               
               <div className="flex justify-between items-center bg-black/30 rounded-lg p-2 mb-3">
                 <p className="font-mono text-neon-pink text-xs md:text-sm text-center w-full relative overflow-hidden">
-                  <span className="inline-block">0xooooooooooooooooooooooooooooooooooo</span>
+                  <span className="inline-block animate-pulse">0xooooooooooooooooooooooooooooooooooo</span>
                 </p>
                 <button 
                   onClick={() => copyToClipboard("0xooooooooooooooooooooooooooooooooooo", "Donation address copied to clipboard")}
                   className="ml-3 flex-shrink-0 text-neon-green hover:text-neon-blue transition-colors p-1 rounded hover:bg-white/10"
                   title="Copy donation address"
+                  aria-label="Copy donation address"
                 >
                   <Copy size={18} />
                 </button>
