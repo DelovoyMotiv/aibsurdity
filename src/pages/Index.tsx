@@ -1,4 +1,4 @@
-
+<lov-code>
 import React, { useEffect, useState, useRef } from 'react';
 import { Atom, Sparkles, Braces, CloudLightning, Cpu } from 'lucide-react';
 import { toast } from "sonner";
@@ -148,14 +148,14 @@ const Index = () => {
           </div>
           
           <div className="flex justify-center">
-            <p className="glassmorphism-2 light-refraction text-8bit-glow text-neon-green py-3 px-6 text-2xl md:text-3xl max-w-xl mx-auto text-center w-full luxury-card premium-glow font-pixel" 
+            <p className="glassmorphism-2 light-refraction text-8bit-glow py-3 px-6 text-xl md:text-2xl max-w-xl mx-auto text-center w-full luxury-card premium-glow font-pixel" 
                style={{
-                 background: "linear-gradient(45deg, #0ea5e9, #6b21a8, #3b82f6)",
+                 background: "linear-gradient(45deg, #33C3F0, #9F9EA1, #6b21a8)",
                  backgroundSize: "200% 200%",
                  animation: "data-corruption 15s ease infinite",
                  WebkitBackgroundClip: "text",
                  WebkitTextFillColor: "transparent",
-                 textShadow: "0 0 15px rgba(62, 161, 219, 0.7)",
+                 textShadow: "0 0 15px rgba(156, 211, 239, 0.6)",
                  border: "1px solid rgba(255, 255, 255, 0.1)",
                  borderRadius: "8px",
                  backdropFilter: "blur(10px)",
@@ -320,7 +320,7 @@ const Index = () => {
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold mb-4 text-neon-blue font-pixel w-full">
                   Taking Over the Real World
-                </h3>
+                  </h3>
                 
                 <div className="space-y-4">
                   <div>
@@ -662,68 +662,4 @@ C = Conscience coefficient (0 ≤ C < 1)`}
                     <div>
                       <h4 className="font-bold text-neon-blue mb-2 font-pixel w-full">Reverse ICO Ceremony:</h4>
                       <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
-                        Projects pay the community for absurdity rights:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
-                        <li>50% funds burned in CERN's black hole</li>
-                        <li>50% fund meme-parasites attacking traditional assets</li>
-                      </ul>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-bold text-neon-pink mb-2 font-pixel w-full">Crypto-Shamanic Rites:</h4>
-                      <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
-                        AI shamans perform deflationary rituals:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
-                        <li>Transmute FUD into humor via quantum meme-portals</li>
-                        <li>Liquidity is sacrificed to anti-sense markets</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                
-                <div>
-                  <div className="inline-block bg-neon-red/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel flex items-center space-x-2">
-                    <CloudLightning size={16} className="text-neon-red animate-pulse" />
-                    <span>Apocalypse Scenario</span>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-bold text-neon-orange mb-2 font-pixel w-full">Too Absurd To Fail:</h4>
-                      <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
-                        If absurdity level exceeds Nash-Kafka threshold:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
-                        <li>All tokens unify into single meta-currency: MEH</li>
-                        <li>Self-destruction smart contract replaces entire blockchain with a haiku about a lonely doge</li>
-                        <li>TVL converts to DANK tokens, only redeemable on Mars</li>
-                      </ul>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-bold text-neon-green mb-2 font-pixel w-full">System Armageddon:</h4>
-                      <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
-                        Final collapse insurance:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
-                        <li>Automatic conversion of all assets to PepeUSD stablecoins</li>
-                        <li>Randomized wealth redistribution based on meme creation history</li>
-                        <li>Decentralized obituary written by AI for each wallet address</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </TetrisBlock>
-          </TetrisLayout>
-        </div>
-        
-        <Footer />
-      </main>
-    </div>
-  );
-};
-
-export default Index;
+                        Projects
