@@ -40,7 +40,7 @@ const GlitchText: React.FC<GlitchTextProps> = ({
           const quantumChars = '量子∑Ω⌘∆ΔΨϟ⚛';
           
           const charSet = variant === 'future' ? futureChars : 
-                           variant === 'quantum' ? quantumChars : glitchChars;
+                          variant === 'quantum' ? quantumChars : glitchChars;
           
           const textArray = text.split('');
           const numGlitches = Math.floor(Math.random() * 3) + 1;
