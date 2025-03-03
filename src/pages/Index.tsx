@@ -610,4 +610,4 @@ const Index = () => {
                 <div className="p-2 bg-neon-purple/20 rounded-full hover:bg-neon-purple/40 transition-colors cursor-pointer">
                   <Coffee size={16} className="text-neon-pink" />
                 </div>
-                <div className="p-
+                <div className="p-2 bg
