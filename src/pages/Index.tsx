@@ -441,7 +441,7 @@ const Index = () => {
                 </button>
               </div>
               
-              <p className="text-center text-gray-300 text-xs font-pixel">Managing absurd assets since 2023</p>
+              <p className="text-center text-gray-300 text-xs font-pixel">Hedge Fund named after Common Sense and Children's Hopes</p>
               
               <div className="absolute inset-0 pointer-events-none">
                 <div className="w-full h-full opacity-10 bg-gradient-to-r from-neon-blue via-transparent to-neon-blue/30 animate-[pulse_5s_ease-in-out_infinite]"></div>
