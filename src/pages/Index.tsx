@@ -148,7 +148,19 @@ const Index = () => {
           </div>
           
           <div className="flex justify-center">
-            <p className="glassmorphism-2 light-refraction text-8bit-glow text-neon-green py-3 px-6 text-lg md:text-xl max-w-xl mx-auto text-center w-full luxury-card premium-glow">
+            <p className="glassmorphism-2 light-refraction text-8bit-glow text-neon-green py-3 px-6 text-2xl md:text-3xl max-w-xl mx-auto text-center w-full luxury-card premium-glow font-pixel" 
+               style={{
+                 background: "linear-gradient(45deg, #0ea5e9, #6b21a8, #3b82f6)",
+                 backgroundSize: "200% 200%",
+                 animation: "data-corruption 15s ease infinite",
+                 WebkitBackgroundClip: "text",
+                 WebkitTextFillColor: "transparent",
+                 textShadow: "0 0 15px rgba(62, 161, 219, 0.7)",
+                 border: "1px solid rgba(255, 255, 255, 0.1)",
+                 borderRadius: "8px",
+                 backdropFilter: "blur(10px)",
+                 boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)"
+               }}>
               "I'm broken, but it's a feature."
             </p>
           </div>
