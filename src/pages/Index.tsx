@@ -1,4 +1,4 @@
-
+<lov-code>
 import React, { useEffect, useState, useRef } from 'react';
 import { Github, Twitter, Send, Copy, Heart, Coffee, HandCoins, Briefcase, Shield, Zap, BarChart3 } from 'lucide-react';
 import { toast } from "sonner";
@@ -395,7 +395,7 @@ const Index = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
                   <div className="flex flex-col justify-center">
                     <GlitchText 
-                      text="Философский Фундамент" 
+                      text="Philosophical Foundation" 
                       fontSize="text-3xl md:text-5xl" 
                       color="text-white" 
                       className="font-pixel tracking-tight mb-6"
@@ -405,8 +405,8 @@ const Index = () => {
                     />
                     
                     <p className="text-8bit text-gray-300 text-sm md:text-base mb-6 font-pixel w-full">
-                      "Протокол AIbsurdity функционирует как живой организм, где хаос является источником ликвидности, 
-                      абсурд защищает от системных рисков, а мемы служат клетками экономического метаболизма."
+                      "The AIbsurdity protocol functions as a living organism where chaos is the source of liquidity, 
+                      absurdity protects against systemic risks, and memes serve as cells of economic metabolism."
                     </p>
                     
                     <div className="space-y-6 mt-6">
@@ -415,10 +415,10 @@ const Index = () => {
                           <Zap size={24} className="text-neon-purple" />
                         </div>
                         <div>
-                          <h3 className="text-neon-purple font-pixel mb-2">Хаос как Источник Ликвидности</h3>
+                          <h3 className="text-neon-purple font-pixel mb-2">Chaos as a Source of Liquidity</h3>
                           <p className="text-gray-300 text-xs font-pixel w-full">
-                            Наши смарт-контракты превращают рыночный хаос в ликвидность.
-                            Чем больше паника на рынке, тем больше энергии генерирует наша система.
+                            Our smart contracts transform market chaos into liquidity.
+                            The more panic in the market, the more energy our system generates.
                           </p>
                         </div>
                       </div>
@@ -428,10 +428,10 @@ const Index = () => {
                           <Shield size={24} className="text-neon-green" />
                         </div>
                         <div>
-                          <h3 className="text-neon-green font-pixel mb-2">Абсурд против Системных Рисков</h3>
+                          <h3 className="text-neon-green font-pixel mb-2">Absurdity Against Systemic Risks</h3>
                           <p className="text-gray-300 text-xs font-pixel w-full">
-                            Когда все системы следуют логике, они становятся предсказуемыми и уязвимыми.
-                            Наша абсурдная логика создает защитный иммунитет от традиционных финансовых кризисов.
+                            When all systems follow logic, they become predictable and vulnerable.
+                            Our absurd logic creates protective immunity from traditional financial crises.
                           </p>
                         </div>
                       </div>
@@ -441,11 +441,11 @@ const Index = () => {
                           <BarChart3 size={24} className="text-neon-blue" />
                         </div>
                         <div>
-                          <h3 className="text-neon-blue font-pixel mb-2">Мем-Синтезатор</h3>
+                          <h3 className="text-neon-blue font-pixel mb-2">Meme-Synthesizer</h3>
                           <p className="text-gray-300 text-xs font-pixel w-full">
-                            Наш Meme Hadron Collider генерирует NFT-токены из вирусных твитов, 
-                            случайных кадров с уличных камер и снов пользователей, 
-                            которые интерпретируются нашим ИИ.
+                            Our Meme Hadron Collider generates NFT tokens from viral tweets, 
+                            random frames from street cameras, and users' dreams 
+                            that are interpreted by our AI.
                           </p>
                         </div>
                       </div>
@@ -457,19 +457,19 @@ const Index = () => {
                       <div className="absolute inset-0 bg-neon-purple/20 rounded-xl blur-xl animate-pulse"></div>
                       <div className="glassmorphism-2 p-8 rounded-xl relative z-10 h-full">
                         <div className="font-pixel text-center mb-6">
-                          <span className="text-neon-green animate-neon-pulse text-xl">Индекс Абсурдности</span>
+                          <span className="text-neon-green animate-neon-pulse text-xl">Absurdity Index</span>
                           <div className="text-5xl mt-2 text-white">
                             <span className="animate-pixel-flicker">93</span>
                             <span className="text-sm text-neon-pink ml-1">/100</span>
                           </div>
-                          <p className="text-xs text-neon-blue mt-2">КРИТИЧЕСКИЙ УРОВЕНЬ АБСУРДА</p>
+                          <p className="text-xs text-neon-blue mt-2">CRITICAL LEVEL OF ABSURDITY</p>
                         </div>
                         
                         <div className="space-y-6 mt-8">
                           <div>
                             <div className="flex justify-between text-xs mb-1">
-                              <span className="text-gray-300 font-pixel">Плотность Мемов</span>
-                              <span className="text-neon-orange font-pixel">83.5 мм/с²</span>
+                              <span className="text-gray-300 font-pixel">Meme Density</span>
+                              <span className="text-neon-orange font-pixel">83.5 mm/s²</span>
                             </div>
                             <div className="w-full bg-black/30 h-4 rounded-full overflow-hidden">
                               <div className="bg-gradient-to-r from-neon-red to-neon-orange h-full rounded-full" style={{width: '83.5%'}}></div>
@@ -478,7 +478,7 @@ const Index = () => {
                           
                           <div>
                             <div className="flex justify-between text-xs mb-1">
-                              <span className="text-gray-300 font-pixel">Метаболизм ИИ-Агентов</span>
+                              <span className="text-gray-300 font-pixel">AI-Agents Metabolism</span>
                               <span className="text-neon-green font-pixel">97.2%</span>
                             </div>
                             <div className="w-full bg-black/30 h-4 rounded-full overflow-hidden">
@@ -488,7 +488,7 @@ const Index = () => {
                           
                           <div>
                             <div className="flex justify-between text-xs mb-1">
-                              <span className="text-gray-300 font-pixel">Абсурдная Энергия</span>
+                              <span className="text-gray-300 font-pixel">Absurd Energy</span>
                               <span className="text-neon-purple font-pixel">+358%</span>
                             </div>
                             <div className="w-full bg-black/30 h-4 rounded-full overflow-hidden">
@@ -497,7 +497,7 @@ const Index = () => {
                           </div>
                           
                           <p className="mt-6 text-center text-xs text-gray-300 font-pixel w-full">
-                            "Чем абсурднее снаружи, тем прибыльнее внутри."
+                            "The more absurd on the outside, the more profitable on the inside."
                           </p>
                         </div>
                       </div>
@@ -617,33 +617,4 @@ const Index = () => {
               </div>
               
               <div className="absolute inset-0 pointer-events-none">
-                <div className="w-full h-full opacity-10 bg-gradient-to-r from-neon-pink via-transparent to-neon-pink/30 animate-[pulse_5s_ease-in-out_infinite]"></div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Social Links & Copyright */}
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex space-x-4 mb-4 md:mb-0">
-              <a href="#" className="p-2 bg-white/5 hover:bg-white/10 transition-colors rounded-full" aria-label="Twitter">
-                <Twitter size={20} className="text-neon-blue" />
-              </a>
-              <a href="#" className="p-2 bg-white/5 hover:bg-white/10 transition-colors rounded-full" aria-label="GitHub">
-                <Github size={20} className="text-white" />
-              </a>
-              <a href="#" className="p-2 bg-white/5 hover:bg-white/10 transition-colors rounded-full" aria-label="Discord">
-                <Send size={20} className="text-neon-purple" />
-              </a>
-            </div>
-            
-            <p className="text-center md:text-right text-gray-400 text-xs font-pixel">
-              &copy; {new Date().getFullYear()} AIbsurdity | <span className="text-neon-green">All rights reversed</span>
-            </p>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
-};
-
-export default Index;
+                <div className="w-full h-full opacity-10 bg-
