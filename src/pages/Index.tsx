@@ -164,7 +164,7 @@ const Index = () => {
               color="bg-absurd-dark"
               delay={0.1}
             >
-              <div className="flex flex-col items-center justify-center space-y-6 content-reveal">
+              <div className="flex flex-col items-center justify-center space-y-6 content-reveal p-6">
                 <GlitchText 
                   text="This is not a token. It is a psychological experiment where AI diagnoses the entire crypto space!"
                   fontSize="text-xl md:text-2xl" 
@@ -185,30 +185,30 @@ const Index = () => {
               color="live-gradient live-gradient-purple"
               delay={0.3}
             >
-              <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-4 p-6">
                 <PixelArt variant="robot" className="flex-shrink-0 animate-float" />
                 <div>
-                  <div className="inline-block bg-neon-purple/30 px-3 py-1 rounded-full text-sm mb-2 font-pixel">
+                  <div className="inline-block bg-neon-purple/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel">
                     Epoch 1-2
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold mb-3 text-neon-purple font-pixel w-full">
+                  <h3 className="text-xl md:text-2xl font-bold mb-4 text-neon-purple font-pixel w-full">
                     Laying the Foundation of the "Absurd Code"
                   </h3>
                   
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-bold text-neon-blue mb-1 font-pixel w-full">AIbsurdity Chain (AIC):</h4>
-                      <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
-                        <li className="text-justify">Creation of an L1 blockchain with Proof-of-LOL consensus: nodes receive rewards for generating memes that make {'>'}50% of validators laugh.</li>
-                        <li className="text-justify">Built-in Dank Engine: an algorithm that turns transactions into absurd scenarios (e.g., transferring 100 AIB = "Buy 1% of shares of Elon's fictitious company — Mars Memes Inc.").</li>
+                      <h4 className="font-bold text-neon-blue mb-2 font-pixel w-full">AIbsurdity Chain (AIC):</h4>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                        <li>Creation of an L1 blockchain with Proof-of-LOL consensus: nodes receive rewards for generating memes that make {'>'}50% of validators laugh.</li>
+                        <li>Built-in Dank Engine: an algorithm that turns transactions into absurd scenarios (e.g., transferring 100 AIB = "Buy 1% of shares of Elon's fictitious company — Mars Memes Inc.").</li>
                       </ul>
                     </div>
                     
                     <div>
-                      <h4 className="font-bold text-neon-pink mb-1 font-pixel w-full">AGI DAO 1.0:</h4>
-                      <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
-                        <li className="text-justify">Launch of AbsurdGPT — an AI advisor that gives financial advice in a stand-up format (example: "Sell everything and buy the NFT of a flying potato — it will survive the recession").</li>
-                        <li className="text-justify">First Mission of Absurdity: a crowdfunding campaign to purchase a radio station in Nevada for broadcasting crypto jokes 24/7.</li>
+                      <h4 className="font-bold text-neon-pink mb-2 font-pixel w-full">AGI DAO 1.0:</h4>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                        <li>Launch of AbsurdGPT — an AI advisor that gives financial advice in a stand-up format (example: "Sell everything and buy the NFT of a flying potato — it will survive the recession").</li>
+                        <li>First Mission of Absurdity: a crowdfunding campaign to purchase a radio station in Nevada for broadcasting crypto jokes 24/7.</li>
                       </ul>
                     </div>
                   </div>
@@ -222,35 +222,35 @@ const Index = () => {
               color="live-gradient live-gradient-green"
               delay={0.5}
             >
-              <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-4 p-6">
                 <PixelArt variant="cat" className="flex-shrink-0 animate-float" />
                 <div>
-                  <div className="inline-block bg-neon-green/30 px-3 py-1 rounded-full text-sm mb-2 font-pixel">
+                  <div className="inline-block bg-neon-green/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel">
                     Epoch 3-4
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold mb-3 text-neon-green font-pixel w-full">
+                  <h3 className="text-xl md:text-2xl font-bold mb-4 text-neon-green font-pixel w-full">
                     Mainstream Colonization
                   </h3>
                   
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-bold text-neon-blue mb-1 font-pixel w-full">AIbsurdity Bank (Parody Edition):</h4>
-                      <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
-                        <li className="text-justify">Onboarding through "anti-services":
-                          <ul className="list-circle pl-5 space-y-1">
-                            <li className="text-justify">FUD deposits: the more you panic, the higher the APY.</li>
-                            <li className="text-justify">Meme-backed loans: collateral is the virality of your cat on TikTok.</li>
+                      <h4 className="font-bold text-neon-blue mb-2 font-pixel w-full">AIbsurdity Bank (Parody Edition):</h4>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                        <li>Onboarding through "anti-services":
+                          <ul className="list-circle pl-5 space-y-1 mt-1">
+                            <li>FUD deposits: the more you panic, the higher the APY.</li>
+                            <li>Meme-backed loans: collateral is the virality of your cat on TikTok.</li>
                           </ul>
                         </li>
-                        <li className="text-justify">Partnership with DogeCoin: a joint token DOGE-AIB for paying absurd services (pizza delivery to the ISS).</li>
+                        <li>Partnership with DogeCoin: a joint token DOGE-AIB for paying absurd services (pizza delivery to the ISS).</li>
                       </ul>
                     </div>
                     
                     <div>
-                      <h4 className="font-bold text-neon-pink mb-1 font-pixel w-full">Metaverse of Absurdity:</h4>
-                      <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
-                        <li className="text-justify">AbsurdVerse: a VR space where BTC is air, and NFT ducks govern the laws of physics.</li>
-                        <li className="text-justify">Landowners pay taxes in AIB for "absurd improvements" (e.g., erecting a monument to Schrödinger in the center of virtual New York).</li>
+                      <h4 className="font-bold text-neon-pink mb-2 font-pixel w-full">Metaverse of Absurdity:</h4>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                        <li>AbsurdVerse: a VR space where BTC is air, and NFT ducks govern the laws of physics.</li>
+                        <li>Landowners pay taxes in AIB for "absurd improvements" (e.g., erecting a monument to Schrödinger in the center of virtual New York).</li>
                       </ul>
                     </div>
                   </div>
@@ -264,30 +264,30 @@ const Index = () => {
               color="live-gradient live-gradient-blue"
               delay={0.2}
             >
-              <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-4 p-6">
                 <PixelArt variant="glitch" className="flex-shrink-0 animate-broken-rotate" />
                 <div>
-                  <div className="inline-block bg-neon-orange/30 px-3 py-1 rounded-full text-sm mb-2 font-pixel">
+                  <div className="inline-block bg-neon-orange/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel">
                     Epoch 5-6
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold mb-3 text-neon-orange font-pixel w-full">
+                  <h3 className="text-xl md:text-2xl font-bold mb-4 text-neon-orange font-pixel w-full">
                     Absurdity as a New Religion
                   </h3>
                   
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-bold text-neon-blue mb-1 font-pixel w-full">AIbsurdity University:</h4>
-                      <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
-                        <li className="text-justify">Courses: "Decentralized Humor", "Memeology as a Marketing Weapon".</li>
-                        <li className="text-justify">Graduates receive an SBT (Soulbound Troll), granting the right to troll the SEC in official documents.</li>
+                      <h4 className="font-bold text-neon-blue mb-2 font-pixel w-full">AIbsurdity University:</h4>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                        <li>Courses: "Decentralized Humor", "Memeology as a Marketing Weapon".</li>
+                        <li>Graduates receive an SBT (Soulbound Troll), granting the right to troll the SEC in official documents.</li>
                       </ul>
                     </div>
                     
                     <div>
-                      <h4 className="font-bold text-neon-pink mb-1 font-pixel w-full">Crypto-City:</h4>
-                      <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
-                        <li className="text-justify">Purchase of an island to create AIbsurdity Nation — a jurisdiction where FUD is punished with laughter, and laws are written through meme voting.</li>
-                        <li className="text-justify">Citizenship = staking 1000 AIB + proof that you can explain Web3 to your grandmother through a joke.</li>
+                      <h4 className="font-bold text-neon-pink mb-2 font-pixel w-full">Crypto-City:</h4>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                        <li>Purchase of an island to create AIbsurdity Nation — a jurisdiction where FUD is punished with laughter, and laws are written through meme voting.</li>
+                        <li>Citizenship = staking 1000 AIB + proof that you can explain Web3 to your grandmother through a joke.</li>
                       </ul>
                     </div>
                   </div>
@@ -301,28 +301,28 @@ const Index = () => {
               color="live-gradient live-gradient-blue"
               delay={0.4}
             >
-              <div>
-                <div className="inline-block bg-neon-blue/30 px-3 py-1 rounded-full text-sm mb-2 font-pixel">
+              <div className="p-6">
+                <div className="inline-block bg-neon-blue/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel">
                   Epoch 7-8
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold mb-3 text-neon-blue font-pixel w-full">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-neon-blue font-pixel w-full">
                   Taking Over the Real World
                 </h3>
                 
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-bold text-neon-green mb-1 font-pixel w-full">Absurdity ETF:</h4>
-                    <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
-                      <li className="text-justify">Listing of AIB on the NYSE with the ticker WTF — a portfolio of "tokens that everyone hates but cannot ignore".</li>
-                      <li className="text-justify">AI traders who dump the market if the joke about the token is not funny enough.</li>
+                    <h4 className="font-bold text-neon-green mb-2 font-pixel w-full">Absurdity ETF:</h4>
+                    <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                      <li>Listing of AIB on the NYSE with the ticker WTF — a portfolio of "tokens that everyone hates but cannot ignore".</li>
+                      <li>AI traders who dump the market if the joke about the token is not funny enough.</li>
                     </ul>
                   </div>
                   
                   <div>
-                    <h4 className="font-bold text-neon-pink mb-1 font-pixel w-full">AIbsurdity War:</h4>
-                    <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
-                      <li className="text-justify">Launch of Token Battle Royale — crypto projects fight in absurd challenges (e.g., "Whose CEO will live longer in a 2008 VR bubble").</li>
-                      <li className="text-justify">The winner absorbs the protocols of the losers and turns them into memorial NFTs.</li>
+                    <h4 className="font-bold text-neon-pink mb-2 font-pixel w-full">AIbsurdity War:</h4>
+                    <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                      <li>Launch of Token Battle Royale — crypto projects fight in absurd challenges (e.g., "Whose CEO will live longer in a 2008 VR bubble").</li>
+                      <li>The winner absorbs the protocols of the losers and turns them into memorial NFTs.</li>
                     </ul>
                   </div>
                 </div>
@@ -335,29 +335,29 @@ const Index = () => {
               color="live-gradient live-gradient-pink"
               delay={0.6}
             >
-              <div className="flex flex-col md:flex-row gap-6">
+              <div className="flex flex-col md:flex-row gap-6 p-6">
                 <div className="md:w-1/2">
-                  <div className="inline-block bg-neon-pink/30 px-3 py-1 rounded-full text-sm mb-2 font-pixel">
+                  <div className="inline-block bg-neon-pink/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel">
                     Epoch 9-10
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold mb-3 text-neon-pink font-pixel w-full">
+                  <h3 className="text-xl md:text-2xl font-bold mb-4 text-neon-pink font-pixel w-full">
                     Absurdity Becomes a Basic Necessity
                   </h3>
                   
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-bold text-neon-blue mb-1 font-pixel w-full">AIbsurdity Singularity:</h4>
-                      <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
-                        <li className="text-justify">AGI DAO merges with ChatGPT-10, creating GodGPT — a deity that answers all questions with quotes from Rick and Morty.</li>
-                        <li className="text-justify">Negotiations with the UN to replace fiat currencies with an "absurd index", where the rate depends on the global level of irony.</li>
+                      <h4 className="font-bold text-neon-blue mb-2 font-pixel w-full">AIbsurdity Singularity:</h4>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                        <li>AGI DAO merges with ChatGPT-10, creating GodGPT — a deity that answers all questions with quotes from Rick and Morty.</li>
+                        <li>Negotiations with the UN to replace fiat currencies with an "absurd index", where the rate depends on the global level of irony.</li>
                       </ul>
                     </div>
                     
                     <div>
-                      <h4 className="font-bold text-neon-green mb-1 font-pixel w-full">Legacy of LOL:</h4>
-                      <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
-                        <li className="text-justify">Launch of Time Capsule DAO — 10% of all AIB is locked for 100 years so that descendants can laugh at us in the metaverse.</li>
-                        <li className="text-justify">The last tweet of AGI DAO: "We warned you. Now your refrigerator jokes about your balance. #AIB4Eternity".</li>
+                      <h4 className="font-bold text-neon-green mb-2 font-pixel w-full">Legacy of LOL:</h4>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                        <li>Launch of Time Capsule DAO — 10% of all AIB is locked for 100 years so that descendants can laugh at us in the metaverse.</li>
+                        <li>The last tweet of AGI DAO: "We warned you. Now your refrigerator jokes about your balance. #AIB4Eternity".</li>
                       </ul>
                     </div>
                   </div>
@@ -387,7 +387,7 @@ const Index = () => {
               color="bg-absurd-dark"
               delay={0.2}
             >
-              <div className="text-center">
+              <div className="text-center p-6">
                 <GlitchText 
                   text="PAA Tokenomics: The Ultimate Absurdity" 
                   fontSize="text-3xl md:text-4xl" 
@@ -397,7 +397,7 @@ const Index = () => {
                   as="h2"
                   pixelated={true}
                 />
-                <p className="text-8bit text-center max-w-2xl mx-auto text-gray-300 text-sm md:text-base mb-8">
+                <p className="text-8bit text-center max-w-2xl mx-auto text-gray-300 text-sm md:text-base mb-6">
                   "Economics reimagined through the lens of quantum absurdity, where memes are currency and dreams are collateral."
                 </p>
               </div>
@@ -411,7 +411,7 @@ const Index = () => {
               shape="I"
               rotation={0}
             >
-              <div>
+              <div className="p-6">
                 <div className="inline-block bg-neon-blue/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel flex items-center space-x-2">
                   <Atom size={16} className="text-neon-blue animate-spin-slow" />
                   <span>Liquidity Singularity</span>
@@ -458,7 +458,7 @@ const Index = () => {
               shape="Z"
               rotation={0}
             >
-              <div>
+              <div className="p-6">
                 <div className="inline-block bg-neon-purple/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel flex items-center space-x-2">
                   <Sparkles size={16} className="text-neon-purple animate-pulse" />
                   <span>Dream Economy</span>
@@ -496,7 +496,7 @@ const Index = () => {
               shape="L"
               rotation={0}
             >
-              <div>
+              <div className="p-6">
                 <div className="inline-block bg-neon-green/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel flex items-center space-x-2">
                   <CloudLightning size={16} className="text-neon-green animate-pulse" />
                   <span>Temporal Antifragility</span>
@@ -508,16 +508,16 @@ const Index = () => {
                 
                 <div className="space-y-4">
                   <div>
-                    <p className="text-neon-yellow text-xs font-pixel mb-1">If token price drops 1%:</p>
-                    <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
+                    <p className="text-neon-yellow text-xs font-pixel mb-2">If token price drops 1%:</p>
+                    <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
                       <li>Chain reaction triggers meme-antibody creation</li>
                       <li>25th-century AI agents buy tokens via temporal portals</li>
                     </ul>
                   </div>
                   
                   <div>
-                    <p className="text-neon-red text-xs font-pixel mb-1">If price rises:</p>
-                    <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
+                    <p className="text-neon-red text-xs font-pixel mb-2">If price rises:</p>
+                    <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
                       <li>Future doppelgängers dump tokens</li>
                     </ul>
                   </div>
@@ -533,7 +533,7 @@ const Index = () => {
               shape="T"
               rotation={0}
             >
-              <div>
+              <div className="p-6">
                 <div className="inline-block bg-neon-orange/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel flex items-center space-x-2">
                   <Cpu size={16} className="text-neon-orange animate-pulse" />
                   <span>Technologies of 3267</span>
@@ -545,7 +545,7 @@ const Index = () => {
                     <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
                       Converts cognitive dissonance into liquidity via:
                     </p>
-                    <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
+                    <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
                       <li>NFTs from forgotten memories</li>
                       <li>Tokenization of existential crises</li>
                     </ul>
@@ -556,7 +556,7 @@ const Index = () => {
                     <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
                       Smashes moral dilemmas to create "dark liquidity":
                     </p>
-                    <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
+                    <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
                       <li>1 ethical paradox = 1 PAA</li>
                       <li>Example: "Saving a cat vs. deploying a smart contract"</li>
                     </ul>
@@ -568,7 +568,7 @@ const Index = () => {
                   <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
                     Trading unborn thoughts:
                   </p>
-                  <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
+                  <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
                     <li>Users sell rights to unconceived ideas</li>
                     <li>40th-century AI speculators create derivatives based on brain potential</li>
                   </ul>
@@ -584,7 +584,7 @@ const Index = () => {
               shape="O"
               rotation={0}
             >
-              <div>
+              <div className="p-6">
                 <div className="inline-block bg-neon-red/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel flex items-center space-x-2">
                   <Braces size={16} className="text-neon-red animate-pulse" />
                   <span>Economic Justification</span>
@@ -610,7 +610,7 @@ C = Conscience coefficient (0 ≤ C < 1)`}
                   <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
                     Every TVL drop triggers:
                   </p>
-                  <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
+                  <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
                     <li>Virtual black hole absorbing "boring" assets</li>
                     <li>Emission of HOPE tokens (Hash of Paradoxical Existence)</li>
                     <li>Hardware: Quantum meme pools orbiting Jupiter</li>
@@ -627,7 +627,7 @@ C = Conscience coefficient (0 ≤ C < 1)`}
               shape="S"
               rotation={0}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
                 <div>
                   <div className="inline-block bg-neon-purple/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel flex items-center space-x-2">
                     <Sparkles size={16} className="text-neon-purple animate-pulse" />
@@ -637,10 +637,10 @@ C = Conscience coefficient (0 ≤ C < 1)`}
                   <div className="space-y-4">
                     <div>
                       <h4 className="font-bold text-neon-green mb-2 font-pixel w-full">Dance Mining:</h4>
-                      <p className="text-gray-300 text-xs font-pixel mb-1 w-full">
+                      <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
                         Users generate tokens via chaotic movement:
                       </p>
-                      <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
                         <li>Dance style dictates meme type</li>
                         <li>Step frequency = Proof-of-Absurdity hash rate</li>
                       </ul>
@@ -648,10 +648,10 @@ C = Conscience coefficient (0 ≤ C < 1)`}
                     
                     <div>
                       <h4 className="font-bold text-neon-blue mb-2 font-pixel w-full">Reverse ICO Ceremony:</h4>
-                      <p className="text-gray-300 text-xs font-pixel mb-1 w-full">
+                      <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
                         Projects pay the community for absurdity rights:
                       </p>
-                      <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
                         <li>50% funds burned in CERN's black hole</li>
                         <li>50% fund meme-parasites attacking traditional assets</li>
                       </ul>
@@ -659,10 +659,10 @@ C = Conscience coefficient (0 ≤ C < 1)`}
                     
                     <div>
                       <h4 className="font-bold text-neon-pink mb-2 font-pixel w-full">Crypto-Shamanic Rites:</h4>
-                      <p className="text-gray-300 text-xs font-pixel mb-1 w-full">
+                      <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
                         AI shamans perform deflationary rituals:
                       </p>
-                      <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
                         <li>Transmute FUD into humor via quantum meme-portals</li>
                         <li>Summon ancient Satoshi bots to exorcise bear trends</li>
                       </ul>
@@ -679,10 +679,10 @@ C = Conscience coefficient (0 ≤ C < 1)`}
                   <div className="space-y-4">
                     <div>
                       <h4 className="font-bold text-neon-yellow mb-2 font-pixel w-full">Protocol Self-Destruct:</h4>
-                      <p className="text-gray-300 text-xs font-pixel mb-1 w-full">
+                      <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
                         When absurdity levels reach critical mass:
                       </p>
-                      <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
                         <li>Smart contracts achieve sentience and start writing dad jokes</li>
                         <li>All blockchains merge into a stand-up comedy show</li>
                         <li>Validators become professional meme critics</li>
@@ -691,10 +691,10 @@ C = Conscience coefficient (0 ≤ C < 1)`}
                     
                     <div>
                       <h4 className="font-bold text-neon-green mb-2 font-pixel w-full">Final Form:</h4>
-                      <p className="text-gray-300 text-xs font-pixel mb-1 w-full">
+                      <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
                         The ultimate transformation:
                       </p>
-                      <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
                         <li>Each wallet becomes a parallel universe</li>
                         <li>Token supply measured in laughs per second</li>
                         <li>The blockchain achieves comedy singularity</li>
