@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useRef } from 'react';
 import { Github, Twitter, Send, Copy, Heart, Coffee, HandCoins, Briefcase } from 'lucide-react';
 import { toast } from "sonner";
@@ -474,7 +473,7 @@ const Index = () => {
                 </button>
               </div>
               
-              <p className="text-center text-gray-300 text-xs font-pixel">Your support helps us create more absurdity!</p>
+              <p className="text-center text-gray-300 text-xs font-pixel">Donation to the development team's psychosis</p>
               
               <div className="flex justify-center space-x-4 mt-3">
                 <div className="p-2 bg-neon-purple/20 rounded-full hover:bg-neon-purple/40 transition-colors cursor-pointer">
