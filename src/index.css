@@ -421,6 +421,81 @@
     opacity: 1;
     animation: float-refraction 4s infinite alternate;
   }
+
+  .live-gradient {
+    position: relative;
+    background-size: 200% 200%;
+    transition: all 0.3s ease;
+  }
+
+  .live-gradient-purple {
+    background-image: linear-gradient(135deg, 
+      rgba(139, 92, 246, 0.5) 0%, 
+      rgba(168, 85, 247, 0.2) 50%, 
+      rgba(139, 92, 246, 0.5) 100%
+    );
+  }
+
+  .live-gradient-blue {
+    background-image: linear-gradient(135deg, 
+      rgba(0, 255, 255, 0.5) 0%, 
+      rgba(59, 130, 246, 0.2) 50%, 
+      rgba(0, 255, 255, 0.5) 100%
+    );
+  }
+
+  .live-gradient-pink {
+    background-image: linear-gradient(135deg, 
+      rgba(255, 0, 255, 0.5) 0%, 
+      rgba(236, 72, 153, 0.2) 50%, 
+      rgba(255, 0, 255, 0.5) 100%
+    );
+  }
+
+  .live-gradient-green {
+    background-image: linear-gradient(135deg, 
+      rgba(0, 255, 0, 0.5) 0%, 
+      rgba(34, 197, 94, 0.2) 50%, 
+      rgba(0, 255, 0, 0.5) 100%
+    );
+  }
+
+  .pixel-texture {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .glassmorphism-2 {
+    @apply relative;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+      0 8px 32px rgba(31, 38, 135, 0.15),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+  
+  .glassmorphism-wave {
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.6) 0%,
+      transparent 70%
+    );
+    background-size: 200% 200%;
+    animation: glassmorphism-wave 8s infinite linear;
+    filter: blur(3px);
+  }
+  
+  .glassmorphism-glow {
+    background: radial-gradient(
+      ellipse at center,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0.1) 40%,
+      transparent 70%
+    );
+    filter: blur(6px);
+    animation: glassmorphism-glow 4s infinite alternate;
+  }
 }
 
 @keyframes glitch-anim-1 {
@@ -543,4 +618,18 @@ html, body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+/* New Glassmorphism 2.0 animations */
+@keyframes glassmorphism-wave {
+  0% { background-position: 0% 0%; }
+  25% { background-position: 100% 0%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+@keyframes glassmorphism-glow {
+  0% { opacity: 0.2; transform: scale(0.9); }
+  50% { opacity: 0.4; transform: scale(1.0); }
+  100% { opacity: 0.3; transform: scale(1.1); }
 }

@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useRef } from 'react';
 import { Github, Twitter, Send, Copy, Heart, Coffee, HandCoins } from 'lucide-react';
 import { toast } from "sonner";
@@ -115,6 +116,11 @@ const Index = () => {
     <div ref={pageRef} className="relative min-h-screen overflow-x-hidden">
       <ParticleBackground />
       
+      {/* AbsurdOS Button - Repositioned to top right */}
+      <div className="fixed top-4 right-4 z-50">
+        <AbsurdButton />
+      </div>
+      
       {/* Header */}
       <header className="pt-10 pb-6 px-4 relative">
         <div className="max-w-6xl mx-auto">
@@ -134,11 +140,6 @@ const Index = () => {
             <p className="glassmorphism-2 light-refraction text-8bit-glow text-neon-green py-3 px-6 text-lg md:text-xl max-w-xl mx-auto">
               "I'm broken, but it's a feature."
             </p>
-          </div>
-          
-          {/* AbsurdOS Button */}
-          <div className="flex justify-center mt-6">
-            <AbsurdButton />
           </div>
         </div>
       </header>

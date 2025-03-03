@@ -155,41 +155,33 @@ const AbsurdButton: React.FC = () => {
       onMouseEnter={() => setHoverState(true)}
       onMouseLeave={() => setHoverState(false)}
       className={`
-        neon-button light-refraction relative px-8 py-4 rounded-full 
-        overflow-hidden transition-all duration-500
+        glassmorphism-2 light-refraction relative px-4 py-2 rounded-full 
+        overflow-hidden transition-all duration-500 text-sm
         ${activated ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}
       `}
       style={{
-        background: `linear-gradient(90deg, 
-          rgba(255, 0, 255, 0.8) 0%, 
-          rgba(138, 43, 226, 0.8) 50%,
-          rgba(0, 255, 255, 0.8) 100%)`,
-        boxShadow: `0 0 10px 2px #ff00ff, 
-                    0 0 20px 4px rgba(255, 0, 255, 0.6), 
-                    0 0 30px 6px rgba(138, 43, 226, 0.4),
-                    inset 0 0 15px 3px rgba(255, 255, 255, 0.5)`,
-        transform: `translateZ(0) perspective(40px) ${hoverState ? 'rotateX(10deg) scale(1.05)' : 'rotateX(0) scale(1)'}`,
-        transition: 'all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+        background: `rgba(255, 255, 255, 0.1)`,
+        backdropFilter: `blur(10px)`,
+        border: `1px solid rgba(255, 255, 255, 0.2)`,
+        boxShadow: `0 8px 32px rgba(31, 38, 135, 0.15), 
+                    inset 0 0 0 1px rgba(255, 255, 255, 0.1)`,
+        transform: hoverState ? 'scale(1.05)' : 'scale(1)',
+        transition: 'all 0.3s ease'
       }}
     >
       <div className="relative z-10 flex items-center justify-center">
-        <div className="wave-animation absolute inset-0 opacity-50 pointer-events-none"></div>
-        <div className="glow-pulse absolute inset-0 opacity-60 pointer-events-none"></div>
+        <div className="glassmorphism-wave absolute inset-0 opacity-40 pointer-events-none"></div>
+        <div className="glassmorphism-glow absolute inset-0 opacity-30 pointer-events-none"></div>
         <span className={`
-          text-white font-pixel tracking-wider text-lg
-          relative z-20 text-shadow-neon transition-all duration-300
+          text-white font-pixel tracking-wider text-xs
+          relative z-20 transition-all duration-300
           ${activated ? 'animate-glitch' : hoverState ? 'scale-105' : ''}
         `}
         style={{
-          textShadow: `0 0 5px white, 
-                       0 0 10px #fff, 
-                       0 0 15px #fff, 
-                       0 0 20px #00ffff, 
-                       0 0 35px #ff00ff, 
-                       0 0 40px #8B5CF6`
+          textShadow: `0 0 5px rgba(255, 255, 255, 0.8)`
         }}
         >
-          {activated ? 'ACTIVATED' : 'LAUNCH ABSURD-OS'}
+          {activated ? 'ACTIVATED' : 'ABSURD-OS'}
         </span>
       </div>
     </button>
