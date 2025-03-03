@@ -93,6 +93,9 @@ const Footer = () => {
         <p className="text-center text-gray-500 text-xs font-pixel">
           © {new Date().getFullYear()} AIbsurdity. All rights absurdified. This is not financial advice—it's a joke with a blockchain.
         </p>
+        <p className="text-center text-neon-orange text-sm mt-4 font-pixel animate-pulse">
+          If nothing works out for us... we'll leave, but as a farewell we'll slam the door so hard that the world will tremble!
+        </p>
       </div>
     </footer>
   );
