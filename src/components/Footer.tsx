@@ -1,12 +1,14 @@
 
 import React, { useEffect, useState } from 'react';
-import { Github, Twitter, Send, Copy, Check } from 'lucide-react';
+import { Github, Twitter, Send, Copy, Check, Heart } from 'lucide-react';
 import { toast } from "sonner";
 
 const Footer = () => {
   const [glowColor, setGlowColor] = useState('text-neon-blue');
   const [isCopied, setIsCopied] = useState(false);
+  const [isDonationCopied, setIsDonationCopied] = useState(false);
   const contractAddress = '0xAIb5urd1ty00000000000000000DeaDBeEF';
+  const donationAddress = '0xD0n4t10n5AIb5urd1ty000000000B3N3F1T';
   
   // Create a changing glow effect
   useEffect(() => {
@@ -34,6 +36,19 @@ const Footer = () => {
       });
   };
 
+  const copyDonationAddress = () => {
+    navigator.clipboard.writeText(donationAddress)
+      .then(() => {
+        setIsDonationCopied(true);
+        toast.success("Donation address copied to clipboard!");
+        setTimeout(() => setIsDonationCopied(false), 2000);
+      })
+      .catch(err => {
+        toast.error("Failed to copy donation address: " + err.message);
+        console.error("Failed to copy donation address: ", err);
+      });
+  };
+
   return (
     <footer className="w-full py-8 px-4 mt-16 glassmorphism-2 border-t border-gray-800">
       {/* Contract Address Block */}
@@ -49,6 +64,28 @@ const Footer = () => {
             aria-label="Copy contract address"
           >
             {isCopied ? 
+              <Check size={16} className="text-neon-green" /> : 
+              <Copy size={16} />
+            }
+          </button>
+        </div>
+      </div>
+      
+      {/* Donation Address Block */}
+      <div className="max-w-lg mx-auto mb-8 neo-brutalism glassmorphism p-4 rounded-lg">
+        <div className="text-center mb-2 flex items-center justify-center space-x-2">
+          <Heart size={14} className="text-neon-pink" />
+          <p className="text-neon-pink font-pixel text-xs">Support AIbsurdity</p>
+          <Heart size={14} className="text-neon-pink" />
+        </div>
+        <div className="flex items-center justify-center bg-black/50 rounded-md p-2 relative">
+          <p className="text-gray-300 font-mono text-xs truncate mr-2">{donationAddress}</p>
+          <button 
+            onClick={copyDonationAddress} 
+            className="text-gray-400 hover:text-neon-pink transition-colors p-1 rounded-md"
+            aria-label="Copy donation address"
+          >
+            {isDonationCopied ? 
               <Check size={16} className="text-neon-green" /> : 
               <Copy size={16} />
             }
