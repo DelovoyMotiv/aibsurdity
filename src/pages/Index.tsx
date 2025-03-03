@@ -1,4 +1,4 @@
-<lov-code>
+
 import React, { useEffect, useState, useRef } from 'react';
 import { Github, Twitter, Send, Copy, Heart, Coffee, HandCoins, Briefcase, Shield, Zap, BarChart3 } from 'lucide-react';
 import { toast } from "sonner";
@@ -506,7 +506,6 @@ const Index = () => {
                 </div>
               </div>
             </TetrisBlock>
-            
           </TetrisLayout>
         </div>
       </main>
@@ -617,4 +616,14 @@ const Index = () => {
               </div>
               
               <div className="absolute inset-0 pointer-events-none">
-                <div className="w-full h-full opacity-10 bg-
+                <div className="w-full h-full opacity-10 bg-gradient-to-r from-neon-pink via-transparent to-neon-pink/30 animate-[pulse_5s_ease-in-out_infinite]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Index;
