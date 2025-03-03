@@ -378,3 +378,31 @@
     opacity: 0.2;
   }
 }
+
+/* Ensure body scrolling works properly with fixed elements */
+html, body {
+  overflow-x: hidden;
+  position: relative;
+  height: auto;
+  min-height: 100%;
+}
+
+/* Ensure z-index stacking is appropriate for fixed elements */
+.fixed {
+  z-index: 40;
+}
+
+/* Prevent overflow issues in containers */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* Animation optimizations for better performance */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
