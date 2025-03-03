@@ -1,18 +1,17 @@
 
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import PixelArt from './PixelArt';
+import { Rabbit } from 'lucide-react';
 
 const RabbitEarsButton = () => {
   const [visible, setVisible] = useState(false);
   
   useEffect(() => {
-    // Show the button every 30 seconds for 3 seconds
+    // Show the button every 30 seconds for 10 seconds
     const showButton = () => {
       setVisible(true);
       setTimeout(() => {
         setVisible(false);
-      }, 3000);
+      }, 10000); // Changed from 3000 to 10000 (10 seconds)
     };
     
     // Initial show
@@ -23,53 +22,6 @@ const RabbitEarsButton = () => {
     
     return () => clearInterval(intervalId);
   }, []);
-  
-  // Custom pixel art rabbit ears
-  const RabbitEars = () => (
-    <div className="w-12 h-16 grid grid-cols-3 gap-0.5 pixel-rendering">
-      {/* Left ear */}
-      {Array(15).fill(0).map((_, i) => (
-        <div 
-          key={`left-${i}`} 
-          className={`${
-            [1, 2, 4, 5, 7, 8, 10, 11, 13, 14].includes(i) 
-              ? 'bg-neon-pink' 
-              : 'bg-transparent'
-          } ${[1, 2, 4, 5, 7, 8, 10, 11, 13, 14].includes(i) ? 'shadow-sm' : ''}`}
-          style={{
-            boxShadow: [1, 2, 4, 5, 7, 8, 10, 11, 13, 14].includes(i) ? '0px 0px 2px rgba(0,0,0,0.5)' : 'none',
-            width: '100%',
-            height: '100%'
-          }}
-        />
-      ))}
-      
-      {/* Middle space */}
-      {Array(15).fill(0).map((_, i) => (
-        <div 
-          key={`middle-${i}`} 
-          className="bg-transparent"
-        />
-      ))}
-      
-      {/* Right ear */}
-      {Array(15).fill(0).map((_, i) => (
-        <div 
-          key={`right-${i}`} 
-          className={`${
-            [0, 3, 6, 9, 12].includes(i) 
-              ? 'bg-transparent' 
-              : 'bg-neon-pink'
-          } ${![0, 3, 6, 9, 12].includes(i) ? 'shadow-sm' : ''}`}
-          style={{
-            boxShadow: ![0, 3, 6, 9, 12].includes(i) ? '0px 0px 2px rgba(0,0,0,0.5)' : 'none',
-            width: '100%',
-            height: '100%'
-          }}
-        />
-      ))}
-    </div>
-  );
   
   if (!visible) return null;
   
@@ -82,7 +34,11 @@ const RabbitEarsButton = () => {
       aria-label="Follow the rabbit"
     >
       <div className="relative group">
-        <RabbitEars />
+        <Rabbit 
+          size={48} 
+          className="text-neon-pink"
+          strokeWidth={1.5}
+        />
         <div className="absolute -top-8 right-0 bg-black/70 text-neon-pink px-2 py-1 rounded text-xs font-pixel opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
           Follow the rabbit
         </div>
