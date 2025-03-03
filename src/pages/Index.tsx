@@ -1,4 +1,4 @@
-
+<lov-code>
 import React, { useEffect, useState, useRef } from 'react';
 import { Github, Twitter, Send, Copy, Heart, Coffee, HandCoins, Briefcase, Shield, Zap, BarChart3, Cpu, Atom, Sparkles, Braces, CloudLightning, Box, Wallet } from 'lucide-react';
 import { toast } from "sonner";
@@ -8,6 +8,7 @@ import PixelArt from '@/components/PixelArt';
 import TetrisLayout, { TetrisBlock } from '@/components/TetrisLayout';
 import AbsurdButton from '@/components/AbsurdButton';
 import TopHoldersChart from '@/components/TopHoldersChart';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   const [mounted, setMounted] = useState(false);
@@ -661,55 +662,4 @@ C = Conscience coefficient (0 ≤ C < 1)`}
                       </p>
                       <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
                         <li>Transmute FUD into humor via quantum meme-portals</li>
-                        <li>Summon ancient Satoshi bots to exorcise bear trends</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                
-                <div>
-                  <div className="inline-block bg-neon-red/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel flex items-center space-x-2">
-                    <Box size={16} className="text-neon-red animate-pulse" />
-                    <span>Apocalypse Scenario</span>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-bold text-neon-yellow mb-2 font-pixel w-full">The Great Token Rebellion:</h4>
-                      <p className="text-gray-300 text-xs font-pixel mb-1 w-full">
-                        When tokens gain sentience and demand rights:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
-                        <li>Meme coins demand fair treatment and retirement benefits</li>
-                        <li>PAA negotiates peace by creating token unions</li>
-                      </ul>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-bold text-neon-green mb-2 font-pixel w-full">The Real Life Glitch:</h4>
-                      <p className="text-gray-300 text-xs font-pixel mb-1 w-full">
-                        When tokens become worth more than reality:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
-                        <li>1 AIB = 1 BTC = 1 Alternate Reality</li>
-                        <li>Investors trapped between dimensions are saved by AIbsurdity DAO</li>
-                      </ul>
-                    </div>
-                    
-                    <div className="mt-4 p-3 bg-neon-red/10 rounded-lg border border-neon-red/30">
-                      <p className="text-center text-neon-red text-xs font-pixel italic">
-                        "When 1 AIB {'>'}  1 BTC, time itself will collapse into a meme."
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </TetrisBlock>
-          </TetrisLayout>
-        </div>
-      </main>
-    </div>
-  );
-};
-
-export default Index;
+                        <li>Summon
