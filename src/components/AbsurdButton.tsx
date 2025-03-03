@@ -1,10 +1,29 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { toast } from 'sonner';
 import GlitchText from './GlitchText';
 
 const AbsurdButton: React.FC = () => {
   const [activated, setActivated] = useState(false);
+  const [hoverState, setHoverState] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  
+  // Track mouse position for light refraction effect
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!buttonRef.current) return;
+      
+      const rect = buttonRef.current.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      
+      buttonRef.current.style.setProperty('--x', `${x}%`);
+      buttonRef.current.style.setProperty('--y', `${y}%`);
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
   
   const activateAbsurdMode = () => {
     if (activated) return;
@@ -130,22 +149,49 @@ const AbsurdButton: React.FC = () => {
 
   return (
     <button
+      ref={buttonRef}
       onClick={activateAbsurdMode}
       disabled={activated}
+      onMouseEnter={() => setHoverState(true)}
+      onMouseLeave={() => setHoverState(false)}
       className={`
-        pixel-texture neo-brutal font-pixel text-8bit p-4 rounded-lg relative overflow-hidden
-        transition-all duration-300 animate-pixel-flicker
-        ${activated ? 'bg-neon-purple' : 'bg-neon-pink'}
-        hover:bg-neon-purple hover:animate-glitch
-        border-4 border-black
+        neon-button light-refraction relative px-8 py-4 rounded-full 
+        overflow-hidden transition-all duration-500
+        ${activated ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}
       `}
+      style={{
+        background: `linear-gradient(90deg, 
+          rgba(255, 0, 255, 0.8) 0%, 
+          rgba(138, 43, 226, 0.8) 50%,
+          rgba(0, 255, 255, 0.8) 100%)`,
+        boxShadow: `0 0 10px 2px #ff00ff, 
+                    0 0 20px 4px rgba(255, 0, 255, 0.6), 
+                    0 0 30px 6px rgba(138, 43, 226, 0.4),
+                    inset 0 0 15px 3px rgba(255, 255, 255, 0.5)`,
+        transform: `translateZ(0) perspective(40px) ${hoverState ? 'rotateX(10deg) scale(1.05)' : 'rotateX(0) scale(1)'}`,
+        transition: 'all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+      }}
     >
-      <div className="relative z-10 flex items-center space-x-2">
-        <span className={`text-black ${activated ? 'animate-glitch' : ''}`}>
+      <div className="relative z-10 flex items-center justify-center">
+        <div className="wave-animation absolute inset-0 opacity-50 pointer-events-none"></div>
+        <div className="glow-pulse absolute inset-0 opacity-60 pointer-events-none"></div>
+        <span className={`
+          text-white font-pixel tracking-wider text-lg
+          relative z-20 text-shadow-neon transition-all duration-300
+          ${activated ? 'animate-glitch' : hoverState ? 'scale-105' : ''}
+        `}
+        style={{
+          textShadow: `0 0 5px white, 
+                       0 0 10px #fff, 
+                       0 0 15px #fff, 
+                       0 0 20px #00ffff, 
+                       0 0 35px #ff00ff, 
+                       0 0 40px #8B5CF6`
+        }}
+        >
           {activated ? 'ACTIVATED' : 'LAUNCH ABSURD-OS'}
         </span>
       </div>
-      <div className="absolute inset-0 bg-gradient-to-r from-neon-blue to-neon-pink opacity-30"></div>
     </button>
   );
 };
