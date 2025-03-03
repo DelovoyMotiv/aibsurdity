@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -271,6 +273,52 @@
     @apply rounded-lg animate-neon-pulse;
     box-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
   }
+
+  .pixel-text {
+    font-family: 'Press Start 2P', cursive;
+    letter-spacing: -0.05em;
+    line-height: 1.5;
+    image-rendering: pixelated;
+  }
+  
+  .pixel-title {
+    font-family: 'Press Start 2P', cursive;
+    letter-spacing: 0.05em;
+    line-height: 1.8;
+    text-transform: uppercase;
+    image-rendering: pixelated;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
+  }
+  
+  .pixel-subtitle {
+    font-family: 'Press Start 2P', cursive;
+    letter-spacing: 0;
+    line-height: 1.6;
+    image-rendering: pixelated;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.8);
+  }
+  
+  /* Enhanced pixelated text effects */
+  .text-8bit {
+    font-family: 'Press Start 2P', cursive;
+    line-height: 1.5;
+    image-rendering: pixelated;
+    text-shadow: 2px 2px 0 #000;
+  }
+  
+  .text-8bit-glow {
+    font-family: 'Press Start 2P', cursive;
+    line-height: 1.5;
+    image-rendering: pixelated;
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+  }
+  
+  .text-8bit-outline {
+    font-family: 'Press Start 2P', cursive;
+    line-height: 1.5;
+    -webkit-text-stroke: 1px #000;
+    paint-order: stroke fill;
+  }
 }
 
 @keyframes glitch-anim-1 {
@@ -315,4 +363,18 @@
 @keyframes tetris-fall {
   0% { transform: translateY(-100vh); }
   100% { transform: translateY(0); }
+}
+
+@keyframes pixel-scan {
+  0% {
+    background-position: 0 0;
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    background-position: 0 100%;
+    opacity: 0.2;
+  }
 }

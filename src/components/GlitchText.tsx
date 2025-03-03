@@ -18,7 +18,7 @@ const GlitchText: React.FC<GlitchTextProps> = ({
   color = 'text-white',
   variant = 'default',
   as: Component = 'div',
-  pixelated = false
+  pixelated = true // Default changed to true to apply pixelated style
 }) => {
   const [isGlitching, setIsGlitching] = useState(false);
   const [textDisplay, setTextDisplay] = useState(text);
@@ -65,7 +65,7 @@ const GlitchText: React.FC<GlitchTextProps> = ({
     default: 'animate-glitch',
     intense: 'animate-glitch [animation-iteration-count:infinite]',
     subtle: 'hover:animate-glitch',
-    pixel: 'animate-glitch font-mono tracking-widest'
+    pixel: 'animate-glitch font-pixel tracking-widest'
   };
   
   const pixelatedClass = pixelated ? 'font-pixel tracking-wide' : '';
@@ -75,8 +75,10 @@ const GlitchText: React.FC<GlitchTextProps> = ({
       className={`glitch-container ${fontSize} ${color} ${className} ${isGlitching ? variantClasses[variant] : ''} ${pixelatedClass}`}
       data-text={textDisplay}
       style={{ 
-        ...(pixelated && { fontFamily: '"Press Start 2P", monospace', letterSpacing: '0.1em' }),
-        textShadow: isGlitching ? '2px 2px 0 #ff00ff, -2px -2px 0 #00ffff' : 'none'
+        fontFamily: pixelated ? '"Press Start 2P", cursive' : 'inherit',
+        letterSpacing: pixelated ? '0.1em' : 'inherit',
+        lineHeight: pixelated ? '1.5' : 'inherit',
+        textShadow: isGlitching ? '2px 2px 0 #ff00ff, -2px -2px 0 #00ffff' : pixelated ? '2px 2px 0 #000' : 'none'
       }}
     >
       {textDisplay}

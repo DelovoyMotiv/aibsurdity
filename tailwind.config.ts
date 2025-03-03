@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -19,6 +18,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				pixel: ['"Press Start 2P"', 'cursive'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -118,6 +120,19 @@ export default {
 				'tetris-fall': {
 					'0%': { transform: 'translateY(-100vh)' },
 					'100%': { transform: 'translateY(0)' }
+				},
+				'pixel-bounce': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-4px)' }
+				},
+				'pixel-flicker': {
+					'0%, 100%': { opacity: '1' },
+					'10%, 30%, 50%, 70%, 90%': { opacity: '0.8' },
+					'20%, 40%, 60%, 80%': { opacity: '1' }
+				},
+				'scan-line': {
+					'0%': { transform: 'translateY(-100%)' },
+					'100%': { transform: 'translateY(100%)' }
 				}
 			},
 			animation: {
@@ -128,7 +143,10 @@ export default {
 				'shake': 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both',
 				'neon-pulse': 'neon-pulse 2s ease-in-out infinite',
 				'broken-rotate': 'broken-rotate 8s linear infinite',
-				'tetris-fall': 'tetris-fall 1.5s cubic-bezier(0.65, 0, 0.35, 1)'
+				'tetris-fall': 'tetris-fall 1.5s cubic-bezier(0.65, 0, 0.35, 1)',
+				'pixel-bounce': 'pixel-bounce 0.5s ease-in-out infinite',
+				'pixel-flicker': 'pixel-flicker 2s linear infinite',
+				'scan-line': 'scan-line 2s linear infinite'
 			}
 		}
 	},
