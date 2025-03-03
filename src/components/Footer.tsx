@@ -34,7 +34,7 @@ const Footer = () => {
         <div>
           <h3 className="text-neon-blue font-pixel text-lg mb-4">AIbsurdity</h3>
           <p className="text-gray-400 text-sm mb-4 font-pixel">
-            The most absurd AI-driven blockchain experiment in the multiverse.
+            Absolutely everything that surrounds you was once someone's absurd idea...
           </p>
           <div className="flex space-x-4">
             <a href="https://twitter.com/absurdity" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-blue transition-colors">
