@@ -6,12 +6,22 @@ import GlitchText from '@/components/GlitchText';
 import ParticleBackground from '@/components/ParticleBackground';
 import PixelArt from '@/components/PixelArt';
 import TetrisLayout, { TetrisBlock } from '@/components/TetrisLayout';
+import AIConfessionBooth from '@/components/AIConfessionBooth';
 
 const Index = () => {
   const [mounted, setMounted] = useState(false);
+  const [hasVisitedBefore, setHasVisitedBefore] = useState(false);
   
   useEffect(() => {
     setMounted(true);
+    
+    // Check if this is the first visit
+    const hasVisited = localStorage.getItem('hasVisitedAbsurdity');
+    if (hasVisited) {
+      setHasVisitedBefore(true);
+    } else {
+      localStorage.setItem('hasVisitedAbsurdity', 'true');
+    }
     
     // Add scroll listener for broken animations
     const handleScroll = () => {
@@ -37,11 +47,27 @@ const Index = () => {
       });
   };
   
+  // Easter egg - occasionally shows a glitch in the welcome message
+  useEffect(() => {
+    if (!hasVisitedBefore) return;
+    
+    const glitchChance = Math.random();
+    if (glitchChance > 0.7) {
+      setTimeout(() => {
+        toast("I see you've been here before...", {
+          description: "The AI remembers your previous visits",
+          icon: <span className="text-neon-purple animate-pulse">👁️</span>,
+        });
+      }, 5000);
+    }
+  }, [hasVisitedBefore]);
+  
   if (!mounted) return null;
   
   return (
     <div className="relative min-h-screen overflow-x-hidden">
       <ParticleBackground />
+      <AIConfessionBooth />
       
       {/* Header */}
       <header className="pt-10 pb-6 px-4 relative">
@@ -361,6 +387,9 @@ const Index = () => {
           
           <div className="mt-10 pt-6 border-t border-white/10 text-center text-gray-500 text-sm">
             <p>© {new Date().getFullYear()} AIbsurdity — A psychological experiment disguised as a token</p>
+            <p className="mt-1 text-xs text-neon-purple opacity-60 hover:opacity-100 transition-opacity">
+              <span className="inline-block animate-pulse">In the symbiosis of AI and human creativity, we transcend the limitations of both</span>
+            </p>
           </div>
         </div>
       </footer>
