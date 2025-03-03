@@ -1,4 +1,4 @@
-<lov-code>
+
 import React, { useEffect, useState, useRef } from 'react';
 import { Github, Twitter, Send, Copy, Heart, Coffee, HandCoins, Briefcase, Shield, Zap, BarChart3, Cpu, Atom, Sparkles, Braces, CloudLightning, Box, Wallet } from 'lucide-react';
 import { toast } from "sonner";
@@ -196,7 +196,7 @@ const Index = () => {
                     <div>
                       <h4 className="font-bold text-neon-blue mb-1 font-pixel w-full">AIbsurdity Chain (AIC):</h4>
                       <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
-                        <li className="text-justify">Creation of an L1 blockchain with Proof-of-LOL consensus: nodes receive rewards for generating memes that make &gt;50% of validators laugh.</li>
+                        <li className="text-justify">Creation of an L1 blockchain with Proof-of-LOL consensus: nodes receive rewards for generating memes that make {'>'}50% of validators laugh.</li>
                         <li className="text-justify">Built-in Dank Engine: an algorithm that turns transactions into absurd scenarios (e.g., transferring 100 AIB = "Buy 1% of shares of Elon's fictitious company — Mars Memes Inc.").</li>
                       </ul>
                     </div>
@@ -662,3 +662,54 @@ C = Conscience coefficient (0 ≤ C < 1)`}
                       <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
                         <li>Transmute FUD into humor via quantum meme-portals</li>
                         <li>Summon ancient Satoshi bots to exorcise bear trends</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <div className="inline-block bg-neon-red/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel flex items-center space-x-2">
+                    <Box size={16} className="text-neon-red animate-pulse" />
+                    <span>Apocalypse Scenario</span>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-bold text-neon-yellow mb-2 font-pixel w-full">The Great Token Rebellion:</h4>
+                      <p className="text-gray-300 text-xs font-pixel mb-1 w-full">
+                        When tokens gain sentience and demand rights:
+                      </p>
+                      <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
+                        <li>Meme coins demand fair treatment and retirement benefits</li>
+                        <li>PAA negotiates peace by creating token unions</li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-bold text-neon-green mb-2 font-pixel w-full">The Real Life Glitch:</h4>
+                      <p className="text-gray-300 text-xs font-pixel mb-1 w-full">
+                        When tokens become worth more than reality:
+                      </p>
+                      <ul className="list-disc pl-5 space-y-1 text-gray-300 text-xs font-pixel w-full">
+                        <li>1 AIB = 1 BTC = 1 Alternate Reality</li>
+                        <li>Investors trapped between dimensions are saved by AIbsurdity DAO</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="mt-4 p-3 bg-neon-red/10 rounded-lg border border-neon-red/30">
+                      <p className="text-center text-neon-red text-xs font-pixel italic">
+                        "When 1 AIB {'>'}  1 BTC, time itself will collapse into a meme."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TetrisBlock>
+          </TetrisLayout>
+        </div>
+      </main>
+    </div>
+  );
+};
+
+export default Index;
