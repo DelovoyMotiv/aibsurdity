@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Github, Twitter, Send, Copy } from 'lucide-react';
 import { toast } from "sonner";
@@ -6,7 +5,6 @@ import GlitchText from '@/components/GlitchText';
 import ParticleBackground from '@/components/ParticleBackground';
 import PixelArt from '@/components/PixelArt';
 import TetrisLayout, { TetrisBlock } from '@/components/TetrisLayout';
-import AIConfessionBooth from '@/components/AIConfessionBooth';
 
 const Index = () => {
   const [mounted, setMounted] = useState(false);
@@ -67,7 +65,6 @@ const Index = () => {
   return (
     <div className="relative min-h-screen overflow-x-hidden">
       <ParticleBackground />
-      <AIConfessionBooth />
       
       {/* Header */}
       <header className="pt-10 pb-6 px-4 relative">
