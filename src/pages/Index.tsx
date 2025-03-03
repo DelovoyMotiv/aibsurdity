@@ -376,63 +376,72 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-10 px-4 bg-black/60 backdrop-blur-xl border-t border-white/10">
         <div className="max-w-6xl mx-auto">
-          {/* Smart Contract Address Block */}
-          <div className="flex justify-center mb-10">
-            <div className="glassmorphism-2 light-refraction py-3 px-5 relative overflow-hidden max-w-md w-full mx-auto">
-              <span className="text-xs text-gray-400 block text-center mb-2 font-pixel">Smart Contract:</span>
-              <div className="flex justify-between items-center">
-                <p className="font-mono text-neon-purple text-center w-full relative overflow-hidden transition-all duration-500">
-                  <span className="animate-pulse inline-block">0x000000000000000000000000</span>
+          {/* Contract and Fund Blocks - Horizontal Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            {/* Smart Contract Block */}
+            <div className="glassmorphism-2 light-refraction py-4 px-5 relative overflow-hidden h-full">
+              <div className="flex justify-center mb-2">
+                <div className="bg-neon-purple/30 px-3 py-1 rounded-full text-xs mb-1 flex items-center space-x-2 font-pixel">
+                  <Copy size={14} className="text-neon-purple animate-pulse" />
+                  <span>Smart Contract</span>
+                </div>
+              </div>
+              
+              <h3 className="text-center text-neon-purple mb-3 font-pixel text-sm">Contract Address</h3>
+              
+              <div className="flex justify-between items-center bg-black/30 rounded-lg p-2 mb-3">
+                <p className="font-mono text-neon-purple text-xs md:text-sm text-center w-full relative overflow-hidden">
+                  <span className="inline-block animate-pulse">0x000000000000000000000000</span>
                 </p>
                 <button 
                   onClick={() => copyToClipboard("0x000000000000000000000000", "Contract address copied to clipboard")}
                   className="ml-3 flex-shrink-0 text-neon-green hover:text-neon-blue transition-colors p-1 rounded hover:bg-white/10"
-                  title="Copy to clipboard"
+                  title="Copy contract address"
                 >
                   <Copy size={18} />
                 </button>
               </div>
               
+              <p className="text-center text-gray-300 text-xs font-pixel">Verified on Etherscan</p>
+              
               <div className="absolute inset-0 pointer-events-none">
-                <div className="w-full h-full opacity-10 bg-gradient-to-r from-neon-blue via-transparent to-transparent animate-[pulse_3s_ease-in-out_infinite]"></div>
-              </div>
-              <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div className="w-1 h-full bg-neon-green absolute left-0 top-0 animate-[pulse_2s_ease-in-out_infinite] opacity-30"></div>
-                <div className="w-1 h-full bg-neon-pink absolute right-0 top-0 animate-[pulse_3s_ease-in-out_infinite] opacity-30"></div>
+                <div className="w-full h-full opacity-10 bg-gradient-to-r from-neon-purple via-transparent to-neon-purple/30 animate-[pulse_5s_ease-in-out_infinite]"></div>
               </div>
             </div>
-          </div>
 
-          {/* Hedge Fund of Common Sense Block */}
-          <div className="flex justify-center mb-10">
-            <div className="glassmorphism-2 light-refraction py-3 px-5 relative overflow-hidden max-w-md w-full mx-auto">
-              <span className="text-xs text-gray-400 block text-center mb-2 font-pixel">Hedge Fund of Common Sense:</span>
-              <div className="flex justify-between items-center">
-                <p className="font-mono text-neon-blue text-center w-full relative overflow-hidden transition-all duration-500">
-                  <span className="animate-pulse inline-block">0x1111111111111111111111111</span>
+            {/* Hedge Fund Block */}
+            <div className="glassmorphism-2 light-refraction py-4 px-5 relative overflow-hidden h-full">
+              <div className="flex justify-center mb-2">
+                <div className="bg-neon-blue/30 px-3 py-1 rounded-full text-xs mb-1 flex items-center space-x-2 font-pixel">
+                  <Briefcase size={14} className="text-neon-blue animate-pulse" />
+                  <span>Hedge Fund of Common Sense</span>
+                </div>
+              </div>
+              
+              <h3 className="text-center text-neon-blue mb-3 font-pixel text-sm">Fund Address</h3>
+              
+              <div className="flex justify-between items-center bg-black/30 rounded-lg p-2 mb-3">
+                <p className="font-mono text-neon-blue text-xs md:text-sm text-center w-full relative overflow-hidden">
+                  <span className="inline-block animate-pulse">0x1111111111111111111111111</span>
                 </p>
                 <button 
                   onClick={() => copyToClipboard("0x1111111111111111111111111", "Hedge Fund address copied to clipboard")}
                   className="ml-3 flex-shrink-0 text-neon-green hover:text-neon-blue transition-colors p-1 rounded hover:bg-white/10"
-                  title="Copy to clipboard"
+                  title="Copy fund address"
                 >
                   <Copy size={18} />
                 </button>
               </div>
               
+              <p className="text-center text-gray-300 text-xs font-pixel">Managing absurd assets since 2023</p>
+              
               <div className="absolute inset-0 pointer-events-none">
-                <div className="w-full h-full opacity-10 bg-gradient-to-r from-neon-green via-transparent to-transparent animate-[pulse_3s_ease-in-out_infinite]"></div>
-              </div>
-              <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div className="w-1 h-full bg-neon-blue absolute left-0 top-0 animate-[pulse_2s_ease-in-out_infinite] opacity-30"></div>
-                <div className="w-1 h-full bg-neon-yellow absolute right-0 top-0 animate-[pulse_3s_ease-in-out_infinite] opacity-30"></div>
+                <div className="w-full h-full opacity-10 bg-gradient-to-r from-neon-blue via-transparent to-neon-blue/30 animate-[pulse_5s_ease-in-out_infinite]"></div>
               </div>
             </div>
-          </div>
 
-          {/* Donation Block */}
-          <div className="flex justify-center mb-10">
-            <div className="glassmorphism-2 light-refraction py-4 px-5 relative overflow-hidden max-w-md w-full mx-auto">
+            {/* Donation Block */}
+            <div className="glassmorphism-2 light-refraction py-4 px-5 relative overflow-hidden h-full">
               <div className="flex justify-center mb-2">
                 <div className="bg-neon-pink/30 px-3 py-1 rounded-full text-xs mb-1 flex items-center space-x-2 font-pixel">
                   <Heart size={14} className="text-neon-pink animate-pulse" />
@@ -440,10 +449,10 @@ const Index = () => {
                 </div>
               </div>
               
-              <h3 className="text-center text-neon-green mb-3 font-pixel text-sm">Donation to the development team's psychosis</h3>
+              <h3 className="text-center text-neon-green mb-3 font-pixel text-sm">Donation Address</h3>
               
               <div className="flex justify-between items-center bg-black/30 rounded-lg p-2 mb-3">
-                <p className="font-mono text-neon-purple text-center w-full relative overflow-hidden">
+                <p className="font-mono text-neon-pink text-xs md:text-sm text-center w-full relative overflow-hidden">
                   <span className="inline-block">0xooooooooooooooooooooooooooooooooooo</span>
                 </p>
                 <button 
@@ -455,17 +464,17 @@ const Index = () => {
                 </button>
               </div>
               
-              <p className="text-center text-gray-300 text-xs font-pixel">Your support helps us create more absurdity in the crypto space!</p>
+              <p className="text-center text-gray-300 text-xs font-pixel">Your support helps us create more absurdity!</p>
               
               <div className="flex justify-center space-x-4 mt-3">
                 <div className="p-2 bg-neon-purple/20 rounded-full hover:bg-neon-purple/40 transition-colors cursor-pointer">
-                  <Coffee size={20} className="text-neon-pink" />
+                  <Coffee size={16} className="text-neon-pink" />
                 </div>
                 <div className="p-2 bg-neon-green/20 rounded-full hover:bg-neon-green/40 transition-colors cursor-pointer">
-                  <HandCoins size={20} className="text-neon-green" />
+                  <HandCoins size={16} className="text-neon-green" />
                 </div>
                 <div className="p-2 bg-neon-blue/20 rounded-full hover:bg-neon-blue/40 transition-colors cursor-pointer">
-                  <Heart size={20} className="text-neon-blue" />
+                  <Heart size={16} className="text-neon-blue" />
                 </div>
               </div>
               
@@ -475,6 +484,7 @@ const Index = () => {
             </div>
           </div>
 
+          {/* Rest of the footer content */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="space-y-3">
               <GlitchText 
