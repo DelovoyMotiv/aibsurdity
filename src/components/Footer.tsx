@@ -41,7 +41,7 @@ const Footer = () => {
         </div>
         
         <div className="text-right">
-          <p className="text-gray-400 text-sm font-pixel">© 2024 AIbsurdity</p>
+          <p className="text-gray-400 text-sm font-pixel">© 3024 AIbsurdity</p>
           <p className="text-gray-500 text-xs">All rights unreserved in alternate realities</p>
         </div>
       </div>
