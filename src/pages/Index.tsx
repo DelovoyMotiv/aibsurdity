@@ -376,22 +376,15 @@ const Index = () => {
                   </div>
                 </div>
               </TetrisBlock>
-              
-              {/* 100 Legends - Top ABSURD token holders chart - NOW AT THE BOTTOM */}
-              <TetrisBlock 
-                className="md:col-span-12 glassmorphism-2 light-refraction" 
-                color="bg-absurd-bg"
-                delay={0.2}
-              >
-                <TopHoldersChart />
-              </TetrisBlock>
-            </TetrisLayout>
-          </div>
-        </main>
-        
-        {/* Footer */}
-        <footer className="py-10 px-4 bg-black/60 backdrop-blur-xl border-t border-white/10">
-          <div className="max-w-6xl mx-auto">
+            
+            
+          </TetrisLayout>
+        </div>
+      </main>
+      
+      {/* Footer */}
+      <footer className="py-10 px-4 bg-black/60 backdrop-blur-xl border-t border-white/10">
+        <div className="max-w-6xl mx-auto">
             {/* Contract and Fund Blocks - Horizontal Layout */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
               {/* Smart Contract Block */}
