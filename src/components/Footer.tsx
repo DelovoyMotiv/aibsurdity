@@ -1,9 +1,12 @@
 
 import React, { useEffect, useState } from 'react';
-import { Github, Twitter, Send } from 'lucide-react';
+import { Github, Twitter, Send, Copy, Check } from 'lucide-react';
+import { toast } from "sonner";
 
 const Footer = () => {
   const [glowColor, setGlowColor] = useState('text-neon-blue');
+  const [isCopied, setIsCopied] = useState(false);
+  const contractAddress = '0xAIb5urd1ty00000000000000000DeaDBeEF';
   
   // Create a changing glow effect
   useEffect(() => {
@@ -18,8 +21,41 @@ const Footer = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(contractAddress)
+      .then(() => {
+        setIsCopied(true);
+        toast.success("Contract address copied to clipboard!");
+        setTimeout(() => setIsCopied(false), 2000);
+      })
+      .catch(err => {
+        toast.error("Failed to copy address: " + err.message);
+        console.error("Failed to copy address: ", err);
+      });
+  };
+
   return (
     <footer className="w-full py-8 px-4 mt-16 glassmorphism-2 border-t border-gray-800">
+      {/* Contract Address Block */}
+      <div className="max-w-lg mx-auto mb-8 glassmorphism p-4 rounded-lg">
+        <div className="text-center mb-2">
+          <p className="text-neon-green font-pixel text-xs">AIbsurdity Token Contract</p>
+        </div>
+        <div className="flex items-center justify-center bg-black/50 rounded-md p-2 relative">
+          <p className="text-gray-300 font-mono text-xs truncate mr-2">{contractAddress}</p>
+          <button 
+            onClick={copyToClipboard} 
+            className="text-gray-400 hover:text-neon-blue transition-colors p-1 rounded-md"
+            aria-label="Copy contract address"
+          >
+            {isCopied ? 
+              <Check size={16} className="text-neon-green" /> : 
+              <Copy size={16} />
+            }
+          </button>
+        </div>
+      </div>
+      
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="mb-6 md:mb-0">
           <p className="text-neon-green font-pixel text-2xl mb-2">AIbsurdity</p>
