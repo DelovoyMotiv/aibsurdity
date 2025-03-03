@@ -175,15 +175,6 @@ const Index = () => {
               </div>
             </TetrisBlock>
             
-            {/* 100 Legends - Top ABSURD token holders chart */}
-            <TetrisBlock 
-              className="md:col-span-12 glassmorphism-2 light-refraction" 
-              color="bg-absurd-bg"
-              delay={0.2}
-            >
-              <TopHoldersChart />
-            </TetrisBlock>
-            
             {/* Epoch 1-2 */}
             <TetrisBlock 
               className="md:col-span-6 glassmorphism-2 light-refraction" 
@@ -384,6 +375,15 @@ const Index = () => {
                     </p>
                   </div>
                 </div>
+              </TetrisBlock>
+              
+              {/* 100 Legends - Top ABSURD token holders chart - NOW AT THE BOTTOM */}
+              <TetrisBlock 
+                className="md:col-span-12 glassmorphism-2 light-refraction" 
+                color="bg-absurd-bg"
+                delay={0.2}
+              >
+                <TopHoldersChart />
               </TetrisBlock>
             </TetrisLayout>
           </div>
