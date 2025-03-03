@@ -1,6 +1,5 @@
-
 import React, { useEffect, useState, useRef } from 'react';
-import { Github, Twitter, Send, Copy, Heart, Coffee, HandCoins } from 'lucide-react';
+import { Github, Twitter, Send, Copy, Heart, Coffee, HandCoins, Briefcase } from 'lucide-react';
 import { toast } from "sonner";
 import GlitchText from '@/components/GlitchText';
 import ParticleBackground from '@/components/ParticleBackground';
@@ -400,6 +399,33 @@ const Index = () => {
               <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <div className="w-1 h-full bg-neon-green absolute left-0 top-0 animate-[pulse_2s_ease-in-out_infinite] opacity-30"></div>
                 <div className="w-1 h-full bg-neon-pink absolute right-0 top-0 animate-[pulse_3s_ease-in-out_infinite] opacity-30"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Hedge Fund of Common Sense Block */}
+          <div className="flex justify-center mb-10">
+            <div className="glassmorphism-2 light-refraction py-3 px-5 relative overflow-hidden max-w-md w-full mx-auto">
+              <span className="text-xs text-gray-400 block text-center mb-2 font-pixel">Hedge Fund of Common Sense:</span>
+              <div className="flex justify-between items-center">
+                <p className="font-mono text-neon-blue text-center w-full relative overflow-hidden transition-all duration-500">
+                  <span className="animate-pulse inline-block">0x1111111111111111111111111</span>
+                </p>
+                <button 
+                  onClick={() => copyToClipboard("0x1111111111111111111111111", "Hedge Fund address copied to clipboard")}
+                  className="ml-3 flex-shrink-0 text-neon-green hover:text-neon-blue transition-colors p-1 rounded hover:bg-white/10"
+                  title="Copy to clipboard"
+                >
+                  <Copy size={18} />
+                </button>
+              </div>
+              
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="w-full h-full opacity-10 bg-gradient-to-r from-neon-green via-transparent to-transparent animate-[pulse_3s_ease-in-out_infinite]"></div>
+              </div>
+              <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                <div className="w-1 h-full bg-neon-blue absolute left-0 top-0 animate-[pulse_2s_ease-in-out_infinite] opacity-30"></div>
+                <div className="w-1 h-full bg-neon-yellow absolute right-0 top-0 animate-[pulse_3s_ease-in-out_infinite] opacity-30"></div>
               </div>
             </div>
           </div>
