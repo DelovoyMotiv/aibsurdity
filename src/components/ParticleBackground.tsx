@@ -1,26 +1,35 @@
 
 import React, { useEffect, useRef } from 'react';
 
-interface Particle {
-  x: number;
-  y: number;
-  size: number;
-  speedX: number;
-  speedY: number;
-  color: string;
-  alpha: number;
-}
-
-const colors = [
-  '#ff00ff', '#00ffff', '#ffff00', '#00ff00', '#ff00aa', '#aa00ff', '#ff8800'
-];
-
 const ParticleBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const particlesRef = useRef<Particle[]>([]);
-  const mouseRef = useRef({ x: 0, y: 0 });
   const requestRef = useRef<number>();
-
+  const mouseRef = useRef({ x: 0, y: 0 });
+  const blobsRef = useRef<Blob[]>([]);
+  
+  interface Blob {
+    x: number;
+    y: number;
+    radius: number;
+    xOffset: number;
+    yOffset: number;
+    angle: number;
+    angleSpeed: number;
+    amplitude: number;
+    color: string;
+    opacity: number;
+    depth: number;
+  }
+  
+  const colors = [
+    { r: 255, g: 0, b: 255 },    // neon pink
+    { r: 0, g: 255, b: 255 },    // neon cyan
+    { r: 255, g: 255, b: 0 },    // neon yellow
+    { r: 0, g: 255, b: 0 },      // neon green
+    { r: 139, g: 92, b: 246 },   // neon purple
+    { r: 249, g: 115, b: 22 }    // neon orange
+  ];
+  
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -31,88 +40,127 @@ const ParticleBackground: React.FC = () => {
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      initParticles();
+      initBlobs();
     };
-
-    const initParticles = () => {
-      particlesRef.current = [];
-      const particleCount = Math.min(Math.floor(window.innerWidth * window.innerHeight / 8000), 150);
+    
+    const initBlobs = () => {
+      blobsRef.current = [];
+      const blobCount = 6; // Fewer but more complex blobs
       
-      for (let i = 0; i < particleCount; i++) {
-        particlesRef.current.push({
+      for (let i = 0; i < blobCount; i++) {
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        const depth = 0.1 + Math.random() * 0.9; // 0.1 to 1.0, controls z-index and size
+        
+        blobsRef.current.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          size: Math.random() * 4 + 1,
-          speedX: (Math.random() - 0.5) * 2,
-          speedY: (Math.random() - 0.5) * 2,
-          color: colors[Math.floor(Math.random() * colors.length)],
-          alpha: 0.3 + Math.random() * 0.3,
+          radius: 100 + (Math.random() * 150 * depth), // Larger blobs
+          xOffset: Math.random() * 2000,
+          yOffset: Math.random() * 2000,
+          angle: Math.random() * Math.PI * 2,
+          angleSpeed: 0.0001 + Math.random() * 0.0001,
+          amplitude: 30 + Math.random() * 50,
+          color: `rgba(${color.r}, ${color.g}, ${color.b}, 0.05)`,
+          opacity: 0.05 + Math.random() * 0.05, // Very subtle
+          depth: depth
         });
       }
     };
-
-    const drawParticles = () => {
+    
+    // Draw a single morphing blob
+    const drawBlob = (blob: Blob, timestamp: number) => {
+      const time = timestamp * 0.001; // Convert milliseconds to seconds
+      const points = 8; // Number of points to create the blob
+      const twoPi = Math.PI * 2;
+      
+      // Blob movement using perlin-like motion
+      const centerX = blob.x + Math.sin(time * 0.2 + blob.xOffset) * 100;
+      const centerY = blob.y + Math.cos(time * 0.3 + blob.yOffset) * 100;
+      
+      // Create gradient fill for depth perception
+      const gradient = ctx.createRadialGradient(
+        centerX, centerY, 0,
+        centerX, centerY, blob.radius * 1.5
+      );
+      
+      // Parse the rgb values from the color string
+      const colorMatch = blob.color.match(/rgba\((\d+),\s*(\d+),\s*(\d+),\s*([\d.]+)\)/);
+      if (colorMatch) {
+        const [_, r, g, b, a] = colorMatch;
+        
+        // Create a 3D-like effect with the gradient
+        gradient.addColorStop(0, `rgba(${r}, ${g}, ${b}, ${parseFloat(a) * 2})`);
+        gradient.addColorStop(0.5, `rgba(${r}, ${g}, ${b}, ${parseFloat(a)})`);
+        gradient.addColorStop(1, `rgba(${r}, ${g}, ${b}, 0)`);
+      }
+      
+      ctx.fillStyle = gradient;
+      ctx.beginPath();
+      
+      // Start drawing the blob with bezier curves for smoother shapes
+      for (let i = 0; i <= points; i++) {
+        const angle = (i / points) * twoPi;
+        const nextAngle = ((i + 1) / points) * twoPi;
+        
+        // Create wavy radius for organic feeling
+        const waveX = Math.sin(angle * 3 + time + blob.angle) * blob.amplitude;
+        const waveY = Math.cos(angle * 2 + time + blob.angle) * blob.amplitude;
+        const nextWaveX = Math.sin(nextAngle * 3 + time + blob.angle) * blob.amplitude;
+        const nextWaveY = Math.cos(nextAngle * 2 + time + blob.angle) * blob.amplitude;
+        
+        const radius = blob.radius + waveX + waveY;
+        const nextRadius = blob.radius + nextWaveX + nextWaveY;
+        
+        const x = centerX + Math.cos(angle) * radius;
+        const y = centerY + Math.sin(angle) * radius;
+        
+        const nextX = centerX + Math.cos(nextAngle) * nextRadius;
+        const nextY = centerY + Math.sin(nextAngle) * nextRadius;
+        
+        // Control points for bezier curves
+        const cpX1 = centerX + Math.cos(angle + 0.1) * (radius * 1.2);
+        const cpY1 = centerY + Math.sin(angle + 0.1) * (radius * 1.2);
+        
+        if (i === 0) {
+          ctx.moveTo(x, y);
+        } else {
+          ctx.quadraticCurveTo(cpX1, cpY1, nextX, nextY);
+        }
+      }
+      
+      ctx.closePath();
+      ctx.fill();
+      
+      // Update blob angle for continuous morphing
+      blob.angle += blob.angleSpeed;
+    };
+    
+    const animate = (timestamp: number) => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      particlesRef.current.forEach((particle, i) => {
-        // Update particle position
-        particle.x += particle.speedX;
-        particle.y += particle.speedY;
-        
-        // Boundary check
-        if (particle.x < 0 || particle.x > canvas.width) {
-          particle.speedX *= -1;
-        }
-        if (particle.y < 0 || particle.y > canvas.height) {
-          particle.speedY *= -1;
-        }
-        
-        // Mouse interaction
-        const dx = mouseRef.current.x - particle.x;
-        const dy = mouseRef.current.y - particle.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        
-        if (distance < 150) {
-          const angle = Math.atan2(dy, dx);
-          const force = (150 - distance) / 150;
-          
-          // Push particles away from mouse
-          particle.speedX -= Math.cos(angle) * force * 0.5;
-          particle.speedY -= Math.sin(angle) * force * 0.5;
-          
-          // Speed limits
-          const maxSpeed = 4;
-          particle.speedX = Math.max(-maxSpeed, Math.min(maxSpeed, particle.speedX));
-          particle.speedY = Math.max(-maxSpeed, Math.min(maxSpeed, particle.speedY));
-        }
-        
-        // Draw connections to nearby particles
-        for (let j = i + 1; j < particlesRef.current.length; j++) {
-          const other = particlesRef.current[j];
-          const dx = particle.x - other.x;
-          const dy = particle.y - other.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          
-          if (dist < 100) {
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.15 * (1 - dist / 100)})`;
-            ctx.lineWidth = 0.5;
-            ctx.moveTo(particle.x, particle.y);
-            ctx.lineTo(other.x, other.y);
-            ctx.stroke();
-          }
-        }
-        
-        // Draw particle
-        ctx.beginPath();
-        ctx.globalAlpha = particle.alpha;
-        ctx.fillStyle = particle.color;
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.globalAlpha = 1;
+      // Sort blobs by depth for proper layering (3D effect)
+      const sortedBlobs = [...blobsRef.current].sort((a, b) => a.depth - b.depth);
+      
+      // Draw each blob
+      sortedBlobs.forEach(blob => {
+        drawBlob(blob, timestamp);
       });
       
-      requestRef.current = requestAnimationFrame(drawParticles);
+      // Interactive effect - make blobs react to mouse position
+      sortedBlobs.forEach(blob => {
+        const dx = mouseRef.current.x - blob.x;
+        const dy = mouseRef.current.y - blob.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        // Subtle attraction to mouse
+        if (distance < 300) {
+          const force = (300 - distance) / 3000;
+          blob.x += dx * force * blob.depth;
+          blob.y += dy * force * blob.depth;
+        }
+      });
+      
+      requestRef.current = requestAnimationFrame(animate);
     };
     
     const handleMouseMove = (e: MouseEvent) => {
@@ -123,7 +171,7 @@ const ParticleBackground: React.FC = () => {
     window.addEventListener('mousemove', handleMouseMove);
     
     resizeCanvas();
-    drawParticles();
+    requestRef.current = requestAnimationFrame(animate);
     
     return () => {
       window.removeEventListener('resize', resizeCanvas);
