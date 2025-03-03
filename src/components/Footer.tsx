@@ -69,7 +69,7 @@ const Footer = () => {
             </div>
             
             <div className="flex items-center justify-between text-gray-400 text-sm p-2 bg-gray-900 rounded font-pixel">
-              <span>Support:</span>
+              <span>Fund:</span>
               <span className="flex items-center">
                 {supportEmail}
                 <button 
