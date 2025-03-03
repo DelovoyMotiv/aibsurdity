@@ -27,7 +27,6 @@ const Footer = () => {
         </div>
         
         <div className="flex flex-col items-center mb-6 md:mb-0">
-          <p className="text-gray-300 mb-2 font-pixel">Join the absurdity</p>
           <div className="flex space-x-4">
             <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-blue transition-colors">
               <Github size={24} />
