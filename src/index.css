@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,9 +22,10 @@
   @media (max-width: 767px) {
     h1, h2, h3, h4, h5, h6, .font-pixel {
       font-style: normal !important;
-      font-weight: normal;
+      font-weight: normal !important;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      font-family: inherit !important;
     }
   }
 }
