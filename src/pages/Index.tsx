@@ -186,7 +186,7 @@ const Index = () => {
                   pixelated={true}
                 />
                 
-                <p className="text-8bit text-center max-w-2xl text-gray-300 text-sm md:text-base w-full">
+                <p className="text-8bit text-center max-w-2xl text-gray-300 text-sm md:text-base w-full font-pixel neon-text-subtle">
                   "Finance is too boring to be taken seriously. It's time to rewrite the rules — through absurdity."
                 </p>
               </div>

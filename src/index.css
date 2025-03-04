@@ -19,6 +19,14 @@
 }
 
 @layer components {
+  /* Neon text effect with subtle glow */
+  .neon-text-subtle {
+    font-family: 'Press Start 2P', monospace;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.7), 0 0 10px rgba(0, 255, 255, 0.3);
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+  }
+  
   /* Holographic Card Effect */
   .holographic-card {
     position: relative;
