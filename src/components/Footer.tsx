@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Twitter, ExternalLink, Copy, Check, Github, MessageCircle } from 'lucide-react';
 import { toast } from "sonner";
@@ -14,7 +13,7 @@ const Footer = () => {
   const hologramRef = useRef<HTMLDivElement>(null);
   
   const contractAddress = "0xabsurd...42069";
-  const supportEmail = "ai@absurdity.wtf";
+  const supportEmail = "0x00000000000000000000";
   
   // VHS overlay, quantum noise, and holographic effects
   useEffect(() => {
