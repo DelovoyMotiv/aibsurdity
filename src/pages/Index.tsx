@@ -131,14 +131,14 @@ const Index = () => {
         <AbsurdButton />
       </div>
       
-      {/* Enhanced Header with Responsive Font Size */}
+      {/* Enhanced Header */}
       <header className="pt-10 pb-6 px-4 relative">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center items-center mb-8">
             <LogoReveal>
               <GlitchText 
                 text="AIbsurdity" 
-                fontSize="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl" 
+                fontSize="text-5xl md:text-7xl" 
                 color="text-white" 
                 className="font-pixel tracking-tight"
                 variant="intense"
