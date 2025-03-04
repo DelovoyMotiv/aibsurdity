@@ -10,6 +10,7 @@ import AbsurdButton from '@/components/AbsurdButton';
 import Footer from '@/components/Footer';
 import LogoReveal from '@/components/LogoReveal';
 import RabbitEarsButton from '@/components/RabbitEarsButton';
+import AbsurdQuoteBlock from '@/components/AbsurdQuoteBlock';
 
 const Index = () => {
   const [mounted, setMounted] = useState(false);
@@ -186,10 +187,20 @@ const Index = () => {
                   pixelated={true}
                 />
                 
-                <p className="text-8bit text-center max-w-2xl text-gray-300 text-sm md:text-base w-full font-pixel neon-text-subtle">
-                  "Finance is too boring to be taken seriously. It's time to rewrite the rules — through absurdity."
-                </p>
+                {/* Removed the p tag here and replaced with AbsurdQuoteBlock component */}
               </div>
+            </TetrisBlock>
+            
+            {/* Add the AbsurdQuoteBlock as a separate component */}
+            <TetrisBlock 
+              className="md:col-span-12 glassmorphism-2 light-refraction luxury-card quantum-effect" 
+              color="live-gradient live-gradient-blue"
+              delay={0.2}
+            >
+              <AbsurdQuoteBlock 
+                text="Finance is too boring to be taken seriously. It's time to rewrite the rules — through absurdity." 
+                className="bg-transparent"
+              />
             </TetrisBlock>
             
             {/* Epoch 1-2 */}
@@ -709,7 +720,7 @@ C = Conscience coefficient (0 ≤ C < 1)`}
         </div>
       </main>
       
-      {/* Добавляем Footer внизу страницы */}
+      {/* Footer */}
       <Footer />
     </div>
   );
