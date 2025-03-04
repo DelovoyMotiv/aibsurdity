@@ -448,3 +448,75 @@
   6% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
   100% { clip-path: none; }
 }
+
+/* Terminal and glitch effects for AbsurdQuoteBlock */
+.terminal-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.terminal-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.terminal-scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(0, 255, 255, 0.1);
+  opacity: 0.75;
+  z-index: 2;
+  pointer-events: none;
+  animation: terminal-scanline 6s linear infinite;
+}
+
+@keyframes terminal-scanline {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+.terminal-glitch {
+  animation: terminal-glitch 0.3s linear;
+}
+
+@keyframes terminal-glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-3px, 3px);
+  }
+  40% {
+    transform: translate(-3px, -3px);
+  }
+  60% {
+    transform: translate(3px, 3px);
+  }
+  80% {
+    transform: translate(3px, -3px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
