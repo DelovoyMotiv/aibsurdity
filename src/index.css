@@ -19,6 +19,78 @@
 }
 
 @layer components {
+  /* Holographic Card Effect */
+  .holographic-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  }
+  
+  .holographic-card::before {
+    content: '';
+    position: absolute;
+    top: -500%;
+    left: -500%;
+    height: 1000%;
+    width: 1000%;
+    background: linear-gradient(45deg, 
+      rgba(255, 255, 255, 0) 0%, 
+      rgba(255, 255, 255, 0.03) 30%, 
+      rgba(255, 255, 255, 0.07) 40%, 
+      rgba(255, 255, 255, 0.03) 50%, 
+      rgba(255, 255, 255, 0) 100%);
+    transform: rotate(-45deg);
+    animation: holographic-sweep 5s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .holographic-card:hover {
+    box-shadow: 0 15px 35px rgba(31, 38, 135, 0.25);
+    transform: translateY(-2px);
+  }
+
+  /* Holographic Button Effect */
+  .holographic-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+  
+  .holographic-button::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, 
+      rgba(255, 255, 255, 0.1) 0%, 
+      rgba(255, 255, 255, 0.2) 50%, 
+      rgba(255, 255, 255, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .holographic-button:hover::after {
+    opacity: 1;
+  }
+  
+  .holographic-button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Holographic Overlay Animation */
+  .holographic-overlay {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+
   /* Consistent padding for containers */
   .container, section, main > div, footer > div {
     @apply px-6;
@@ -43,6 +115,23 @@
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+  }
+  
+  @keyframes holographic-sweep {
+    0% { transform: rotate(-45deg) translateX(-100%); }
+    100% { transform: rotate(-45deg) translateX(100%); }
+  }
+  
+  @keyframes prism-light {
+    0% { background-position: 0% 50%; filter: hue-rotate(0deg); }
+    50% { background-position: 100% 50%; filter: hue-rotate(180deg); }
+    100% { background-position: 0% 50%; filter: hue-rotate(360deg); }
+  }
+
+  @keyframes tactile-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
   }
   
   @keyframes broken-glitch {
@@ -87,6 +176,76 @@
     filter: blur(10px);
     border-radius: 8px;
     animation: data-corruption 15s ease infinite;
+  }
+
+  /* Prism effect for holographic minimalism */
+  .prism-effect {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .prism-effect::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.05) 0%, 
+      rgba(0, 255, 255, 0.1) 25%, 
+      rgba(255, 0, 255, 0.1) 50%, 
+      rgba(255, 255, 0, 0.1) 75%, 
+      rgba(255, 255, 255, 0.05) 100%);
+    background-size: 400% 400%;
+    animation: prism-light 10s linear infinite;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Digital texture with tactile feedback (skeuomorphism 2.0) */
+  .tactile-digital {
+    position: relative;
+    background-image: 
+      linear-gradient(45deg, rgba(255, 255, 255, 0.03) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(255, 255, 255, 0.03) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.03) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.03) 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    transition: all 0.2s ease;
+  }
+
+  .tactile-digital:hover {
+    animation: tactile-pulse 0.4s ease;
+  }
+
+  .tactile-digital:active {
+    transform: scale(0.98);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Quantum animation effect */
+  .quantum-effect {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .quantum-effect::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, 
+      rgba(255, 255, 255, 0) 0%, 
+      rgba(0, 255, 255, 0.1) 35%, 
+      rgba(255, 0, 255, 0.1) 65%, 
+      rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    mix-blend-mode: screen;
+  }
+
+  .quantum-effect:hover::after {
+    opacity: 1;
   }
 }
 

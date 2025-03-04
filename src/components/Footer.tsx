@@ -8,13 +8,15 @@ const Footer = () => {
   const [contractCopied, setContractCopied] = useState(false);
   const [emailCopied, setEmailCopied] = useState(false);
   const [glitchActive, setGlitchActive] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const vhsOverlayRef = useRef<HTMLDivElement>(null);
   const quantumNoiseRef = useRef<HTMLDivElement>(null);
+  const hologramRef = useRef<HTMLDivElement>(null);
   
   const contractAddress = "0xabsurd...42069";
   const supportEmail = "ai@absurdity.wtf";
   
-  // VHS overlay and quantum noise effects
+  // VHS overlay, quantum noise, and holographic effects
   useEffect(() => {
     const glitchInterval = setInterval(() => {
       // Randomly activate glitch effect
@@ -35,9 +37,43 @@ const Footer = () => {
         quantumNoiseRef.current.style.filter = `hue-rotate(${hue}deg)`;
         quantumNoiseRef.current.style.opacity = (Math.random() * 0.2 + 0.05).toString();
       }
+
+      // Animate holographic overlay
+      if (hologramRef.current) {
+        const clipAngle = Math.random() * 10;
+        hologramRef.current.style.clipPath = `polygon(${clipAngle}% 0%, 100% 0%, ${100-clipAngle}% 100%, 0% 100%)`;
+      }
     }, 2000);
     
     return () => clearInterval(glitchInterval);
+  }, []);
+
+  // Mouse position tracking for holographic effect
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      setMousePosition({ x, y });
+      
+      if (hologramRef.current) {
+        const rect = hologramRef.current.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        
+        const offsetX = ((x - centerX) / window.innerWidth) * 20;
+        const offsetY = ((y - centerY) / window.innerHeight) * 20;
+        
+        hologramRef.current.style.transform = `perspective(1000px) rotateX(${-offsetY}deg) rotateY(${offsetX}deg)`;
+        
+        // Update holographic gradient position
+        const gradientX = 50 + offsetX * 2;
+        const gradientY = 50 + offsetY * 2;
+        hologramRef.current.style.backgroundPosition = `${gradientX}% ${gradientY}%`;
+      }
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
   
   const copyToClipboard = (text: string, type: 'contract' | 'email') => {
@@ -89,6 +125,19 @@ const Footer = () => {
         }}
       />
       
+      {/* Holographic Overlay */}
+      <div 
+        ref={hologramRef}
+        className="absolute inset-0 pointer-events-none z-5 holographic-overlay"
+        style={{
+          background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(0,255,255,0.2) 25%, rgba(255,0,255,0.2) 50%, rgba(0,255,255,0.2) 75%, rgba(255,255,255,0.1) 100%)',
+          backgroundSize: '400% 400%',
+          transition: 'transform 0.1s ease-out, background-position 0.1s ease-out',
+          transform: 'perspective(1000px)',
+          mixBlendMode: 'overlay'
+        }}
+      />
+      
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 relative z-20">
         <div className="text-left">
           <h3 className={`text-neon-blue font-pixel text-lg mb-4 ${glitchActive ? 'animate-broken-glitch' : ''}`}></h3>
@@ -100,16 +149,16 @@ const Footer = () => {
             />
           </p>
           <div className="flex space-x-4">
-            <a href="https://twitter.com/absurdity" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-blue transition-colors">
+            <a href="https://twitter.com/absurdity" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-blue transition-colors holographic-button">
               <Twitter size={20} className={glitchActive ? 'animate-distort-text' : ''} />
             </a>
-            <a href="https://t.me/absurdity" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-purple transition-colors">
+            <a href="https://t.me/absurdity" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-purple transition-colors holographic-button">
               <MessageCircle size={20} className={glitchActive ? 'animate-fragmented-glitch' : ''} />
             </a>
-            <a href="https://github.com/absurdity" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-green transition-colors">
+            <a href="https://github.com/absurdity" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-green transition-colors holographic-button">
               <Github size={20} className={glitchActive ? 'animate-broken-shake' : ''} />
             </a>
-            <a href="https://absurdity.wtf" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-yellow transition-colors">
+            <a href="https://absurdity.wtf" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-yellow transition-colors holographic-button">
               <ExternalLink size={20} className={glitchActive ? 'animate-broken-rotate' : ''} />
             </a>
           </div>
@@ -118,26 +167,26 @@ const Footer = () => {
         <div className="text-left">
           <h3 className={`text-neon-pink font-pixel text-lg mb-4 ${glitchActive ? 'animate-broken-flicker' : ''}`}></h3>
           <div className="space-y-3">
-            <div className={`flex items-center justify-between text-gray-400 text-sm p-3 bg-gray-900 rounded font-pixel ${glitchActive ? 'animate-reality-glitch' : ''}`}>
+            <div className={`flex items-center justify-between text-gray-400 text-sm p-3 bg-gray-900 rounded font-pixel ${glitchActive ? 'animate-reality-glitch' : ''} holographic-card`}>
               <span>Contract:</span>
               <span className="flex items-center">
                 {contractAddress}
                 <button 
                   onClick={() => copyToClipboard(contractAddress, 'contract')} 
-                  className="ml-2 hover:text-neon-blue transition-colors"
+                  className="ml-2 hover:text-neon-blue transition-colors holographic-button"
                 >
                   {contractCopied ? <Check size={16} className="text-neon-green" /> : <Copy size={16} />}
                 </button>
               </span>
             </div>
             
-            <div className={`flex items-center justify-between text-gray-400 text-sm p-3 bg-gray-900 rounded font-pixel ${glitchActive ? 'animate-broken-warp' : ''}`}>
+            <div className={`flex items-center justify-between text-gray-400 text-sm p-3 bg-gray-900 rounded font-pixel ${glitchActive ? 'animate-broken-warp' : ''} holographic-card`}>
               <span>Fund:</span>
               <span className="flex items-center">
                 {supportEmail}
                 <button 
                   onClick={() => copyToClipboard(supportEmail, 'email')} 
-                  className="ml-2 hover:text-neon-pink transition-colors"
+                  className="ml-2 hover:text-neon-pink transition-colors holographic-button"
                 >
                   {emailCopied ? <Check size={16} className="text-neon-green" /> : <Copy size={16} />}
                 </button>
