@@ -5,7 +5,7 @@ import GlitchText from './GlitchText';
 
 const Footer = () => {
   const [contractCopied, setContractCopied] = useState(false);
-  const [emailCopied, setEmailCopied] = useState(false);
+  const [walletCopied, setWalletCopied] = useState(false);
   const [glitchActive, setGlitchActive] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const vhsOverlayRef = useRef<HTMLDivElement>(null);
@@ -13,7 +13,7 @@ const Footer = () => {
   const hologramRef = useRef<HTMLDivElement>(null);
   
   const contractAddress = "0xabsurd...42069";
-  const supportEmail = "0x00000000000000000000";
+  const supportWallet = "0x00000000000000000000";
   
   // VHS overlay, quantum noise, and holographic effects
   useEffect(() => {
@@ -75,7 +75,7 @@ const Footer = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
   
-  const copyToClipboard = (text: string, type: 'contract' | 'email') => {
+  const copyToClipboard = (text: string, type: 'contract' | 'wallet') => {
     navigator.clipboard.writeText(text)
       .then(() => {
         if (type === 'contract') {
@@ -83,9 +83,9 @@ const Footer = () => {
           toast.success("Contract address copied!");
           setTimeout(() => setContractCopied(false), 2000);
         } else {
-          setEmailCopied(true);
-          toast.success("Email address copied!");
-          setTimeout(() => setEmailCopied(false), 2000);
+          setWalletCopied(true);
+          toast.success("Wallet address copied!");
+          setTimeout(() => setWalletCopied(false), 2000);
         }
       })
       .catch(err => {
@@ -182,12 +182,12 @@ const Footer = () => {
             <div className={`flex items-center justify-between text-gray-400 text-sm p-3 bg-gray-900 rounded font-pixel ${glitchActive ? 'animate-broken-warp' : ''} holographic-card`}>
               <span>Fund:</span>
               <span className="flex items-center">
-                {supportEmail}
+                {supportWallet}
                 <button 
-                  onClick={() => copyToClipboard(supportEmail, 'email')} 
+                  onClick={() => copyToClipboard(supportWallet, 'wallet')} 
                   className="ml-2 hover:text-neon-pink transition-colors holographic-button"
                 >
-                  {emailCopied ? <Check size={16} className="text-neon-green" /> : <Copy size={16} />}
+                  {walletCopied ? <Check size={16} className="text-neon-green" /> : <Copy size={16} />}
                 </button>
               </span>
             </div>
