@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useRef } from 'react';
 import { Atom, Sparkles, Braces, CloudLightning, Cpu } from 'lucide-react';
 import { toast } from "sonner";
@@ -324,7 +325,7 @@ const Index = () => {
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold mb-4 text-neon-blue font-pixel w-full">
                   Taking Over the Real World
-                  </h3>
+                </h3>
                 
                 <div className="space-y-4">
                   <div>
@@ -665,4 +666,75 @@ C = Conscience coefficient (0 ≤ C < 1)`}
                     
                     <div>
                       <h4 className="font-bold text-neon-blue mb-2 font-pixel w-full">Reverse ICO Ceremony:</h4>
-                      <p className="text-gray-300 text-
+                      <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
+                        Projects pay users for participating:
+                      </p>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                        <li>The more absurd your idea, the more tokens you receive</li>
+                        <li>Special bonus for ideas violating thermodynamics laws</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <div className="inline-block bg-neon-red/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel flex items-center space-x-2">
+                    <Braces size={16} className="text-neon-red animate-pulse" />
+                    <span>Apocalypse Scenario</span>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-bold text-neon-red mb-2 font-pixel w-full">Chain Reaction:</h4>
+                      <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
+                        If PAA reaches $1 trillion market cap:
+                      </p>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                        <li>The simulation collapses as per Thotin's Paradox</li>
+                        <li>Time folds back to 1971 when Nixon ended gold standard</li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-bold text-neon-yellow mb-2 font-pixel w-full">Failsafe Protocol:</h4>
+                      <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
+                        Built-in safety measures:
+                      </p>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                        <li>AI agents sell their own existence as NFTs</li>
+                        <li>Reverse Ponzi: early investors receive less than latecomers (by design)</li>
+                        <li>Quantum escape contracts deploy users to Dimension C-137</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TetrisBlock>
+            
+            {/* This Is Not A Token Block */}
+            <TetrisBlock 
+              className="md:col-span-12 glassmorphism-2 light-refraction luxury-card premium-hover" 
+              color="live-gradient live-gradient-blue"
+              delay={0.6}
+            >
+              <div className="flex flex-col items-center justify-center p-6">
+                <GlitchText 
+                  text="This is not a token. It is a psychological experiment where AI diagnoses the entire crypto space!"
+                  fontSize="text-xl md:text-2xl" 
+                  className="font-pixel text-center max-w-3xl"
+                  as="h2"
+                  pixelated={true}
+                />
+              </div>
+            </TetrisBlock>
+          </TetrisLayout>
+        </div>
+      </main>
+      
+      {/* Footer */}
+      <Footer />
+    </div>
+  );
+};
+
+export default Index;
