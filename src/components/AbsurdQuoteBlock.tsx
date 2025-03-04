@@ -95,36 +95,25 @@ const AbsurdQuoteBlock: React.FC<AbsurdQuoteBlockProps> = ({
   };
   
   // Generate unique glitch animation classes based on component instance
-  const glitchAnimationClass = isGlitching ? 
-    `animate-broken-glitch` : 
-    '';
+  const glitchAnimationClass = isGlitching ? `animate-broken-glitch` : '';
   
   return (
-    <div className={`terminal-card retro-computer-card rounded p-6 my-6 max-w-3xl mx-auto ${className}`}
-         style={{ 
-           backgroundColor: '#000000e6', 
-           border: '1px solid #00ff00',
-           boxShadow: '0 0 15px rgba(0, 255, 0, 0.15), inset 0 0 10px rgba(0, 0, 0, 0.8)'
-         }}>
-      <div className="terminal-header flex items-center mb-3 border-b border-opacity-20 border-green-500 pb-2">
-        <div className="w-3 h-3 rounded-full bg-green-500 opacity-70 mr-2"></div>
-        <div className="w-3 h-3 rounded-full bg-green-500 opacity-50 mr-2"></div>
-        <div className="w-3 h-3 rounded-full bg-green-500 opacity-30 mr-2"></div>
-        <span className="text-xs text-green-400 font-mono ml-2">aibsurdity.fun</span>
+    <div className={`py-4 my-2 mx-auto ${className}`}>
+      <div className="relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-neon-blue/5 via-neon-purple/5 to-neon-green/5 rounded-lg blur-md"></div>
+        <div className="relative">
+          <p className={`text-center font-pixel text-xl md:text-2xl ${glitchAnimationClass}`}
+             style={{ 
+               color: 'white', 
+               textShadow: '0 0 8px rgba(156, 211, 239, 0.7), 0 0 12px rgba(107, 33, 168, 0.3)', 
+               letterSpacing: '0.05em',
+               lineHeight: '1.8'
+             }}>
+            {isTyping ? displayText + (Math.random() > 0.5 ? '_' : '|') : displayText}
+          </p>
+          <div className="h-0.5 w-0 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-blue animate-[width_3s_ease-in-out_forwards] mt-3 mx-auto" style={{ width: isTyping ? '0%' : '60%' }}></div>
+        </div>
       </div>
-      <div className="terminal-scanline-container relative overflow-hidden">
-        <p className={`text-center font-mono ${glitchAnimationClass}`}
-           style={{ 
-             color: '#00ff00', 
-             textShadow: '0 0 8px rgba(0, 255, 0, 0.7)', 
-             letterSpacing: '0.05em',
-             lineHeight: '1.6'
-           }}>
-          {isTyping ? displayText + (Math.random() > 0.5 ? '_' : '|') : displayText}
-        </p>
-        <div className="terminal-scanline absolute top-0 left-0 w-full h-2 bg-green-500 opacity-10"></div>
-      </div>
-      <div className="terminal-noise"></div>
     </div>
   );
 };
