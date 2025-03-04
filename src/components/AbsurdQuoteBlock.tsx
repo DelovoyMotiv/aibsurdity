@@ -110,7 +110,7 @@ const AbsurdQuoteBlock: React.FC<AbsurdQuoteBlockProps> = ({
         <div className="w-3 h-3 rounded-full bg-green-500 opacity-70 mr-2"></div>
         <div className="w-3 h-3 rounded-full bg-green-500 opacity-50 mr-2"></div>
         <div className="w-3 h-3 rounded-full bg-green-500 opacity-30 mr-2"></div>
-        <span className="text-xs text-green-400 font-mono ml-2">absurdity.terminal</span>
+        <span className="text-xs text-green-400 font-mono ml-2">aibsurdity.fun</span>
       </div>
       <div className="terminal-scanline-container relative overflow-hidden">
         <p className={`text-center font-mono ${glitchAnimationClass}`}
