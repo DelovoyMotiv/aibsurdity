@@ -138,7 +138,7 @@ const Index = () => {
             <LogoReveal>
               <GlitchText 
                 text="AIbsurdity" 
-                fontSize="text-5xl md:text-7xl" 
+                fontSize="text-3xl md:text-5xl" 
                 color="text-white" 
                 className="font-pixel tracking-tight"
                 variant="intense"
