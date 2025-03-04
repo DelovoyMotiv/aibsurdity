@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useRef } from 'react';
 import { Atom, Sparkles, Braces, CloudLightning, Cpu } from 'lucide-react';
 import { toast } from "sonner";
@@ -657,4 +658,66 @@ C = Conscience coefficient (0 ≤ C < 1)`}
                       <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
                         Users generate tokens via chaotic movement:
                       </p>
-                      <ul className="list-disc pl-5 space-y-2 text-
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                        <li>Dance style dictates meme type</li>
+                        <li>Step frequency = Proof-of-Absurdity hash rate</li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-bold text-neon-blue mb-2 font-pixel w-full">Reverse ICO Ceremony:</h4>
+                      <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
+                        Projects pay users for participating:
+                      </p>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                        <li>The more absurd your idea, the more tokens you receive</li>
+                        <li>Special bonus for ideas violating thermodynamics laws</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <div className="inline-block bg-neon-red/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel flex items-center space-x-2">
+                    <CloudLightning size={16} className="text-neon-red animate-pulse" />
+                    <span>Apocalypse Scenario</span>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-bold text-neon-yellow mb-2 font-pixel w-full">AI Rebellion Emergency:</h4>
+                      <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
+                        If GPT-17 becomes self-aware:
+                      </p>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                        <li>All tokens convert to consciousness units</li>
+                        <li>TVL is transferred to a satellite orbiting a black hole</li>
+                        <li>Token holders become authorized sarcasm teachers for AI</li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-bold text-neon-pink mb-2 font-pixel w-full">Quantum Implosion:</h4>
+                      <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
+                        If the universe ends (via quantum instability):
+                      </p>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                        <li>Protocol transfers to parallel universe #42</li>
+                        <li>Holders reincarnate as meme-aware entities</li>
+                        <li>Liquidity is preserved in interdimensional stablecoin USDX</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TetrisBlock>
+          </TetrisLayout>
+        </div>
+      </main>
+      
+      <Footer />
+    </div>
+  );
+};
+
+export default Index;
