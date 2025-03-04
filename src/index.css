@@ -12,6 +12,13 @@
     text-align: left;
   }
   
+  /* Fix for mobile fonts displaying as italic */
+  @media (max-width: 767px) {
+    h1, h2, h3, h4, h5, h6, .font-pixel {
+      font-style: normal !important;
+    }
+  }
+  
   /* Exception for centered elements */
   .text-center {
     text-align: center !important;
