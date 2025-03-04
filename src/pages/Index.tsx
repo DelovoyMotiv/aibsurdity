@@ -185,15 +185,16 @@ const Index = () => {
               </div>
             </TetrisBlock>
             
-            {/* Add the AbsurdQuoteBlock as a separate component */}
+            {/* Add the AbsurdQuoteBlock as a separate component with retro computer styling */}
             <TetrisBlock 
-              className="md:col-span-12 glassmorphism-2 light-refraction luxury-card quantum-effect" 
-              color="live-gradient live-gradient-blue"
+              className="md:col-span-12 glassmorphism-2 light-refraction retro-computer-effect" 
+              color="bg-black"
               delay={0.2}
             >
               <AbsurdQuoteBlock 
                 text="Finance is too boring to be taken seriously. It's time to rewrite the rules — through absurdity." 
                 className="bg-transparent"
+                glitchIntensity="high"
               />
             </TetrisBlock>
             
