@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useRef } from 'react';
 import { Atom, Sparkles, Braces, CloudLightning, Cpu } from 'lucide-react';
 import { toast } from "sonner";
@@ -411,7 +410,7 @@ const Index = () => {
               </div>
             </TetrisBlock>
 
-            {/* Liquidity Singularity Block - Shape I */}
+            {/* Liquidity Singularity Block - Shape Z */}
             <TetrisBlock 
               className="glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="live-gradient live-gradient-blue"
@@ -662,71 +661,4 @@ C = Conscience coefficient (0 ≤ C < 1)`}
                 </div>
                 
                 <div>
-                  <div className="inline-block bg-neon-red/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel flex items-center space-x-2">
-                    <CloudLightning size={16} className="text-neon-red animate-pulse" />
-                    <span>Apocalypse Scenario</span>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-bold text-neon-yellow mb-2 font-pixel w-full">Total Memetic Collapse:</h4>
-                      <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
-                        If absurdity level exceeds Hawking threshold:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
-                        <li>Universal Meme Singularity takes over all blockchains</li>
-                        <li>Every transaction becomes an abstract art piece</li>
-                        <li>All financial instruments are priced in LOLs rather than dollars</li>
-                      </ul>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-bold text-neon-pink mb-2 font-pixel w-full">The Ultimate Hedge:</h4>
-                      <p className="text-gray-300 text-xs font-pixel mb-2 w-full">
-                        The more serious the world becomes, the more valuable PAA tokens:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
-                        <li>One laugh = one PAA in post-apocalyptic world</li>
-                        <li>HODLers evolve into interdimensional entities known as "The Giggling Ones"</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </TetrisBlock>
-            
-            <TetrisBlock 
-              className="glassmorphism-2 light-refraction luxury-card premium-hover text-center" 
-              color="live-gradient live-gradient-blue"
-              delay={0.2}
-              shape="I"
-            >
-              <div className="p-6">
-                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-neon-pink font-pixel w-full">
-                  Ready to Jump Down the Rabbit Hole?
-                </h3>
-                <p className="text-gray-300 text-sm mb-8 max-w-2xl mx-auto font-pixel">
-                  The journey into absurdity is just beginning. The tokenomics of madness await those brave enough to challenge conventional wisdom.
-                </p>
-                <div className="inline-block">
-                  <button 
-                    onClick={() => copyToClipboard('aibsurdity.finance')}
-                    className="bg-neon-purple/20 border border-neon-purple text-neon-pink py-3 px-6 rounded-lg hover:bg-neon-purple/30 transition-all font-pixel flex items-center space-x-2 mx-auto"
-                  >
-                    <span>Copy AIbsurdity Domain</span>
-                    <Sparkles size={16} className="text-neon-pink animate-pulse" />
-                  </button>
-                </div>
-              </div>
-            </TetrisBlock>
-            
-          </TetrisLayout>
-        </div>
-      </main>
-      
-      <Footer />
-    </div>
-  );
-};
-
-export default Index;
+                  <div className="inline-block bg-neon-red/30 px-3 py-1 rounded-full text-sm

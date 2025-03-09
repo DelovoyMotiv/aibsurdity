@@ -27,15 +27,15 @@ const TetrisBlock = ({ className, color, delay, shape, rotation, children }: Tet
       case 'S':
         return 'col-span-full md:col-span-12';
       default:
-        return '';
+        return 'col-span-full';
     }
   };
 
   return (
     <div
-      className={`transition-transform duration-500 ease-in-out ${className} ${color} ${getShapeClasses()} ${shape ? `shape-${shape}` : ''}`}
+      className={`${className || ''} ${color || ''} ${getShapeClasses()} ${shape ? `shape-${shape}` : ''}`}
       style={{
-        transform: `rotate(${rotation || 0}deg)`,
+        transform: rotation ? `rotate(${rotation}deg)` : undefined,
         transitionDelay: delay ? `${delay}s` : undefined,
       }}
     >
@@ -47,22 +47,11 @@ const TetrisBlock = ({ className, color, delay, shape, rotation, children }: Tet
 const TetrisLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-12 gap-6 py-6">
-      {React.Children.map(children, (child, index) => {
+      {React.Children.map(children, (child) => {
         if (!React.isValidElement(child)) return null;
         
-        // Add premium transition effects
-        const tetrisBlockProps = {
-          ...child.props,
-          className: `${child.props.className || ''} animate-subtle-float`,
-          style: {
-            ...child.props.style,
-            transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)', // Premium bounce effect
-            transitionDuration: '0.8s', // Slightly slower for more elegant movement
-            boxShadow: '0 10px 30px -5px rgba(0, 0, 0, 0.3)' // Premium shadow
-          }
-        };
-        
-        return React.cloneElement(child, tetrisBlockProps);
+        // Just pass through the child props, don't add or override anything
+        return child;
       })}
     </div>
   );
