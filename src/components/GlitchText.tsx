@@ -31,8 +31,15 @@ const GlitchText: React.FC<GlitchTextProps> = ({
   const [skewY, setSkewY] = useState(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   
+  // Ensure we always have valid text
+  useEffect(() => {
+    setTextDisplay(text || '');
+  }, [text]);
+  
   // Random glitch effect
   useEffect(() => {
+    if (!text) return; // Skip if no text provided
+    
     const glitchRandomly = () => {
       if (Math.random() > 0.7) {
         setIsGlitching(true);
@@ -51,17 +58,25 @@ const GlitchText: React.FC<GlitchTextProps> = ({
                           variant === 'fragmented' ? fragmentedChars : 
                           glitchChars;
           
-          const textArray = text.split('');
-          const numGlitches = Math.floor(Math.random() * 3) + 1;
-          
-          for (let i = 0; i < numGlitches; i++) {
-            const pos = Math.floor(Math.random() * text.length);
-            textArray[pos] = charSet[Math.floor(Math.random() * charSet.length)];
+          try {
+            const textArray = text.split('');
+            const numGlitches = Math.floor(Math.random() * 3) + 1;
+            
+            for (let i = 0; i < numGlitches; i++) {
+              const pos = Math.floor(Math.random() * text.length);
+              if (textArray[pos]) {
+                textArray[pos] = charSet[Math.floor(Math.random() * charSet.length)];
+              }
+            }
+            
+            setTextDisplay(textArray.join(''));
+          } catch (error) {
+            console.error('Error in glitch effect:', error);
+            setTextDisplay(text); // Reset to original text on error
           }
           
-          setTextDisplay(textArray.join(''));
-          
           // Reset text after glitch
+          if (timeoutRef.current) clearTimeout(timeoutRef.current);
           timeoutRef.current = setTimeout(() => {
             setTextDisplay(text);
           }, 150);
@@ -74,6 +89,7 @@ const GlitchText: React.FC<GlitchTextProps> = ({
           setSkewY(Math.random() * 15 - 7.5);
           
           // Reset transformations
+          if (timeoutRef.current) clearTimeout(timeoutRef.current);
           timeoutRef.current = setTimeout(() => {
             setRotation(0);
             setSkewX(0);
@@ -118,24 +134,30 @@ const GlitchText: React.FC<GlitchTextProps> = ({
       
       const randomMessage = secretMessages[Math.floor(Math.random() * secretMessages.length)];
       
-      // Create a floating message element
-      const messageEl = document.createElement('div');
-      messageEl.textContent = randomMessage;
-      messageEl.className = "fixed z-50 font-pixel text-neon-green animate-float text-xs md:text-sm";
-      messageEl.style.top = `${Math.random() * 70 + 15}%`;
-      messageEl.style.left = `${Math.random() * 70 + 15}%`;
-      messageEl.style.textShadow = "0 0 10px currentColor";
-      messageEl.style.transform = "rotate(5deg)";
-      document.body.appendChild(messageEl);
-      
-      // Remove after some time
-      setTimeout(() => {
-        if (messageEl.parentNode) {
-          messageEl.parentNode.removeChild(messageEl);
-          setEasterEggActivated(false);
-          setClickCount(0);
-        }
-      }, 5000);
+      try {
+        // Create a floating message element
+        const messageEl = document.createElement('div');
+        messageEl.textContent = randomMessage;
+        messageEl.className = "fixed z-50 font-pixel text-neon-green animate-float text-xs md:text-sm";
+        messageEl.style.top = `${Math.random() * 70 + 15}%`;
+        messageEl.style.left = `${Math.random() * 70 + 15}%`;
+        messageEl.style.textShadow = "0 0 10px currentColor";
+        messageEl.style.transform = "rotate(5deg)";
+        document.body.appendChild(messageEl);
+        
+        // Remove after some time
+        setTimeout(() => {
+          if (messageEl.parentNode) {
+            messageEl.parentNode.removeChild(messageEl);
+            setEasterEggActivated(false);
+            setClickCount(0);
+          }
+        }, 5000);
+      } catch (error) {
+        console.error('Error creating easter egg:', error);
+        setEasterEggActivated(false);
+        setClickCount(0);
+      }
     }
   };
   
