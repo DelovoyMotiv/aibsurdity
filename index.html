@@ -1,18 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>absurdity-factory</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
-    <meta property="og:image" content="/og-image.png" />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIbsurdity</title>
+  <meta name="description" content="AIbsurdity - Where absurdity meets blockchain" />
+  <meta property="og:image" content="images/og-image.png" />
+  <!-- Google Fonts - Press Start 2P for pixel font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="root">
+    <!-- Main page content -->
+    <div class="relative min-h-screen overflow-x-hidden">
+      <!-- Particle Background -->
+      <div id="particle-container" class="fixed inset-0 z-0"></div>
+      
+      <!-- AbsurdOS Button - Top right -->
+      <div class="fixed top-4 right-4 z-50">
+        <button id="absurd-button" class="holographic-button px-4 py-2 rounded-full bg-purple-900 text-white flex items-center space-x-2">
+          <span>AbsurdOS</span>
+        </button>
+      </div>
+      
+      <!-- Enhanced Header -->
+      <header class="pt-10 pb-6 px-4 relative">
+        <div class="max-w-6xl mx-auto">
+          <div class="flex justify-center items-center mb-8">
+            <h1 id="main-logo" class="text-3xl md:text-5xl font-pixel text-white">AIbsurdity</h1>
+          </div>
+          
+          <div class="flex justify-center">
+            <p class="glassmorphism-2 light-refraction text-8bit-glow py-3 px-6 text-lg md:text-xl max-w-xl mx-auto text-center w-full luxury-card premium-glow font-pixel" 
+               style="background: linear-gradient(45deg, #33C3F0, #9F9EA1, #6b21a8); background-size: 200% 200%; animation: data-corruption 15s ease infinite; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 15px rgba(156, 211, 239, 0.4); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; backdrop-filter: blur(10px); box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37)">
+              "I'm broken, but it's a feature."
+            </p>
+          </div>
+        </div>
+      </header>
+      
+      <!-- Main Content -->
+      <main class="px-4 pb-20">
+        <div class="max-w-6xl mx-auto">
+          <div id="tetris-layout" class="grid grid-cols-1 md:grid-cols-12 gap-6">
+            
+            <!-- Manifesto Block -->
+            <div class="md:col-span-12 glassmorphism-2 light-refraction luxury-card premium-hover live-gradient live-gradient-blue">
+              <div class="p-6 relative overflow-hidden">
+                <div class="flex items-center justify-center mb-4">
+                  <div class="inline-block bg-neon-blue/30 px-4 py-1.5 rounded-full text-sm font-pixel flex items-center space-x-2">
+                    <span class="icon">⦗⦘</span>
+                    <span>Manifesto</span>
+                  </div>
+                </div>
+                <div id="quote-block" class="bg-transparent max-w-3xl mx-auto">
+                  <p class="text-center text-lg md:text-xl font-pixel text-white">Finance is too boring to be taken seriously. It's time to rewrite the rules — through absurdity.</p>
+                </div>
+                <div class="absolute -bottom-12 -right-12 w-32 h-32 bg-neon-purple/10 rounded-full blur-3xl"></div>
+                <div class="absolute -top-12 -left-12 w-40 h-40 bg-neon-blue/10 rounded-full blur-3xl"></div>
+              </div>
+            </div>
+            
+            <!-- Epoch 1-2 -->
+            <div class="md:col-span-6 glassmorphism-2 light-refraction luxury-card premium-hover live-gradient live-gradient-purple">
+              <div class="flex items-start space-x-4 p-6">
+                <div class="pixel-art pixel-robot animate-float"></div>
+                <div>
+                  <div class="inline-block bg-neon-purple/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel">
+                    Epoch 1-2
+                  </div>
+                  <h3 class="text-xl md:text-2xl font-bold mb-4 text-neon-purple font-pixel w-full">
+                    Laying the Foundation of the "Absurd Code"
+                  </h3>
+                  
+                  <div class="space-y-4">
+                    <div>
+                      <h4 class="font-bold text-neon-blue mb-2 font-pixel w-full">AIbsurdity Chain (AIC):</h4>
+                      <ul class="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                        <li>Creation of an L1 blockchain with Proof-of-LOL consensus: nodes receive rewards for generating memes that make >50% of validators laugh.</li>
+                        <li>Built-in Dank Engine: an algorithm that turns transactions into absurd scenarios (e.g., transferring 100 AIB = "Buy 1% of shares of Elon's fictitious company — Mars Memes Inc.").</li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 class="font-bold text-neon-pink mb-2 font-pixel w-full">AGI DAO 1.0:</h4>
+                      <ul class="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                        <li>Launch of AbsurdGPT — an AI advisor that gives financial advice in a stand-up format (example: "Sell everything and buy the NFT of a flying potato — it will survive the recession").</li>
+                        <li>First Mission of Absurdity: a crowdfunding campaign to purchase a radio station in Nevada for broadcasting crypto jokes 24/7.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Epoch 3-4 -->
+            <div class="md:col-span-6 glassmorphism-2 light-refraction luxury-card premium-hover live-gradient live-gradient-green">
+              <div class="flex items-start space-x-4 p-6">
+                <div class="pixel-art pixel-cat animate-float"></div>
+                <div>
+                  <div class="inline-block bg-neon-green/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel">
+                    Epoch 3-4
+                  </div>
+                  <h3 class="text-xl md:text-2xl font-bold mb-4 text-neon-green font-pixel w-full">
+                    Mainstream Colonization
+                  </h3>
+                  
+                  <div class="space-y-4">
+                    <div>
+                      <h4 class="font-bold text-neon-blue mb-2 font-pixel w-full">AIbsurdity Bank (Parody Edition):</h4>
+                      <ul class="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                        <li>Onboarding through "anti-services":
+                          <ul class="list-circle pl-5 space-y-1 mt-1">
+                            <li>FUD deposits: the more you panic, the higher the APY.</li>
+                            <li>Meme-backed loans: collateral is the virality of your cat on TikTok.</li>
+                          </ul>
+                        </li>
+                        <li>Partnership with DogeCoin: a joint token DOGE-AIB for paying absurd services (pizza delivery to the ISS).</li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 class="font-bold text-neon-pink mb-2 font-pixel w-full">Metaverse of Absurdity:</h4>
+                      <ul class="list-disc pl-5 space-y-2 text-gray-300 text-xs font-pixel w-full">
+                        <li>AbsurdVerse: a VR space where BTC is air, and NFT ducks govern the laws of physics.</li>
+                        <li>Landowners pay taxes in AIB for "absurd improvements" (e.g., erecting a monument to Schrödinger in the center of virtual New York).</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- More epochs with similar structure -->
+            <!-- Simplified version to keep the file shorter -->
+            
+            <!-- PAA Tokenomics Section -->
+            <div class="md:col-span-12 glassmorphism-2 light-refraction mt-10 mb-8 luxury-card premium-hover bg-absurd-dark">
+              <div class="text-center p-6">
+                <h2 class="text-3xl md:text-4xl font-pixel text-white mb-6">PAA Tokenomics: The Ultimate Absurdity</h2>
+                <p class="text-8bit text-center max-w-2xl mx-auto text-gray-300 text-sm md:text-base mb-6">
+                  "Economics reimagined through the lens of quantum absurdity, where memes are currency and dreams are collateral."
+                </p>
+              </div>
+            </div>
+            
+            <!-- Simplified tokenomics blocks for brevity -->
+          </div>
+        </div>
+      </main>
+      
+      <!-- Footer -->
+      <footer class="bg-absurd-dark border-t border-gray-800 py-12 mt-auto relative overflow-hidden">
+        <!-- VHS Overlay -->
+        <div id="vhs-overlay" class="absolute inset-0 pointer-events-none z-10 opacity-20"
+          style="background: repeating-linear-gradient(to bottom, transparent, transparent 2px, rgba(255, 0, 255, 0.2) 3px, rgba(0, 255, 255, 0.2) 4px); animation: vhs-jitter 0.5s infinite; mix-blend-mode: exclusion">
+        </div>
+        
+        <!-- Quantum Noise Background -->
+        <div id="quantum-noise" class="absolute inset-0 pointer-events-none opacity-10"
+          style="background: radial-gradient(circle at center, rgba(255,0,255,0.3) 0%, rgba(0,255,255,0.3) 50%, rgba(255,255,0,0.3) 100%); background-size: 200% 200%; animation: data-corruption 15s ease infinite; mix-blend-mode: screen">
+        </div>
+        
+        <!-- Holographic Overlay -->
+        <div id="hologram-overlay" class="absolute inset-0 pointer-events-none z-5 holographic-overlay"
+          style="background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(0,255,255,0.2) 25%, rgba(255,0,255,0.2) 50%, rgba(0,255,255,0.2) 75%, rgba(255,255,255,0.1) 100%); background-size: 400% 400%; transition: transform 0.1s ease-out, background-position 0.1s ease-out; transform: perspective(1000px); mix-blend-mode: overlay">
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 relative z-20">
+          <div class="text-left">
+            <p class="text-gray-400 text-sm mb-4 font-pixel glitch-text">
+              Absolutely everything that surrounds you was once someone's absurd idea...
+            </p>
+            <div class="flex space-x-4">
+              <a href="https://twitter.com/absurdity" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-neon-blue transition-colors holographic-button">
+                <span class="icon">𝕏</span>
+              </a>
+              <a href="https://t.me/absurdity" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-neon-purple transition-colors holographic-button">
+                <span class="icon">✉</span>
+              </a>
+              <a href="https://github.com/absurdity" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-neon-green transition-colors holographic-button">
+                <span class="icon">⌥</span>
+              </a>
+              <a href="https://absurdity.wtf" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-neon-yellow transition-colors holographic-button">
+                <span class="icon">↗</span>
+              </a>
+            </div>
+          </div>
+          
+          <div class="text-left">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-gray-400 text-sm p-3 bg-gray-900 rounded font-pixel holographic-card">
+                <span>Contract:</span>
+                <span class="flex items-center">
+                  0xabsurd...42069
+                  <button onclick="copyToClipboard('0xabsurd...42069', 'contract')" class="ml-2 hover:text-neon-blue transition-colors holographic-button">
+                    <span id="contract-copy-icon" class="icon">⎘</span>
+                  </button>
+                </span>
+              </div>
+              
+              <div class="flex items-center justify-between text-gray-400 text-sm p-3 bg-gray-900 rounded font-pixel holographic-card">
+                <span>Fund:</span>
+                <span class="flex items-center">
+                  0x00000000000000000000
+                  <button onclick="copyToClipboard('0x00000000000000000000', 'wallet')" class="ml-2 hover:text-neon-pink transition-colors holographic-button">
+                    <span id="wallet-copy-icon" class="icon">⎘</span>
+                  </button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-6 mt-8 pt-8 border-t border-gray-800">
+          <p class="text-center text-gray-500 text-xs font-pixel">
+            © <span id="current-year"></span> AIbsurdity. All rights absurdified. This is not financial advice—it's a joke with a blockchain.
+          </p>
+          <p class="text-center text-neon-orange text-xs mt-4 font-pixel animate-pulse">
+            If nothing works out for us... we'll leave, but as a farewell we'll slam the door so hard that the world will tremble!
+          </p>
+        </div>
+      </footer>
+      
+      <!-- Toast Notification Container -->
+      <div id="toast-container" class="fixed top-4 right-4 z-50"></div>
+      
+      <!-- Rabbit Ears Button -->
+      <div class="fixed bottom-4 right-4 z-40">
+        <a href="rabbit-hole.html" class="block p-2 rounded-full bg-black/50 hover:bg-black/80 transition-colors">
+          <div class="w-8 h-8 relative">
+            <div class="absolute w-2 h-8 bg-white rounded-full left-1 -top-4 transform rotate-12"></div>
+            <div class="absolute w-2 h-8 bg-white rounded-full right-1 -top-4 transform -rotate-12"></div>
+            <div class="w-8 h-6 bg-gray-700 absolute bottom-0 rounded-full"></div>
+            <div class="w-6 h-4 bg-pink-200 absolute bottom-1 left-1 rounded-full"></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <!-- Toast script for copy notifications -->
+  <script src="scripts.js"></script>
+</body>
 </html>
