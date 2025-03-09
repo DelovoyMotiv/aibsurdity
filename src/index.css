@@ -31,6 +31,17 @@
 }
 
 @layer components {
+  /* Subtle float animation for TetrisBlocks */
+  .animate-subtle-float {
+    animation: subtle-float 6s ease-in-out infinite;
+  }
+  
+  @keyframes subtle-float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+  }
+
   /* Neon text effect with subtle glow */
   .neon-text-subtle {
     font-family: 'Press Start 2P', monospace;
@@ -319,6 +330,36 @@
   );
   z-index: 1;
   pointer-events: none;
+}
+
+/* Tetris Block Shapes */
+.shape-I {
+  width: 100%;
+}
+
+.shape-L {
+  width: 100%;
+  position: relative;
+}
+
+.shape-T {
+  width: 100%;
+  position: relative;
+}
+
+.shape-O {
+  width: 100%;
+  position: relative;
+}
+
+.shape-Z {
+  width: 100%;
+  position: relative;
+}
+
+.shape-S {
+  width: 100%;
+  position: relative;
 }
 
 /* Animations */

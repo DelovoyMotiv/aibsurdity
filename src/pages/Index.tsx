@@ -158,9 +158,10 @@ const Index = () => {
             
             {/* Updated AbsurdQuoteBlock with luxury styling to match site aesthetic */}
             <TetrisBlock 
-              className="md:col-span-12 glassmorphism-2 light-refraction luxury-card premium-hover" 
+              className="glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="live-gradient live-gradient-blue"
               delay={0.2}
+              shape="I"
             >
               <div className="p-6 relative overflow-hidden">
                 <div className="flex items-center justify-center mb-4">
@@ -182,9 +183,10 @@ const Index = () => {
             
             {/* Epoch 1-2 */}
             <TetrisBlock 
-              className="md:col-span-6 glassmorphism-2 light-refraction luxury-card premium-hover" 
+              className="glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="live-gradient live-gradient-purple"
               delay={0.3}
+              shape="L"
             >
               <div className="flex items-start space-x-4 p-6">
                 <PixelArt variant="robot" className="flex-shrink-0 animate-float" />
@@ -219,9 +221,10 @@ const Index = () => {
             
             {/* Epoch 3-4 */}
             <TetrisBlock 
-              className="md:col-span-6 glassmorphism-2 light-refraction luxury-card premium-hover" 
+              className="glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="live-gradient live-gradient-green"
               delay={0.5}
+              shape="L"
             >
               <div className="flex items-start space-x-4 p-6">
                 <PixelArt variant="cat" className="flex-shrink-0 animate-float" />
@@ -261,9 +264,10 @@ const Index = () => {
             
             {/* Epoch 5-6 */}
             <TetrisBlock 
-              className="md:col-span-7 glassmorphism-2 light-refraction luxury-card premium-hover" 
+              className="glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="live-gradient live-gradient-blue"
               delay={0.2}
+              shape="T"
             >
               <div className="flex items-start space-x-4 p-6">
                 <PixelArt variant="glitch" className="flex-shrink-0 animate-broken-rotate" />
@@ -298,9 +302,10 @@ const Index = () => {
             
             {/* Epoch 7-8 */}
             <TetrisBlock 
-              className="md:col-span-5 glassmorphism-2 light-refraction luxury-card premium-hover" 
+              className="glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="live-gradient live-gradient-blue"
               delay={0.4}
+              shape="O"
             >
               <div className="p-6">
                 <div className="inline-block bg-neon-blue/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel">
@@ -332,9 +337,10 @@ const Index = () => {
               
             {/* Epoch 9-10 */}
             <TetrisBlock 
-              className="md:col-span-12 glassmorphism-2 light-refraction luxury-card premium-hover" 
+              className="glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="live-gradient live-gradient-pink"
               delay={0.6}
+              shape="I"
             >
               <div className="flex flex-col md:flex-row gap-6 p-6">
                 <div className="md:w-1/2">
@@ -384,9 +390,10 @@ const Index = () => {
             
             {/* NEW SECTION: PAA Tokenomics - Tetris layout */}
             <TetrisBlock 
-              className="md:col-span-12 glassmorphism-2 light-refraction mt-10 mb-8 luxury-card premium-hover" 
+              className="glassmorphism-2 light-refraction mt-10 mb-8 luxury-card premium-hover" 
               color="bg-absurd-dark"
               delay={0.2}
+              shape="I"
             >
               <div className="text-center p-6">
                 <GlitchText 
@@ -406,11 +413,10 @@ const Index = () => {
 
             {/* Liquidity Singularity Block - Shape I */}
             <TetrisBlock 
-              className="md:col-span-4 glassmorphism-2 light-refraction luxury-card premium-hover" 
+              className="glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="live-gradient live-gradient-blue"
               delay={0.3}
-              shape="I"
-              rotation={0}
+              shape="Z"
             >
               <div className="p-6">
                 <div className="inline-block bg-neon-blue/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel flex items-center space-x-2">
@@ -453,11 +459,10 @@ const Index = () => {
             
             {/* Dream Economy Block - Shape Z */}
             <TetrisBlock 
-              className="md:col-span-4 glassmorphism-2 light-refraction luxury-card premium-hover" 
+              className="glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="live-gradient live-gradient-purple"
               delay={0.4}
               shape="Z"
-              rotation={0}
             >
               <div className="p-6">
                 <div className="inline-block bg-neon-purple/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel flex items-center space-x-2">
@@ -491,11 +496,10 @@ const Index = () => {
             
             {/* Temporal Antifragility Block - Shape L */}
             <TetrisBlock 
-              className="md:col-span-4 glassmorphism-2 light-refraction luxury-card premium-hover" 
+              className="glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="live-gradient live-gradient-green"
               delay={0.5}
-              shape="L"
-              rotation={0}
+              shape="Z"
             >
               <div className="p-6">
                 <div className="inline-block bg-neon-green/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel flex items-center space-x-2">
@@ -528,11 +532,10 @@ const Index = () => {
             
             {/* Technologies Block - Shape T */}
             <TetrisBlock 
-              className="md:col-span-6 glassmorphism-2 light-refraction luxury-card premium-hover" 
+              className="glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="live-gradient live-gradient-orange"
               delay={0.3}
               shape="T"
-              rotation={0}
             >
               <div className="p-6">
                 <div className="inline-block bg-neon-orange/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel flex items-center space-x-2">
@@ -579,11 +582,10 @@ const Index = () => {
             
             {/* Economic Justification Block - Shape O */}
             <TetrisBlock 
-              className="md:col-span-6 glassmorphism-2 light-refraction luxury-card premium-hover" 
+              className="glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="live-gradient live-gradient-red"
               delay={0.4}
               shape="O"
-              rotation={0}
             >
               <div className="p-6">
                 <div className="inline-block bg-neon-red/30 px-3 py-1 rounded-full text-sm mb-3 font-pixel flex items-center space-x-2">
@@ -622,11 +624,10 @@ C = Conscience coefficient (0 ≤ C < 1)`}
             
             {/* Liquidity Rituals & Apocalypse Scenario - Shape S */}
             <TetrisBlock 
-              className="md:col-span-12 glassmorphism-2 light-refraction luxury-card premium-hover" 
+              className="glassmorphism-2 light-refraction luxury-card premium-hover" 
               color="live-gradient live-gradient-purple"
               delay={0.5}
               shape="S"
-              rotation={0}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
                 <div>
@@ -695,11 +696,10 @@ C = Conscience coefficient (0 ≤ C < 1)`}
             </TetrisBlock>
             
             <TetrisBlock 
-              className="md:col-span-12 glassmorphism-2 light-refraction luxury-card premium-hover text-center" 
+              className="glassmorphism-2 light-refraction luxury-card premium-hover text-center" 
               color="live-gradient live-gradient-blue"
               delay={0.2}
               shape="I"
-              rotation={0}
             >
               <div className="p-6">
                 <h3 className="text-2xl md:text-3xl font-bold mb-6 text-neon-pink font-pixel w-full">

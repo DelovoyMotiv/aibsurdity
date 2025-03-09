@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 interface TetrisBlockProps {
@@ -10,9 +11,29 @@ interface TetrisBlockProps {
 }
 
 const TetrisBlock = ({ className, color, delay, shape, rotation, children }: TetrisBlockProps) => {
+  // Add shape-specific styling based on the shape prop
+  const getShapeClasses = () => {
+    switch (shape) {
+      case 'I':
+        return 'col-span-full md:col-span-12';
+      case 'L':
+        return 'col-span-full md:col-span-6';
+      case 'T':
+        return 'col-span-full md:col-span-6';
+      case 'O':
+        return 'col-span-full md:col-span-6';
+      case 'Z':
+        return 'col-span-full md:col-span-4';
+      case 'S':
+        return 'col-span-full md:col-span-12';
+      default:
+        return '';
+    }
+  };
+
   return (
     <div
-      className={`transition-transform duration-500 ease-in-out ${className} ${color} ${shape ? `shape-${shape}` : ''}`}
+      className={`transition-transform duration-500 ease-in-out ${className} ${color} ${getShapeClasses()} ${shape ? `shape-${shape}` : ''}`}
       style={{
         transform: `rotate(${rotation || 0}deg)`,
         transitionDelay: delay ? `${delay}s` : undefined,
